@@ -41,3 +41,8 @@ General Options:
                   CGI URL:  http://localhost/nagios/cgi-bin/
  Traceroute (used by WAP):
 ```
+* Make 
+```
+$ make all
+$ sudo make install
+```
