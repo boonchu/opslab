@@ -41,8 +41,40 @@ General Options:
                   CGI URL:  http://localhost/nagios/cgi-bin/
  Traceroute (used by WAP):
 ```
-* Make 
+* run make to install services 
 ```
 $ make all
 $ sudo make install
+$ sudo make install-int
+$ sudo make install-commandmode
+$ sudo make install-config
+```
+* install web components
+```
+$ sudo make install-webconf
+```
+* add nagios administration user
+```
+$ sudo htpasswd -s -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+```
+* start apache httpd service
+```
+$ sudo system start httpd
+```
+* install nagios plugins service
+```
+$ cd ~/nagios/nagios-plugins-2.0.3
+$ ./configure --with-nagios-user=nagios --with-nagios-group=nagios
+$ make
+$ sudo make install
+```
+* verify configuration
+```
+$ sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+```
+* enable and start nagios service
+```
+$ sudo chkconfig --add nagios
+$ sudo chkconfig --level 35 nagios on
+$ sudo systemctl start nagios
 ```
