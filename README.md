@@ -5,7 +5,7 @@
 ###### Monitoring with nagios (latest - 4.0.7)
 * install nagios service
 ```
-$ sudo yum install -y gcc glibc glibc-common make gd gd-devel net-snmp 
+$ sudo yum install -y httpd php gcc glibc glibc-common make gd gd-devel net-snmp 
 $ sudo useradd nagios
 $ sudo groupadd nagcmd
 $ sudo usermod -G nagcmd nagios
@@ -77,4 +77,5 @@ $ sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 $ sudo chkconfig --add nagios
 $ sudo chkconfig --level 35 nagios on
 $ sudo systemctl start nagios
+$ sudo systemctl reload httpd
 ```
