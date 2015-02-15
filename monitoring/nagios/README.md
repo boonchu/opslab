@@ -75,3 +75,5 @@ $ sudo chkconfig --level 35 nagios on
 $ sudo systemctl start nagios
 $ sudo systemctl reload httpd
 ```
+* login nagios from web browser http://your host/nagios
+
