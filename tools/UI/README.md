@@ -8,7 +8,7 @@ solution to use menu driven application on terminal side.
 ```
 $ whiptail --title "Hello World" --msgbox "Hello World from $LOGNAME" 7 78
 ```
-![hello_world](https://github.com/boonchu/python3lab/blob/master/UI/hello_world.png)
+![hello_world](https://github.com/boonchu/opslab/blob/master/tools/UI/hello_world.png)
 
 * How about Thai recipe?
 
@@ -18,7 +18,7 @@ $ whiptail --title "Recipes" --checklist "choose recipes:" 10 78 4 padthai 'Pad 
 here is output at prompt when I choose two recipes.
 "tumyum" "friedrice"
 ```
-![recipes](https://github.com/boonchu/python3lab/blob/master/UI/recipes.png)
+![recipes](https://github.com/boonchu/opslab/blob/master/tools/UI/recipes.png)
 
 * Progress bar
 
