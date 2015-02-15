@@ -83,6 +83,7 @@ $ yum install -y nrpe nagios-plugins-all openssl
 $ ls -l /usr/lib64/nagios/plugins/
 ```
 * review the configration /etc/nagios/nrpe.cfg
+* enable nrpe nagios client service
 ```
 sudo systemctl enable nrpe
 sudo systemctl start nrpe
