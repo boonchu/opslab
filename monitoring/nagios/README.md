@@ -79,12 +79,12 @@ $ sudo systemctl reload httpd
 
 * install nrpe nagios clent and plugins at managed nodes
 ```
-$ yum install -y nrpe nagios-plugins-all openssl
+$ yum install -y openssl nrpe nagios-plugins-all nagios-plugins-nrpe
 $ ls -l /usr/lib64/nagios/plugins/
 ```
 * review the configration /etc/nagios/nrpe.cfg
 * enable nrpe nagios client service
 ```
-sudo systemctl enable nrpe
-sudo systemctl start nrpe
+$ sudo systemctl enable nrpe
+$ sudo systemctl start nrpe
 ```
