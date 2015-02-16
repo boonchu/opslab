@@ -140,6 +140,20 @@ define host {
 $ sudo systemctl reload nagios
 $ sudo systemctl reload httpd
 ```
+* [server] validate the connection
+```
+$ /usr/lib64/nagios/plugins/check_nrpe -H 192.168.1.161
+NRPE v2.15
+```
+![screens_output](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/services_page.png)
+* noticed from web UI that still have failed status. Use this step to clear the issue
+  - edit parameter allowed_hosts /etc/nagios/nrpe.cfg 
+  - restart nrpe nagios client service
+```
+allowed_hosts=127.0.0.1,[IP of your nagios host]
+
+$ sudo systemctl restart nrpe
+```
 
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
