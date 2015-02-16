@@ -12,6 +12,10 @@
 
 * fish shell:
   - new cool shell, [link](http://fishshell.com/)
+```bash
+yum-config-manager --add-repo http://fishshell.com/files/linux/RedHat_RHEL-6/fish.release:2.repo
+yum install fish
+```
 
 * tmuxinator awesome custom tmux screen layout
   - [link](https://github.com/tmuxinator/tmuxinator)
