@@ -94,6 +94,10 @@ $ sudo systemctl start nrpe
 ```
 cfg_dir=/usr/local/nagios/etc/objects/clusterA
 ```
+  - update parameter $USER1$ [discussed in 
+```
+$USER1$=/usr/lib64/nagios/plugins
+```
   - create three files from hosts.cfg, services.cfg, commands.cfg
 ```
 bigchoo@server1-eth0 1128 $ cat commands.cfg
@@ -137,3 +141,6 @@ define host {
 $ sudo systemctl reload nagios
 $ sudo systemctl reload httpd
 ```
+
+Reference:
+http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
