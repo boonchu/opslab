@@ -12,3 +12,6 @@
 
 * fish shell:
   - new cool shell, [link](http://fishshell.com/)
+
+* tmuxinator awesome custom tmux screen layout
+  - [link](https://github.com/tmuxinator/tmuxinator)
