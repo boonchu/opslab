@@ -88,3 +88,52 @@ $ ls -l /usr/lib64/nagios/plugins/
 $ sudo systemctl enable nrpe
 $ sudo systemctl start nrpe
 ```
+* promote a new cluster environment to be monitored
+  - create /usr/local/nagios/etc/objects/clusterA
+  - update parameter cfg_dir at /usr/local/nagios/etc/nagios.cfg
+```
+cfg_dir=/usr/local/nagios/etc/objects/clusterA
+```
+  - create three files from hosts.cfg, services.cfg, commands.cfg
+```
+bigchoo@server1-eth0 1128 $ cat commands.cfg
+define command {
+        command_name check_nrpe
+        command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
+}
+
+bigchoo@server1-eth0 1129 $ cat services.cfg
+define service {
+        use generic-service
+        host_name vmk1.cracker.org
+        service_description PING
+        check_command check_ping!100.0,20%!500.0,60%
+}
+
+define service {
+        use generic-service
+        host_name vmk1.cracker.org
+        service_description Current Load
+        check_command check_nrpe!check_load
+}
+
+define service {
+        use generic-service
+        host_name vmk1.cracker.org
+        service_description Total Processes
+        check_command check_nrpe!check_users
+}
+
+bigchoo@server1-eth0 1130 $ cat hosts.cfg
+define host {
+        use linux-server
+        host_name vmk1.cracker.org
+        alias nodejs-docker1
+        address 192.168.1.161
+}
+```
+* reload configuration
+```
+$ sudo systemctl reload nagios
+$ sudo systemctl reload httpd
+```
