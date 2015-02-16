@@ -143,4 +143,4 @@ $ sudo systemctl reload httpd
 ```
 
 Reference:
-http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
+- http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
