@@ -8,4 +8,4 @@
 * git:
   - find status from branch [git-branch-status](https://github.com/alexdavid/git-branch-status)
 
-![git_branch_status](https://github.com/boonchu/opslab/blob/master/tools/shell/git_prompt.png)
+![git_branch_status](https://github.com/boonchu/opslab/blob/master/tools/shell/git_branch_status.png)
