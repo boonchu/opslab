@@ -140,6 +140,7 @@ define host {
 $ sudo systemctl reload nagios
 $ sudo systemctl reload httpd
 ```
+![screens_output](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/services_page.png)
 
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
