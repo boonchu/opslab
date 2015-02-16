@@ -94,7 +94,7 @@ $ sudo systemctl start nrpe
 ```
 cfg_dir=/usr/local/nagios/etc/objects/clusterA
 ```
-  - update parameter $USER1$ [discussed in 
+  - update parameter $USER1$ [use Chef or puppet to provision cfg, discussed in serverfault](http://serverfault.com/questions/335984/nrpe-and-the-user1-variable)
 ```
 $USER1$=/usr/lib64/nagios/plugins
 ```
