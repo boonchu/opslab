@@ -91,15 +91,14 @@ $ sudo systemctl start nrpe
 * [server] promote a new cluster environment to be monitored
   - create /usr/local/nagios/etc/objects/clusterA
   - update parameter cfg_dir at /usr/local/nagios/etc/nagios.cfg
-```
-cfg_dir=/usr/local/nagios/etc/objects/clusterA
-```
-  - update parameter $USER1$ [use Chef or puppet to provision cfg, discussed in serverfault](http://serverfault.com/questions/335984/nrpe-and-the-user1-variable)
-```
-$USER1$=/usr/lib64/nagios/plugins
-```
+  - update parameter $USER1$ at /usr/local/nagios/etc/resource.cfg [use Chef or puppet to provision cfg, discussed in serverfault](http://serverfault.com/questions/335984/nrpe-and-the-user1-variable)
   - create three files from hosts.cfg, services.cfg, commands.cfg
 ```
+edit >>> /usr/local/nagios/etc/nagios.cfg
+cfg_dir=/usr/local/nagios/etc/objects/clusterA
+edit >>> 
+$USER1$=/usr/lib64/nagios/plugins
+
 bigchoo@server1-eth0 1128 $ cat commands.cfg
 define command {
         command_name check_nrpe
