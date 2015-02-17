@@ -173,3 +173,4 @@ OK: OK
 
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
+- http://www.slideshare.net/nagiosinc/nagios-conference-2014-jim-prins-passive-monitoring-with-nagios
