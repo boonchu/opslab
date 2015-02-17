@@ -1,4 +1,7 @@
-##### Some works that I have done recently. 
+##### Experimented in codes and tools and other ideas
+
+* Coders:
+  - [write code every day](http://ejohn.org/blog/write-code-every-day/)
 
 * bash: 
   - [list of shell feature comparison](http://hyperpolyglot.org/unix-shells)
@@ -7,6 +10,7 @@
 ![git_prompt](https://github.com/boonchu/opslab/blob/master/tools/shell/git_prompt.png)
 
 * git:
+  - [try Git](https://try.github.io)
   - find status from branch [git-branch-status](https://github.com/alexdavid/git-branch-status)
 
 ![git_branch_status](https://github.com/boonchu/opslab/blob/master/tools/shell/git_branch_status.png)
