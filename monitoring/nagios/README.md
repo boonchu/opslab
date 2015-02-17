@@ -158,30 +158,14 @@ $ sudo systemctl restart nrpe
 ```
 
 ###### What is the [nagios plugins](http://nagios-plugins.org/documentation/) and why is so important?
-
+* Understand the return code from check. It helps you to know how alerts setup.
 ```
-bigchoo@server1-eth0 ~/lab/opslab/daily_linux (master)*$ /usr/lib64/nagios/plugins/check_dummy --help
-check_dummy v2.0.1 (nagios-plugins 2.0.1)
-Copyright (c) 1999 Ethan Galstad <nagios@nagios.org>
-Copyright (c) 1999-2014 Nagios Plugin Development Team
-        <devel@nagios-plugins.org>
-
-This plugin will simply return the state corresponding to the numeric value
-of the <state> argument with optional text
-
-
-Usage:
- check_dummy <integer state> [optional text]
-
-Options:
- -h, --help
-    Print detailed help screen
- -V, --version
-    Print version information
-
-Send email to help@nagios-plugins.org if you have questions regarding use
-of this software. To submit patches or suggest improvements, send email to
-devel@nagios-plugins.org
+bigchoo@vmk1 1012 $ /usr/lib64/nagios/plugins/check_dummy 2 "Critical"
+CRITICAL: Critical
+bigchoo@vmk1 1013 $ /usr/lib64/nagios/plugins/check_dummy 1 "Warning"
+WARNING: Warning
+bigchoo@vmk1 1014 $ /usr/lib64/nagios/plugins/check_dummy 0 "OK"
+OK: OK
 ```
 * see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
