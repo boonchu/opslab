@@ -170,10 +170,10 @@ bigchoo@vmk1 1014 $ /usr/lib64/nagios/plugins/check_dummy 0 "OK"
 OK: OK
 ```
 * types of nrpe check (image sources from nagios)
-* direct check
+  - direct check
 ![direct](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/direct_nrpe.png)
 
-* indirect check
+  - indirect check
 ![indirect](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/indirect_nrpe.png)
 
 * see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
