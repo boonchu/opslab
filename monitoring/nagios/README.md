@@ -160,6 +160,8 @@ $ sudo systemctl restart nrpe
 ###### What is the [nagios plugins](http://nagios-plugins.org/documentation/) and why is so important?
 * Understand the return code from check. It helps you to know how alerts setup.
 ```
+bigchoo@vmk1 1015 $ /usr/lib64/nagios/plugins/check_dummy 3 "Unknown"
+UNKNOWN: Unknown
 bigchoo@vmk1 1012 $ /usr/lib64/nagios/plugins/check_dummy 2 "Critical"
 CRITICAL: Critical
 bigchoo@vmk1 1013 $ /usr/lib64/nagios/plugins/check_dummy 1 "Warning"
