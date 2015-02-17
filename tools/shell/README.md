@@ -10,7 +10,9 @@
 ![git_prompt](https://github.com/boonchu/opslab/blob/master/tools/shell/git_prompt.png)
 
 * git:
-  - [try Git](https://try.github.io)
+  * learning git
+     - [try Git](https://try.github.io)
+     - [git from code school](http://gitreal.codeschool.com)
   - find status from branch [git-branch-status](https://github.com/alexdavid/git-branch-status)
 
 ![git_branch_status](https://github.com/boonchu/opslab/blob/master/tools/shell/git_branch_status.png)
