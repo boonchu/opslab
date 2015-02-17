@@ -1,6 +1,6 @@
 ###### Daily linux
 I am Redhat Certified Engineer. I am dealing with linux daily user 
-case from many users. Just sharing what is routine case and how to 
+case from many users. Just sharing what were user requests and how to 
 resolve it.
 ```
 Case 1:
