@@ -181,6 +181,7 @@ Send email to help@nagios-plugins.org if you have questions regarding use
 of this software. To submit patches or suggest improvements, send email to
 devel@nagios-plugins.org
 ```
+* see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
