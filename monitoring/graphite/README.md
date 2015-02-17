@@ -1,3 +1,4 @@
+###### [David Josephsen: Alert on What You Draw - Nagios Con 2014](https://www.youtube.com/watch?v=wvoOT4QbSkY)
 ###### Graphite 
   * What is graphite? see from this [link](http://graphite.wikidot.com/screen-shots)
   * What components in graphite? 
