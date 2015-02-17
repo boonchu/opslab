@@ -155,5 +155,7 @@ allowed_hosts=127.0.0.1,[IP of your nagios host]
 $ sudo systemctl restart nrpe
 ```
 
+###### What is the [nagios plugins](http://nagios-plugins.org/documentation/) and why is so important?
+
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
