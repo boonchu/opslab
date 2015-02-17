@@ -12,5 +12,8 @@ requirements to allow contractors to share files in one location on
 
 Contractors will be hiring to do the project works for 3 months. The-
 account will be expired automatically after contract ends.
+
+/var/share/docs can be either local or network fiel systems. User likely
+prefer to keep documents on filer volumes.
 ```
 
