@@ -9,5 +9,8 @@ User bump into me at the hallway and ask for help. He has new three
 contractors that need access to web service hosts. He has specific
 requirements to allow contractors to share files in one location on
 /var/share/docs, no one else from his team can be able to access it.
+
+Contractors will be hiring to do the project works for 3 months. The-
+account will be expired automatically after contract ends.
 ```
 
