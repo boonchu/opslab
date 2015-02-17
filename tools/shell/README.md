@@ -3,7 +3,7 @@
 * Coders:
   - [write code every day](http://ejohn.org/blog/write-code-every-day/)
 
-* bash: 
+* bash:
   - [list of shell feature comparison](http://hyperpolyglot.org/unix-shells)
   - to ensure prompt is git-awared. If it is not git, then prompt will be resetting to default shell prompt.
 
