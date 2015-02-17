@@ -1,4 +1,5 @@
 ###### [Latest Nagios Conference 2014](http://tinyurl.com/km8pezb)
+###### [Nagios product information](http://www.nagios.com/handouts/)
 ###### Monitoring with nagios (latest - 4.0.7)
 * [server] install nagios service
 ```
