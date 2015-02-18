@@ -34,3 +34,12 @@ sudo yum localinstall -y python-carbon-0.9.10-1.noarch.rpm \
                    python-whisper-0.9.10-1.noarch.rpm \
                    python-graphite-web-0.9.10-1.noarch.rpm
 ```
+* install django web framework for graphite-web
+```
+$ sudo yum install python-django python-django-tagging
+$ python
+>>> import django
+>>> django.VERSION
+(1, 6, 10, 'final', 0)
+>>> quit()
+```
