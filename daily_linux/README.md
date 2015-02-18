@@ -17,3 +17,9 @@ account will be expired automatically after contract ends.
 prefer to keep documents on filer volumes.
 ```
 
+```
+Case 2:
+
+I have request from site operation center to troubleshoot redhat box that 
+requires to be single user mode at boot time. You have console access.
+```
