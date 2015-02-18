@@ -10,14 +10,13 @@
   * [learning how to build rpm with CI process](https://github.com/boonchu/CI)
 
 - ###### Building rpm with fpm
-  * build carbon rpm
+* build carbon rpm
 ```
 PKG_VERSION=0.9.10
 wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/carbon-${PKG_VERSION}.tar.gz
 fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm carbon-0.9.10/setup.py
 ```
-
-  * build graphite-web
+* build graphite-web
 ```
 PKG_VERSION=0.9.10
 wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/graphite-web-${PKG_VERSION}.tar.gz
