@@ -47,5 +47,5 @@ $ python
 - Fedora 21
 * installation
 ```
-sudo yum localinstall -y python-carbon python-whisper grpahite-web
+sudo yum localinstall -y python-carbon python-whisper grpahite-web supervisor
 ```
