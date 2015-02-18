@@ -47,5 +47,12 @@ $ python
 - Fedora 21
 * installation
 ```
-sudo yum localinstall -y python-carbon python-whisper grpahite-web supervisor
+$ sudo yum localinstall -y python-carbon python-whisper grpahite-web supervisor
+$ tree /etc/graphite-web/
+/etc/graphite-web/
+├── dashboard.conf
+├── local_settings.py
+├── local_settings.pyc
+└── local_settings.pyo
+
 ```
