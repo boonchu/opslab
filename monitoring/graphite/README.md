@@ -56,3 +56,9 @@ $ tree /etc/graphite-web/
 └── local_settings.pyo
 
 ```
+* adding two ini files for supervisord
+```
+bigchoo@server2 224 $ tail -2 /etc/supervisord.conf
+[include]
+files = supervisord.d/*.ini
+```
