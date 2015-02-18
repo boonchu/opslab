@@ -18,5 +18,7 @@ fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm carbon-0
 ```
   * build graphite-web
 ```
-
+PKG_VERSION=0.9.10
+wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/graphite-web-${PKG_VERSION}.tar.gz
+fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm graphite-web-0.9.10/setup.py
 ```
