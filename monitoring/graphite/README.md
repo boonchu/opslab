@@ -22,3 +22,16 @@ PKG_VERSION=0.9.10
 wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/graphite-web-${PKG_VERSION}.tar.gz
 fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm graphite-web-0.9.10/setup.py
 ```
+* build whisper
+```
+PKG_VERSION=0.9.10
+wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/whisper-${PKG_VERSION}.tar.gz
+fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm whisper-0.9.10/setup.py
+```
+* list of rpm files
+```
+\> ls -ltr *.rpm
+-rw-rw-r--. 1 bigchoo bigchoo   82469 Feb 17 14:30 python-carbon-0.9.10-1.noarch.rpm
+-rw-rw-r--. 1 bigchoo bigchoo 2331908 Feb 17 21:26 python-graphite-web-0.9.10-1.noarch.rpm
+-rw-rw-r--. 1 bigchoo bigchoo   21261 Feb 17 21:30 python-whisper-0.9.10-1.noarch.rpm
+```
