@@ -10,6 +10,7 @@
   * [learning how to build rpm with CI process](https://github.com/boonchu/CI)
 
 - ###### Building rpm with fpm
+- CentOS 
 * build carbon rpm
 ```
 PKG_VERSION=0.9.10
@@ -34,7 +35,7 @@ sudo yum localinstall -y python-carbon-0.9.10-1.noarch.rpm \
                    python-whisper-0.9.10-1.noarch.rpm \
                    python-graphite-web-0.9.10-1.noarch.rpm
 ```
-* install django web framework for graphite-web
+* install django-1.4.x web framework for graphite-web
 ```
 $ sudo yum install python-django python-django-tagging
 $ python
@@ -42,4 +43,9 @@ $ python
 >>> django.VERSION
 (1, 6, 10, 'final', 0)
 >>> quit()
+```
+- Fedora 21
+* installation
+```
+sudo yum localinstall -y python-carbon python-whisper grpahite-web
 ```
