@@ -25,6 +25,12 @@ requires to be single user mode at boot time. You have console access.
 ```
 ```
 Case 3:
-User want to know what is the best key performance indicator for measuring the 
-storage devices.
+Users want to know what is the best key performance indicator for measuring the 
+storage devices when the teams have a plan to purchase them.
+```
+```
+Case 4:
+Site operation center have alerts from servers and seems like the file system issue.
+While you investigate and found many of file system block error, how can you determine
+where is the bad block and which devices hold its problem?
 ```
