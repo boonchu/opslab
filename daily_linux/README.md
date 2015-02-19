@@ -34,3 +34,8 @@ Site operation center have alerts from servers and seems like the file system is
 While you investigate and found many of file system block error, how can you determine
 where is the bad block and which devices hold its problem?
 ```
+```
+Case 5:
+Customer are suspicious about TCP throughtput from their applications. They want to see
+realtime TCP data from live traffic. How can you provide that?
+```
