@@ -23,3 +23,8 @@ Case 2:
 I have request from site operation center to troubleshoot *Red Hat 7* box that 
 requires to be single user mode at boot time. You have console access.
 ```
+```
+Case 3:
+User want to know what is the best key performance indicator for measuring the 
+storage devices.
+```
