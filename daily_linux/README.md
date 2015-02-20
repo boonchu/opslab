@@ -40,3 +40,8 @@ Customer are suspicious about TCP throughtput from their applications. They want
 realtime TCP data from live traffic. How can you provide that?
 ```
 ![iperf_dump](https://github.com/boonchu/opslab/blob/master/daily_linux/iperf.png)
+```
+Case 6:
+In Red Hat 7, sys admin need to configure NIC bonding to extends bandwidth for memcached 
+host. SA should be Network Manager utility, no longer needed vim editor.
+```
