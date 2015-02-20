@@ -43,5 +43,6 @@ realtime TCP data from live traffic. How can you provide that?
 ```
 Case 6:
 In Red Hat 7, sys admin need to configure NIC bonding to extends bandwidth for memcached 
-host. SA should be Network Manager utility, no longer needed vim editor.
+host. SA should use Network Manager utility, no longer needed vim editor. It will be benefitual 
+for automation with Chef or Puppet.
 ```
