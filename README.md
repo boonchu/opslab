@@ -7,3 +7,4 @@
 - [Text mode UI design and implementation](https://github.com/boonchu/opslab/tree/master/tools/UI) 
 - [Chef Lab](https://github.com/boonchu/Cheflabs)
 - [Work ideas](https://github.com/boonchu/opslab/tree/master/tools/ideas)
+- [Single Sign On](https://github.com/boonchu/opslab/tree/master/ipa)
