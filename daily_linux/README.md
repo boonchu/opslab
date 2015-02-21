@@ -46,3 +46,7 @@ In Red Hat 7, sys admin need to configure NIC bonding to extends bandwidth for m
 host. SA should use Network Manager utility, no longer needed vim editor. It will be benefitual 
 for automation with Chef or Puppet.
 ```
+```
+Case 7:
+You have a request to migrate local mariaDB data to run on Cent OS 7 with iSCSI storage. 
+```
