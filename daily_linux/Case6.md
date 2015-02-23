@@ -124,4 +124,4 @@ s1#
 ```
 * Nic Teaming works on Mac pro now. What else? 
   * Proceeding to experiment with Virtualbox and Cent OS 7.x
-  * Going to use zookeeper as example service for testing.
+  * Going to use [iSCSI migration on MariaDB project](https://github.com/boonchu/opslab/blob/master/daily_linux/Case7.md) as example service for testing.
