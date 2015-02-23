@@ -107,6 +107,21 @@ Request timeout for icmp_seq 0
 64 bytes from 10.16.0.1: icmp_seq=1 ttl=255 time=6.381 ms
 64 bytes from 10.16.0.1: icmp_seq=2 ttl=255 time=1.467 ms
 ```
+* pull one cable out and observe the ping result. switch complains about port down as usual.
+```
+s1#
+*Mar  1 01:02:50.612: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0/48, changed state to down
+s1#
+*Mar  1 01:02:51.610: %LINK-3-UPDOWN: Interface FastEthernet1/0/48, changed state to down
+```
+* no interruption on ping result. Looks good.
+```
+64 bytes from 10.16.0.1: icmp_seq=267 ttl=255 time=1.907 ms
+64 bytes from 10.16.0.1: icmp_seq=268 ttl=255 time=1.337 ms
+64 bytes from 10.16.0.1: icmp_seq=269 ttl=255 time=1.335 ms
+64 bytes from 10.16.0.1: icmp_seq=270 ttl=255 time=1.759 ms
+64 bytes from 10.16.0.1: icmp_seq=271 ttl=255 time=2.534 ms
+```
 * Nic Teaming works on Mac pro now. What else? 
   * Proceeding to experiment with Virtualbox and Cent OS 7.x
   * Going to use zookeeper as example service for testing.
