@@ -1,8 +1,8 @@
 ##### Setup LACP - Link Aggregation Control Protocol (using my switches from CCNA exam study)
 * testing with cisco C3750 switch (treat as access layer switch, no Spanning-Tree)
-* setup vlan 2 for this lab (blue cable from picture)
+* setup vlan 2 for this lab (blue cables from picture)
 ![bond0](https://github.com/boonchu/opslab/blob/master/daily_linux/bond0.png)
-* setup vlan 99 for management purpose
+* setup vlan 99 for management purpose (yellow cables)
 * configure switch port 47,48 for vlan 2
 ```
 interface Port-channel2
