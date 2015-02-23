@@ -27,3 +27,16 @@ vgdb1-lvol1    xfs               186bf264-f7ad-4221-b125-0ec6bb0c29c1   /var/mys
 sdb            LVM2_member       7uUjb9-yfte-nTGU-CiSh-u8O8-8ZeS-PKHrkX
 sdc            LVM2_member       KAmdu6-Y0Ja-8DXs-Z4JF-DNaR-KdIQ-jkSHlp
 ```
+* copy (rsync) data from old location to new prepared storage one.
+* change configuration /etc/my.conf (if you have a farm cluster, you might consider Chef/Puppet)
+```
+[bigchoo@vmk3 ~]$ cat /etc/my.cnf
+[mysqld]
+user=mysql
+datadir=/var/mysql/data
+socket=/var/mysql/data/mysql.sock
+
+[mysqld_safe]
+log-error=/var/log/mariadb/mariadb.log
+pid-file=/var/run/mariadb/mariadb.pid
+```
