@@ -50,8 +50,3 @@ for automation with Chef or Puppet.
 Case 7:
 You have a request to migrate local mariaDB data to run on Cent OS 7 with iSCSI storage. 
 ```
-```
-Case 8:
-You have new requirement to setup LACP/802.3ad Nic Teaming for customers to expand bandwidth 
-for object caching clusters. 
-```
