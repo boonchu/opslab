@@ -17,7 +17,7 @@
 
 * examples 
   * output from initator side,
-   * two luns presents and become part of lvm vgdb1 and exports as logical group lvol1
+   * two luns (/dev/sdb, /dev/sdc) presents and become part of lvm vgdb1 and exports as logical group lvol1
 ```
 # iscsiadm -m discovery -t st -p 192.168.1.165 -l
 192.168.1.165:3260,1 iqn.2015-02.org.cracker:remotedisk1
