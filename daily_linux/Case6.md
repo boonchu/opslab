@@ -92,3 +92,6 @@ Request timeout for icmp_seq 0
 64 bytes from 10.16.0.1: icmp_seq=1 ttl=255 time=6.381 ms
 64 bytes from 10.16.0.1: icmp_seq=2 ttl=255 time=1.467 ms
 ```
+* Nic Teaming works on Mac pro now. What else? 
+  * Proceeding to experiment with Virtualbox and Cent OS 7.x
+  * Going to use zookeeper as example service for testing.
