@@ -33,8 +33,23 @@ interface FastEthernet1/0/48
  channel-protocol lacp
  channel-group 2 mode active
 !
+```
+* status from ether-channel
+```
 s1#show etherchannel summary | include SU
 2      Po2(SU)         LACP      Fa1/0/47(w) Fa1/0/48(w)
+
+s1#show interfaces Port-channel 2 status
+
+Port      Name               Status       Vlan       Duplex  Speed Type
+Po2                          connected    trunk      a-full  a-100
+
+s1#show interfaces Port-channel 2 etherchannel | include Fa|Protocol
+Protocol            =   LACP
+  0     00     Fa1/0/47 Active             0
+  0     00     Fa1/0/48 Active             0
+Time since last port bundled:    0d:00h:32m:01s    Fa1/0/48
+Time since last port Un-bundled: 0d:00h:32m:39s    Fa1/0/48
 ```
 * if trunk is failing and no connection, I need to check several things from network speed, 
 duplex mode, allowed VLAN on trunk port. if STP involved, need to double check STP.
