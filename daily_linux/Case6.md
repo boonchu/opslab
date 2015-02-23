@@ -1,4 +1,4 @@
-##### Setup LACP - Link Aggregation Control Protocol (using my devices from CCNA exam)
+##### Setup LACP - Link Aggregation Control Protocol (using my switches from CCNA exam study)
 * testing with cisco C3750 switch (treat as access layer switch, no Spanning-Tree)
 * setup vlan 2 for this lab (blue cable from picture)
 * setup vlan 99 for management purpose
