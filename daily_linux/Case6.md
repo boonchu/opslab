@@ -35,6 +35,9 @@ interface FastEthernet1/0/48
  channel-protocol lacp
  channel-group 2 mode active
 !
+interface Vlan2
+ ip address 10.16.0.1 255.255.255.0
+!
 ```
 * status from ether-channel
 ```
