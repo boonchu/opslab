@@ -1,4 +1,4 @@
-##### Setup LACP - Link Aggregation Control Protocol (using my switches from CCNA exam study)
+##### Part One - Setup LACP - Link Aggregation Control Protocol (using my switches from CCNA exam study)
 * basically, I want to make two wired ethernet redundency in case of outage on either switch port.
 * ideally, I need to make at least 2 switches to be redundency each other. I do not have time to test.
 * testing with single cisco C3750 switch (treat as access layer switch, no Spanning-Tree)
