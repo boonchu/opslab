@@ -1,4 +1,4 @@
-##### Part Two - Nic Teaming RHCE exam
+##### Part Two - Nic Teaming RHCE 7 exam
 * list ethernet devices prior adding to Virtualbox
 * promote two Nics to Virtualbox. ensure link are up.
 ```
