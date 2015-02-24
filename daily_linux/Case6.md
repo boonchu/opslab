@@ -124,6 +124,6 @@ s1#
 64 bytes from 10.16.0.1: icmp_seq=270 ttl=255 time=1.759 ms
 64 bytes from 10.16.0.1: icmp_seq=271 ttl=255 time=2.534 ms
 ```
-* Nic Teaming works on Mac pro now. What else? (prep for my RHCE 7 and RHCSA 7 exam study)
+###### Nic Teaming works on Mac pro now. What else? (prep for my RHCE 7 and RHCSA 7 exam study)
   * Proceeding to experiment with Virtualbox and Cent OS 7.x
   * Going to use [iSCSI migration on MariaDB project](https://github.com/boonchu/opslab/blob/master/daily_linux/Case7.md) as example service for testing.
