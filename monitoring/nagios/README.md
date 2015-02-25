@@ -188,6 +188,7 @@ $ grep nagios /etc/sudoers
 nagios ALL=NOPASSWD: /usr/local/bin/hpacucli
 ```
   - If this is not type of RAID you've, you can verify from this [github](https://github.com/glensc/nagios-plugin-check_raid/blob/master/README.md)
+
 ###### see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
 Reference:
