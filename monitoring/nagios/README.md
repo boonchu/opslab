@@ -188,6 +188,7 @@ $ grep nagios /etc/sudoers
 nagios ALL=NOPASSWD: /usr/local/bin/hpacucli
 ```
   - If this is not type of RAID you've, you can verify from this [github](https://github.com/glensc/nagios-plugin-check_raid/blob/master/README.md)
+
 ##### What happens when I monitor multiple hosts in the farm or cluster?
 * how to confgiure hostgroup.cfg
 * enable regex for hostname syntax in the same farm
