@@ -175,7 +175,17 @@ OK: OK
 
   - indirect check
 ![indirect](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/indirect_nrpe.png)
+* install sample plugins. In my case, I support HP DL360G 12 cores, 24 threads hardware with
+some good size of local disk array. I need to monitoring array and alert it. this check requires
+hp array cli software and some pre-configured sudoers to allow script to run array cli.
 
+```
+$ cd /usr/lib64/nagios/plugins && wget "http://exchange.nagios.org/components/com_mtree/attachment.php?link_id=3521&cf_id=30" -O check_hpacucli
+$ sudo ./check_hpacucli -i
+check_hpacucli OK -    array A: OK    physicaldrive 1I:1:1 (port 1I.....
+$ grep nagios /etc/sudoers
+nagios ALL=NOPASSWD: /usr/local/bin/hpacucli
+```
 * see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
 Reference:
