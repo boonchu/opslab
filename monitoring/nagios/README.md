@@ -200,11 +200,10 @@ use_regexp_matching=0
 use_true_regexp_matching=0
 ```
 ###### Checking my CI jenkins service with nagios
-* how to configure [jenkins check]($ sudo yum install perl-libwww-perl perl-JSON)
+* how to configure [jenkins check](https://github.com/jonlives/nagios-jenkins-plugin)
 ```
 $ sudo yum install perl-libwww-perl perl-JSON
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[12:07 Wed Feb 25] ~/nagios/nagios-jenkins-plugin
-bigchoo@vmk1 1136 $ curl -q 'http://vmk1:8080/computer/api/json'  | python -mjson.tool | grep displayName
+$ curl -q 'http://vmk1:8080/computer/api/json'  | python -mjson.tool | grep displayName
             "displayName": "master",
             "displayName": "vmk2",
     "displayName": "nodes",
