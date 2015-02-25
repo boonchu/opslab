@@ -169,13 +169,14 @@ WARNING: Warning
 bigchoo@vmk1 1014 $ /usr/lib64/nagios/plugins/check_dummy 0 "OK"
 OK: OK
 ```
-* types of nrpe check (image sources from nagios)
+###### types of nrpe check (image sources from nagios)
   - direct check
 ![direct](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/direct_nrpe.png)
 
   - indirect check
 ![indirect](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/indirect_nrpe.png)
-* install sample plugins. In my case, I support HP DL360G 12 cores, 24 threads hardware with
+* sample plugins. 
+  - I support HP DL360G 12 cores, 24 threads hardware with
 some good size of local disk array. I need to monitoring array and alert it. this check requires
 hp array cli software and some pre-configured sudoers to allow script to run array cli.
 
@@ -186,7 +187,7 @@ check_hpacucli OK -    array A: OK    physicaldrive 1I:1:1 (port 1I.....
 $ grep nagios /etc/sudoers
 nagios ALL=NOPASSWD: /usr/local/bin/hpacucli
 ```
-* see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
+###### see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
