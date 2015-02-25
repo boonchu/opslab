@@ -190,7 +190,7 @@ nagios ALL=NOPASSWD: /usr/local/bin/hpacucli
   - If this is not type of RAID you've, you can verify from this [github](https://github.com/glensc/nagios-plugin-check_raid/blob/master/README.md)
 
 ##### What happens when I monitor multiple hosts in the farm or cluster?
-* how to confgiure hostgroup.cfg
+* how to configure hostgroup.cfg
 * enable [regex for hostname syntax](http://nagios.sourceforge.net/docs/3_0/configmain.html#use_regexp_matching) in the same farm
 ```
 bigchoo@server1 1067 \> grep regex nagios.cfg
@@ -199,6 +199,17 @@ use_regexp_matching=0
 # (* and ?).  If the option is ENABLED, regexp matching occurs
 use_true_regexp_matching=0
 ```
+###### Checking my CI jenkins service with nagios
+* how to configure [jenkins check]($ sudo yum install perl-libwww-perl perl-JSON)
+```
+$ sudo yum install perl-libwww-perl perl-JSON
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[12:07 Wed Feb 25] ~/nagios/nagios-jenkins-plugin
+bigchoo@vmk1 1136 $ curl -q 'http://vmk1:8080/computer/api/json'  | python -mjson.tool | grep displayName
+            "displayName": "master",
+            "displayName": "vmk2",
+    "displayName": "nodes",
+```
+* basically, script tool checks status from Jenkins server and executor.
 
 ###### see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
