@@ -22,8 +22,8 @@ $ sudo yum -y install ipa-server bind bind-dyndb-ldap
 
 $ sudo ipa-server-install
 ```
-
-Reference:
-* http://www.certdepot.net/rhel7-configure-freeipa-server/
-* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Linux_Domain_Identity_Authentication_and_Policy_Guide/index.html
-* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Windows_Integration_Guide/index.html
+* [MongoDB identity platform integration](http://docs.mongodb.org/ecosystem/tutorial/configure-red-hat-enterprise-linux-identity-management/)
+* Reference:
+   - http://www.certdepot.net/rhel7-configure-freeipa-server/
+   - https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Linux_Domain_Identity_Authentication_and_Policy_Guide/index.html
+   - https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Windows_Integration_Guide/index.html

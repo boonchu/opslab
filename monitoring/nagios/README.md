@@ -169,13 +169,14 @@ WARNING: Warning
 bigchoo@vmk1 1014 $ /usr/lib64/nagios/plugins/check_dummy 0 "OK"
 OK: OK
 ```
-* types of nrpe check (image sources from nagios)
+###### types of nrpe check (image sources from nagios)
   - direct check
 ![direct](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/direct_nrpe.png)
 
   - indirect check
 ![indirect](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/indirect_nrpe.png)
-* install sample plugins. In my case, I support HP DL360G 12 cores, 24 threads hardware with
+* sample plugins. 
+  - I support HP DL360G 12 cores, 24 threads hardware with
 some good size of local disk array. I need to monitoring array and alert it. this check requires
 hp array cli software and some pre-configured sudoers to allow script to run array cli.
 
@@ -186,7 +187,20 @@ check_hpacucli OK -    array A: OK    physicaldrive 1I:1:1 (port 1I.....
 $ grep nagios /etc/sudoers
 nagios ALL=NOPASSWD: /usr/local/bin/hpacucli
 ```
-* see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
+  - If this is not type of RAID you've, you can verify from this [github](https://github.com/glensc/nagios-plugin-check_raid/blob/master/README.md)
+
+##### What happens when I monitor multiple hosts in the farm or cluster?
+* how to confgiure hostgroup.cfg
+* enable [regex for hostname syntax](http://nagios.sourceforge.net/docs/3_0/configmain.html#use_regexp_matching) in the same farm
+```
+bigchoo@server1 1067 \> grep regex nagios.cfg
+# Values: 1 = enable regexp matching, 0 = disable regexp matching
+use_regexp_matching=0
+# (* and ?).  If the option is ENABLED, regexp matching occurs
+use_true_regexp_matching=0
+```
+
+###### see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
