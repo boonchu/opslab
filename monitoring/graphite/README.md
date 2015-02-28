@@ -6,7 +6,7 @@
     - [Carbon](https://github.com/graphite-project/carbon/blob/master/README.md)
     - [Graphite-web](https://github.com/graphite-project/graphite-web/blob/master/README.md)
 
-- ###### Building the rpm 
+- ###### Building rpm with CI
   * [learning how to build rpm with CI process](https://github.com/boonchu/CI)
 
 - ###### Building rpm with fpm
@@ -14,30 +14,24 @@
 * mkdir /tmp/graphite && cd /tmp/graphite
 * build carbon rpm
 ```
-PKG_VERSION=0.9.10
-wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/carbon-${PKG_VERSION}.tar.gz
-tar xvfz carbon-${PKG_VERSION}.tar.gz
-fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm carbon-0.9.10/setup.py
+git clone git@github.com:graphite-project/carbon.git
+fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm carbon/setup.py
 ```
 * build graphite-web
 ```
-PKG_VERSION=0.9.10
-wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/graphite-web-${PKG_VERSION}.tar.gz
-tar xvfz graphite-web-${PKG_VERSION}.tar.gz
-fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm graphite-web-0.9.10/setup.py
+git clone git@github.com:graphite-project/graphite-web.git
+fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm graphite-web/setup.py
 ```
 * build whisper
 ```
-PKG_VERSION=0.9.10
-wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/whisper-${PKG_VERSION}.tar.gz
-tar xvfz whisper-${PKG_VERSION}.tar.gz
-fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm whisper-0.9.10/setup.py
+git clone git@github.com:graphite-project/whisper.git
+fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm whisper/setup.py
 ```
 * install rpm files
 ```
-sudo yum localinstall -y python-carbon-0.9.10-1.noarch.rpm \
-                   python-whisper-0.9.10-1.noarch.rpm \
-                   python-graphite-web-0.9.10-1.noarch.rpm
+sudo yum localinstall python-carbon-0.9.10-1.noarch.rpm  \
+   python-graphite-web-0.10.0_alpha-1.noarch.rpm  \
+   python-whisper-0.9.10-1.noarch.rpm
 ```
 * Very unfortunate... this app framework requires django version below 1.6. I need to install django-1.4.x web framework for graphite-web (note that [django-1.6.x is incompatible](https://docs.djangoproject.com/en/1.4/releases/1.4/#updated-default-project-layout-and-manage-py))
 ```
