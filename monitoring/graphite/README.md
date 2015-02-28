@@ -79,7 +79,7 @@ root@server1 1005 \> /usr/bin/carbon-cache --config=/etc/carbon/carbon.conf star
 ```
 cd  /opt/graphite/webapp/graphite && cp local_settings.py.example local_settings.py
 ```
-* [graphite-web] start graphite
+* [graphite-web] start local dev graphite service
 ```
 root@server1 1027 \> /usr/local/bin/run-graphite-devel-server.py /opt/graphite/
 root@server1 1035 \> /usr/local/bin/run-graphite-devel-server.py /opt/graphite/
