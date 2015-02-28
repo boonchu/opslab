@@ -33,14 +33,24 @@ sudo yum localinstall python-carbon-0.9.10-1.noarch.rpm  \
    python-graphite-web-0.10.0_alpha-1.noarch.rpm  \
    python-whisper-0.9.10-1.noarch.rpm
 ```
-* Very unfortunate... this app framework requires django version below 1.6. I need to install django-1.4.x web framework for graphite-web (note that [django-1.6.x is incompatible](https://docs.djangoproject.com/en/1.4/releases/1.4/#updated-default-project-layout-and-manage-py))
+* [graphite-web] Configure HTTPD
 ```
-$ sudo yum install python-django python-django-tagging
-$ python
->>> import django
->>> django.VERSION
-(1, 6, 10, 'final', 0)
->>> quit()
+root@server1 1091 \> cp /opt/graphite/examples/example-graphite-vhost.conf /etc/httpd/conf.d/graphite.conf
+root@server1 1096 \> systemctl reload httpd
+```
+* [graphite-web] Configure database
+```
+root@server1 1090 \> PYTHONPATH=/opt/graphite/webapp  django-admin.py syncdb --settings=graphite.settings
+You just installed Django's auth system, which means you don't have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Username (leave blank to use 'root'):
+Email address: bigchoo@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+Installing custom SQL ...
+Installing indexes ...
+Installed 0 object(s) from 0 fixture(s)
 ```
 - Fedora 21
 * installation
