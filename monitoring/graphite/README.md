@@ -108,9 +108,9 @@ $ sudo chage -I -1 -E -1 -m -1 -M -1 -W -1 -E -1 graphite
 * [run on gunicorn]
 * [external storage metric DB]
 ```
-/etc/graphite-web/local_settings.py
+/opt/graphite/webapp/graphite/local_settings.py
 
-	DATABASES = {
+DATABASES = {
   'default': {
     'NAME': 'graphite',
     'ENGINE': 'django.db.backends.mysql',
