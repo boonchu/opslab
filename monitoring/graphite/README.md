@@ -71,6 +71,26 @@ Superuser created successfully.
 Installing custom SQL ...
 Installing indexes ...
 Installed 0 object(s) from 0 fixture(s)
+
+root@server1 1162 \> sqlite3 /opt/graphite/storage/graphite.db
+SQLite version 3.7.17 2013-05-20 00:56:22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+
+sqlite> .tables
+account_mygraph             dashboard_dashboard
+account_profile             dashboard_dashboard_owners
+account_variable            dashboard_template
+account_view                dashboard_template_owners
+account_window              django_admin_log
+auth_group                  django_content_type
+auth_group_permissions      django_session
+auth_permission             events_event
+auth_user                   tagging_tag
+auth_user_groups            tagging_taggeditem
+auth_user_user_permissions  url_shortener_link
+
+sqlite> select * from auth_user;
 ```
 * [carbon-cache] reconfigure carbon-cache
 ```
@@ -105,7 +125,6 @@ cd  /opt/graphite/webapp/graphite && cp local_settings.py.example local_settings
 ```
 * [graphite-web] start local dev graphite service
 ```
-root@server1 1027 \> /usr/local/bin/run-graphite-devel-server.py /opt/graphite/
 root@server1 1035 \> /usr/local/bin/run-graphite-devel-server.py /opt/graphite/
 Running Graphite from /opt/graphite/ under django development server
 
