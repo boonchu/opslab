@@ -24,5 +24,9 @@ yum-config-manager --add-repo http://fishshell.com/files/linux/RedHat_RHEL-6/fis
 yum install fish
 ```
 
-* tmuxinator awesome custom tmux screen layout
+* tmuxinator awesome custom tmux screen layout:
   - [link](https://github.com/tmuxinator/tmuxinator)
+
+* IRC chat:
+  - [webchat](http://webchat.freenode.net/)
+  
