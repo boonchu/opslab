@@ -49,6 +49,11 @@ retentions = 10s:4h, 1m:3d, 5m:8d, 15m:32d, 1h:1y
 
 root@server1 1096 \> systemctl restart httpd
 ```
+* [graphite-web] Configure static content
+```
+root@server1 1066 \> PYTHONPATH=/opt/graphite/webapp  django-admin.py collectstatic \
+    --noinput --settings=graphite.settings
+```
 * [graphite-web] Configure database (default is SQLite DB)
 ```
 root@server1 1090 \> PYTHONPATH=/opt/graphite/webapp  django-admin.py syncdb --settings=graphite.settings
