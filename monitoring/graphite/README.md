@@ -96,9 +96,79 @@ Development server is running at http://0.0.0.0:8080/
 Quit the server with CONTROL-C.
 ```
 * [graphic-web] noted that if you encounter problem with 404 error. use this [stackoverflow instruction](http://stackoverflow.com/questions/26505644/graphite-as-django-web-application-returns-404-for-all-static-resources)
-* [collectd](https://github.com/shawn-sterling/collectd) collect metrics from remote host
+* [collectd](https://github.com/shawn-sterling/collectd) collect HTTPD metrics from remote host
 ```
-bigchoo@vmk1 1005 $ sudo yum install -y collectd
+$ sudo yum install -y collectd collectd-apache 
+
+$ cat /etc/httpd/conf.d/status.conf
+LoadModule status_module modules/mod_status.so
+
+<location /server-status>
+    SetHandler server-status
+    Order allow,deny
+    Allow from all
+</location>
+
+# systemctl reload httpd
+
+$ curl vmk1.cracker.org/server-status?auto
+Total Accesses: 12
+Total kBytes: 13
+Uptime: 505
+ReqPerSec: .0237624
+BytesPerSec: 26.3604
+BytesPerReq: 1109.33
+BusyWorkers: 1
+IdleWorkers: 5
+Scoreboard: W_____.............
+
+$ ls /usr/lib64/collectd/ [<-- plugin ]
+$ ls /etc/collectd.d/ [<-- config file ]
+```
+* [collectd] update plugins configuration
+```
+root@vmk1 419 $ cat write_graphite.conf
+LoadPlugin "write_graphite"
+<Plugin "write_graphite">
+ <Node "example">
+   Host "server1.cracker.org"
+   Port "2003"
+   #Prefix "collectd."
+   #Postfix ""
+   #Protocol "udp"
+   #LogSendErrors false
+   EscapeCharacter "_"
+   SeparateInstances true
+   StoreRates false
+   AlwaysAppendDS false
+ </Node>
+</Plugin>
+root@vmk1 420 $ cat apache.conf
+LoadPlugin apache
+<Plugin apache>
+      URL "http://localhost/server-status?auto"
+     # User "www-user"
+     # Password "secret"
+     # CACert "/etc/ssl/ca.crt"
+</Plugin>
+root@vmk1 421 $ cat network.conf
+LoadPlugin network
+<Plugin network>
+  <Server "192.168.1.101" "25826">
+    SecurityLevel None
+    Interface enp0s3
+  </Server>
+  MaxPacketSize 1024
+  Forward true
+  ReportStats true
+</Plugin>
+root@vmk1 422 $ cat logfile.conf
+LoadPlugin "logfile"
+<Plugin "logfile">
+  LogLevel "info"
+  File "/var/log/collectd.log"
+  Timestamp true
+</Plugin>
 ```
 
 ##### Install Graphite Production Mode
