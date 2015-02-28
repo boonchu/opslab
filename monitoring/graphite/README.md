@@ -96,21 +96,4 @@ Quit the server with CONTROL-C.
 ```
 * [graphic-web] noted that if you encounter problem with 404 error. use this [stackoverflow instruction](http://stackoverflow.com/questions/26505644/graphite-as-django-web-application-returns-404-for-all-static-resources)
 
-- Fedora 21
-* installation
-```
-$ sudo yum localinstall -y python-carbon python-whisper grpahite-web supervisor
-$ tree /etc/graphite-web/
-/etc/graphite-web/
-├── dashboard.conf
-├── local_settings.py
-├── local_settings.pyc
-└── local_settings.pyo
-
-```
-* adding two ini files for supervisord
-```
-bigchoo@server2 224 $ tail -2 /etc/supervisord.conf
-[include]
-files = supervisord.d/*.ini
-```
+* [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
