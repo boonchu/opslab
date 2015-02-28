@@ -72,9 +72,32 @@ Installing custom SQL ...
 Installing indexes ...
 Installed 0 object(s) from 0 fixture(s)
 ```
+* [carbon-cache] reconfigure carbon-cache
+```
+root@server1 1036 \> cat /etc/carbon/storage-schemas.conf
+[carbon]
+pattern = ^carbon\.
+retentions = 60:90d
+
+[default_1min_for_1day]
+pattern = .*
+retentions = 60s:1d
+
+[collectd]
+pattern = ^collectd.*
+retentions = 10s:1d,1m:7d,10m:1y
+
+root@server1 1037 \> cat /etc/carbon/storage-aggregation.conf
+[min]
+pattern = \.min$
+xFilesFactor = 0.1
+aggregationMethod = min
+```
 * [carbon-cache] start carbon-cache
 ```
 root@server1 1005 \> /usr/bin/carbon-cache --config=/etc/carbon/carbon.conf start
+
+check log message at /var/log/carbon/carbon-cache-a/console.log
 ```
 * [graphite-web] change your local time-zone and secret key 
 ```
