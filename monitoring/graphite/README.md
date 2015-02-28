@@ -273,6 +273,9 @@ root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apac
 1425157380      254.000000
 ```
 
+##### Graphite Dashboard
+![dashboard](https://github.com/boonchu/opslab/blob/master/monitoring/graphite/dashboard.png)
+
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
 * [security]
