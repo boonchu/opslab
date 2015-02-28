@@ -276,6 +276,12 @@ root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apac
 ##### Graphite Dashboard
 ![dashboard](https://github.com/boonchu/opslab/blob/master/monitoring/graphite/dashboard.png)
 
+##### More metrics
+* [http status code bucket distribution](https://github.com/toni-moreno/collectd-apachelog-plugin)
+
+##### how to get custom access log
+* [http log web latency](http://httpd.apache.org/docs/2.2/mod/mod_log_config.html)
+
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
 * [security]
