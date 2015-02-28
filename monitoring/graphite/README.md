@@ -11,22 +11,26 @@
 
 - ###### Building rpm with fpm
 - CentOS 
+* mkdir /tmp/graphite && cd /tmp/graphite
 * build carbon rpm
 ```
 PKG_VERSION=0.9.10
 wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/carbon-${PKG_VERSION}.tar.gz
+tar xvfz carbon-${PKG_VERSION}.tar.gz
 fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm carbon-0.9.10/setup.py
 ```
 * build graphite-web
 ```
 PKG_VERSION=0.9.10
 wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/graphite-web-${PKG_VERSION}.tar.gz
+tar xvfz graphite-web-${PKG_VERSION}.tar.gz
 fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm graphite-web-0.9.10/setup.py
 ```
 * build whisper
 ```
 PKG_VERSION=0.9.10
 wget http://launchpad.net/graphite/0.9/${PKG_VERSION}/+download/whisper-${PKG_VERSION}.tar.gz
+tar xvfz whisper-${PKG_VERSION}.tar.gz
 fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm whisper-0.9.10/setup.py
 ```
 * install rpm files
