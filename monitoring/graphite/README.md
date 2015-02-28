@@ -35,7 +35,7 @@ sudo yum localinstall -y python-carbon-0.9.10-1.noarch.rpm \
                    python-whisper-0.9.10-1.noarch.rpm \
                    python-graphite-web-0.9.10-1.noarch.rpm
 ```
-* install django-1.4.x web framework for graphite-web (note that [django-1.6.x is incompatible](https://docs.djangoproject.com/en/1.4/releases/1.4/#updated-default-project-layout-and-manage-py))
+* Very unforunate... this app framework requires django version below 1.6. I need to install django-1.4.x web framework for graphite-web (note that [django-1.6.x is incompatible](https://docs.djangoproject.com/en/1.4/releases/1.4/#updated-default-project-layout-and-manage-py))
 ```
 $ sudo yum install python-django python-django-tagging
 $ python
