@@ -96,6 +96,10 @@ Development server is running at http://0.0.0.0:8080/
 Quit the server with CONTROL-C.
 ```
 * [graphic-web] noted that if you encounter problem with 404 error. use this [stackoverflow instruction](http://stackoverflow.com/questions/26505644/graphite-as-django-web-application-returns-404-for-all-static-resources)
+* [collectd](https://github.com/shawn-sterling/collectd) collect metrics from remote host
+```
+bigchoo@vmk1 1005 $ sudo yum install -y collectd
+```
 
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
