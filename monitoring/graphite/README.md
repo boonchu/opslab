@@ -10,7 +10,7 @@
   * [learning how to build rpm with CI process](https://github.com/boonchu/CI)
 
 - ###### Building rpm with fpm
-- CentOS 
+* test from CentOS 7.x
 * mkdir /tmp/graphite && cd /tmp/graphite
 * build carbon rpm
 ```
@@ -27,6 +27,7 @@ fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm graphite
 git clone git@github.com:graphite-project/whisper.git
 fpm --rpm-os linux --python-install-bin /usr/local/bin -s python -t rpm whisper/setup.py
 ```
+###### Install Graphite Dev Mode
 * install rpm files
 ```
 sudo yum localinstall python-carbon-0.9.10-1.noarch.rpm  \
@@ -96,4 +97,5 @@ Quit the server with CONTROL-C.
 ```
 * [graphic-web] noted that if you encounter problem with 404 error. use this [stackoverflow instruction](http://stackoverflow.com/questions/26505644/graphite-as-django-web-application-returns-404-for-all-static-resources)
 
+##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
