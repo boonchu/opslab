@@ -38,7 +38,7 @@ sudo yum localinstall python-carbon-0.9.10-1.noarch.rpm  \
 root@server1 1091 \> cp /opt/graphite/examples/example-graphite-vhost.conf /etc/httpd/conf.d/graphite.conf
 root@server1 1096 \> systemctl reload httpd
 ```
-* [graphite-web] Configure database
+* [graphite-web] Configure database (default is SQLite DB)
 ```
 root@server1 1090 \> PYTHONPATH=/opt/graphite/webapp  django-admin.py syncdb --settings=graphite.settings
 You just installed Django's auth system, which means you don't have any superusers defined.
