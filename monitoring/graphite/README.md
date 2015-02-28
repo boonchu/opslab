@@ -53,6 +53,9 @@ root@server1 1096 \> systemctl restart httpd
 ```
 root@server1 1066 \> PYTHONPATH=/opt/graphite/webapp  django-admin.py collectstatic \
     --noinput --settings=graphite.settings
+==| OR |==
+root@server1 1071 \> django-admin.py collectstatic --noinput \
+    --settings=graphite.settings --pythonpath=/opt/graphite/webapp
 ```
 * [graphite-web] Configure database (default is SQLite DB)
 ```
