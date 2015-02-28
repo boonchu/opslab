@@ -167,7 +167,7 @@ Scoreboard: W_____.............
 $ ls /usr/lib64/collectd/ [<-- plugin ]
 $ ls /etc/collectd.d/ [<-- config file ]
 ```
-* [collectd] update plugins configuration
+* [collectd] update [plugins configuration](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
 ```
 root@vmk1 419 $ cat write_graphite.conf
 LoadPlugin "write_graphite"
