@@ -99,3 +99,30 @@ Quit the server with CONTROL-C.
 
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
+* [security]
+```
+$ sudo groupadd -g 53012 graphite
+$ sudo useradd -u 53012 -g 53012 -d /opt/graphite -s /bin/bash graphite -c "Graphite service account"
+$ sudo chage -I -1 -E -1 -m -1 -M -1 -W -1 -E -1 graphite
+```
+* [run on gunicorn]
+* [external storage metric DB]
+```
+/etc/graphite-web/local_settings.py
+
+	DATABASES = {
+  'default': {
+    'NAME': 'graphite',
+    'ENGINE': 'django.db.backends.mysql',
+    'USER': 'graphite',
+    'PASSWORD': 'complexpassw0rd',
+    'HOST': 'localhost',
+    'PORT': '3306',
+  }
+}
+
+# mysql -e "CREATE USER 'graphite'@'localhost' IDENTIFIED BY 'complexpassw0rd';" -u root -p
+# mysql -e "GRANT ALL PRIVILEGES ON graphite.* TO 'graphite'@'localhost';" -u root -p
+# mysql -e "CREATE DATABASE graphite;" -u root -p
+# mysql -e 'FLUSH PRIVILEGES;' -u root -p
+```
