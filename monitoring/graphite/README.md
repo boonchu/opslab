@@ -94,6 +94,8 @@ Django version 1.5.12, using settings 'graphite.settings'
 Development server is running at http://0.0.0.0:8080/
 Quit the server with CONTROL-C.
 ```
+* [graphic-web] noted that if you encounter problem with 404 error. use this [stackoverflow instruction](http://stackoverflow.com/questions/26505644/graphite-as-django-web-application-returns-404-for-all-static-resources)
+
 - Fedora 21
 * installation
 ```
