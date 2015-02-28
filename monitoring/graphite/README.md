@@ -285,6 +285,7 @@ root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apac
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
 * [system] another site for [supervisord](https://serversforhackers.com/monitoring-processes-with-supervisord)
+* [system] alternate to supervisord, [monit](https://github.com/arnaudsj/monit)
 * [security]
 ```
 $ sudo groupadd -g 53012 graphite
