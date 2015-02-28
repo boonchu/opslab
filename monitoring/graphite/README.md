@@ -33,6 +33,11 @@ sudo yum localinstall python-carbon-0.9.10-1.noarch.rpm  \
    python-graphite-web-0.10.0_alpha-1.noarch.rpm  \
    python-whisper-0.9.10-1.noarch.rpm
 ```
+* use Django version below 1.6
+```
+$ sudo yum install -y python-pip
+$ pip install 'django<1.6'
+```
 * [graphite-web] Configure HTTPD
 ```
 root@server1 1091 \> cp /opt/graphite/examples/example-graphite-vhost.conf /etc/httpd/conf.d/graphite.conf
@@ -62,22 +67,21 @@ Installed 0 object(s) from 0 fixture(s)
 ```
 root@server1 1005 \> /usr/bin/carbon-cache --config=/etc/carbon/carbon.conf start
 ```
+* [graphite-web] change your local time-zone and secret key 
+```
+cd  /opt/graphite/webapp/graphite && cp local_settings.py.example local_settings.py
+```
 * [graphite-web] start graphite
 ```
 root@server1 1027 \> /usr/local/bin/run-graphite-devel-server.py /opt/graphite/
+root@server1 1035 \> /usr/local/bin/run-graphite-devel-server.py /opt/graphite/
 Running Graphite from /opt/graphite/ under django development server
 
 /bin/django-admin runserver --pythonpath /opt/graphite/webapp --settings graphite.settings 0.0.0.0:8080
-Could not import graphite.local_settings, using defaults!
-/opt/graphite/webapp/graphite/settings.py:233: UserWarning: SECRET_KEY is set to an unsafe default. This should be set in local_settings.py for better security
-  warn('SECRET_KEY is set to an unsafe default. This should be set in local_settings.py for better security')
-Could not import graphite.local_settings, using defaults!
-/opt/graphite/webapp/graphite/settings.py:233: UserWarning: SECRET_KEY is set to an unsafe default. This should be set in local_settings.py for better security
-  warn('SECRET_KEY is set to an unsafe default. This should be set in local_settings.py for better security')
 Validating models...
 
 0 errors found
-February 28, 2015 - 17:51:21
+February 28, 2015 - 10:00:06
 Django version 1.5.12, using settings 'graphite.settings'
 Development server is running at http://0.0.0.0:8080/
 Quit the server with CONTROL-C.
