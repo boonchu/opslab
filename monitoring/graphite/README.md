@@ -212,6 +212,46 @@ LoadPlugin "logfile"
   Timestamp true
 </Plugin>
 ```
+##### What are inside metrics?
+* [carbon-cache] carbon push data in /var/lib/carbon
+```
+root@server1 1175 \> tree -d /var/lib/carbon/whisper/vmk1_cracker_org/
+/var/lib/carbon/whisper/vmk1_cracker_org/
+├── apache
+│   └── Graphite
+│       └── apache_scoreboard
+├── cpu
+│   ├── 0
+│   │   └── cpu
+│   └── 1
+│       └── cpu
+├── interface
+│   ├── enp0s3
+│   │   ├── if_errors
+│   │   ├── if_octets
+│   │   └── if_packets
+│   └── lo
+│       ├── if_errors
+│       ├── if_octets
+│       └── if_packets
+├── load
+│   └── load
+├── memory
+│   └── memory
+└── network
+    ├── if_octets
+    ├── if_packets
+    └── total_values
+
+25 directories
+```
+* [whisper] dump/fetch data
+```
+root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apache/Graphite/apache_requests.wsp \
+| tail -2
+1425157320      253.000000
+1425157380      254.000000
+```
 
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
