@@ -138,6 +138,21 @@ Development server is running at http://0.0.0.0:8080/
 Quit the server with CONTROL-C.
 ```
 * [graphic-web] noted that if you encounter problem with 404 error. use this [stackoverflow instruction](http://stackoverflow.com/questions/26505644/graphite-as-django-web-application-returns-404-for-all-static-resources)
+* [carbon] testing data push to carbon
+   - ensure that data appears on carbon side.
+```
+root@server1 1027 \> python example-client.py
+sending message
+
+--------------------------------------------------------------------------------
+system.loadavg_1min 0.00 1425158663
+system.loadavg_5min 0.01 1425158663
+system.loadavg_15min 0.05 1425158663
+
+20      /var/lib/carbon/whisper/system/loadavg_1min.wsp
+20      /var/lib/carbon/whisper/system/loadavg_5min.wsp
+20      /var/lib/carbon/whisper/system/loadavg_15min.wsp
+```
 * [collectd](https://github.com/shawn-sterling/collectd) collect HTTPD metrics from remote host
 ```
 $ sudo yum install -y collectd collectd-apache 
