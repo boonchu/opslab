@@ -158,7 +158,7 @@ system.loadavg_15min 0.05 1425158663
 20      /var/lib/carbon/whisper/system/loadavg_5min.wsp
 20      /var/lib/carbon/whisper/system/loadavg_15min.wsp
 ```
-* [collectd](https://github.com/shawn-sterling/collectd) collect HTTPD metrics from remote host
+* [collectd](https://github.com/shawn-sterling/collectd) example of data collection: pull HTTPD metrics from remote host
 ```
 $ sudo yum install -y collectd collectd-apache 
 
@@ -281,6 +281,20 @@ root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apac
 
 ##### how to get custom access log
 * [http log web latency](http://httpd.apache.org/docs/2.2/mod/mod_log_config.html)
+
+##### Similar product to Graphite
+* RRDTool : 
+  * simple round robin data
+* OpenTSDB : 
+  * requires Hbase and Hadoop. 
+  * weakness is the hot spot.
+* InfluxDB : 
+  * written in go. 
+  * use time series DB.
+  * HTTP native for pulling/pushing data with role-based security wrapper.
+* Kairos : 
+  * requires Apache Cassandra clusters. 
+  * weakness is the hot spoot since the code from OpenTSDB.
 
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
