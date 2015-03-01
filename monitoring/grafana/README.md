@@ -79,7 +79,24 @@ $ setenforce 0
 ```
 $ sudo systemctl reload httpd
 ```
-* note if you encounter the same issue like mine after you use grafana first time.
+* note if you encounter the "Cross Origin Request Blocked" issue like mine after you use grafana first time.
+![CORS](https://github.com/boonchu/opslab/blob/master/monitoring/grafana/CORS.png)
 ```
+1) pip install django-cors-headers
+2) Edit /opt/graphite/webapp/graphite/app_settings.py and add the below settings :
 
+INSTALLED_APPS = (
+    ...
+    'corsheaders',
+    ...
+)
+
+MIDDLEWARE_CLASSES = (
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    ...
+)
+
+CORS_ORIGIN_ALLOW_ALL = True
+3) restart graphite
 ```
