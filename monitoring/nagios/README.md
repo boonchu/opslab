@@ -51,6 +51,42 @@ $ sudo make install-config
 ```
 $ sudo make install-webconf
 ```
+* [server] review httpd config
+```
+ScriptAlias /nagios/cgi-bin "/usr/local/nagios/sbin"
+
+<Directory "/usr/local/nagios/sbin">
+#  SSLRequireSSL
+   Options ExecCGI
+   AllowOverride None
+   Order allow,deny
+   Allow from all
+#  Order deny,allow
+#  Deny from all
+#  Allow from 127.0.0.1
+   AuthName "Nagios Access"
+   AuthType Basic
+   AuthUserFile /usr/local/nagios/etc/htpasswd.users
+   Require valid-user
+</Directory>
+
+Alias /nagios "/usr/local/nagios/share"
+
+<Directory "/usr/local/nagios/share">
+#  SSLRequireSSL
+   Options None
+   AllowOverride None
+   Order allow,deny
+   Allow from all
+#  Order deny,allow
+#  Deny from all
+#  Allow from 127.0.0.1
+   AuthName "Nagios Access"
+   AuthType Basic
+   AuthUserFile /usr/local/nagios/etc/htpasswd.users
+   Require valid-user
+</Directory>
+```
 * [server] add nagios administration user
 ```
 $ sudo htpasswd -s -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
