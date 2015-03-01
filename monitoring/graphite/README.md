@@ -293,7 +293,7 @@ $ sudo useradd -u 53012 -g 53012 -d /opt/graphite -s /bin/bash graphite -c "Grap
 $ sudo chage -I -1 -E -1 -m -1 -M -1 -W -1 -E -1 graphite
 ```
 * [run on gunicorn]
-* [external storage metric DB]
+* [external storage DB]
 ```
 /opt/graphite/webapp/graphite/local_settings.py
 
