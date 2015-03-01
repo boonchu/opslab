@@ -7,7 +7,7 @@ Grafana is nice metric visualziation that pull data from metric platform like Gr
 ###### Installation
 * Tested with CentOS 7.x and httpd apache >2.4 
 * have CNAME alias. In my case, I use www.cracker.org
-* [git clone] and copy to /opt/grafana
+* [git clone](https://github.com/torkelo/grafana) and copy to /opt/grafana
 * [install elasticsearch](https://devops.profitbricks.com/tutorials/install-elasticsearch-on-centos-7/)
 ```
 $ sudo rpm -Uvh https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.2.noarch.rpm
