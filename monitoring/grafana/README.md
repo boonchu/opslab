@@ -7,14 +7,42 @@ Grafana is nice metric visualziation that pull data from metric platform like Gr
 ###### Installation
 * Tested with CentOS 7.x and httpd apache >2.4 
 * have CNAME alias. In my case, I use www.cracker.org
-* git clone and copy to /opt/grafana
-* configure grafana
+* [git clone] and copy to /opt/grafana
+* [install elasticsearch](https://devops.profitbricks.com/tutorials/install-elasticsearch-on-centos-7/)
+```
+$ sudo rpm -Uvh https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.2.noarch.rpm
+$ sudo systemctl daemon-reload
+
+$ edit /etc/elasticsearch/elasticsearch.yml
+cluster.name: elasticsearch
+node.data: true
+transport.tcp.port: 8180
+http.port: 9200
+
+$ sudo systemctl start elasiticsearch
+$ sudo systemctl enable elasticsearch
+$ curl http://server1.cracker.org:9200/
+{
+  "status" : 200,
+  "name" : "Ariann",
+  "version" : {
+    "number" : "1.3.2",
+    "build_hash" : "dee175dbe2f254f3f26992f5d7591939aaefd12f",
+    "build_timestamp" : "2014-08-13T14:29:30Z",
+    "build_snapshot" : false,
+    "lucene_version" : "4.9"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
+* [configure grafana](http://kaivanov.blogspot.com/2014/07/metrics-visualisation-and-collection.html)
 ```
 $ chown -R root.root /opt/grafana/src
 $ cd /opt/grafana/src
 $ cp config.sample.js config.js
 edit this line and point to Graphite service
 >>>     graphiteUrl: "http://server1.cracker.org:8080",
+>>>     elasticsearch: "http://server1.cracker.org:9200",
 ```
 * configure grafana on httpd side
 ```
