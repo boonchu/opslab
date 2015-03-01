@@ -103,4 +103,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 3) restart graphite
 ```
 * final picture after importing dashboard from Graphite.
-![dashboard-graphite](https://github.com/boonchu/opslab/blob/master/monitoring/grafana/dashboard-graphite.png)
+![dashboard-graphite](https://github.com/boonchu/opslab/blob/master/monitoring/grafana/dashboard-grafana.png)
