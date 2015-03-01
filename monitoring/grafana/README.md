@@ -102,3 +102,5 @@ MIDDLEWARE_CLASSES = (
 CORS_ORIGIN_ALLOW_ALL = True
 3) restart graphite
 ```
+* final picture after importing dashboard from Graphite.
+![dashboard-graphite](https://github.com/boonchu/opslab/blob/master/monitoring/grafana/dashboard-graphite.png)
