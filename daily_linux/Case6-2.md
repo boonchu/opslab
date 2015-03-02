@@ -76,3 +76,11 @@ s1#show etherchannel summary | include SD
 ```
 * use nmtui to reconfigure the teamd json file. use this [reference](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html)
 ![nmtui-team0](https://github.com/boonchu/opslab/blob/master/daily_linux/nmtui-team0.png)
+* look like switch shows as fall back mode.
+```
+s1#show interfaces Port-channel 2 etherchannel | include Fa|Protocol
+Protocol            =   LACP
+  0     00     Fa1/0/47 Active             0
+Time since last port bundled:    0d:00h:30m:31s    Fa1/0/47
+Time since last port Un-bundled: 0d:00h:35m:14s    Fa1/0/48
+```
