@@ -1,6 +1,6 @@
 ##### Part Two - Nic Teaming RHCE 7 exam
 * list ethernet devices prior adding to Virtualbox
-* promote two Nics to Virtualbox. ensure link are up.
+* configure two Nics to Virtualbox, bridge for each adapter. Note to ensure that links are up after virtual machine is active.
 ```
 3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
     link/ether 08:00:27:64:1f:17 brd ff:ff:ff:ff:ff:ff
@@ -75,3 +75,4 @@ s1#show etherchannel summary | include SD
 2      Po2(SD)         LACP      Fa1/0/47(w) Fa1/0/48(w)
 ```
 * use nmtui to reconfigure the teamd json file. use this [reference](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html)
+![nmtui-team0](https://github.com/boonchu/opslab/blob/master/daily_linux/nmtui-team0.png)
