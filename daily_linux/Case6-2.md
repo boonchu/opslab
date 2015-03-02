@@ -84,3 +84,12 @@ Protocol            =   LACP
 Time since last port bundled:    0d:00h:30m:31s    Fa1/0/47
 Time since last port Un-bundled: 0d:00h:35m:14s    Fa1/0/48
 ```
+* gateway looks fine too.
+```
+[bigchoo@vmk3 ~]$ ping -I team0 10.16.0.1
+PING 10.16.0.1 (10.16.0.1) from 10.16.0.33 team0: 56(84) bytes of data.
+64 bytes from 10.16.0.1: icmp_seq=1 ttl=255 time=0.831 ms
+64 bytes from 10.16.0.1: icmp_seq=2 ttl=255 time=4.27 ms
+^C
+--- 10.16.0.1 ping statistics ---
+```
