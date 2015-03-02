@@ -332,6 +332,7 @@ root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apac
   * check whistper
   * check carbon
   * run carbon in debugging mode
+  * ensure time server are in sync
 ```
 root@server1 1068 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apache/Graphite/apache_requests.wsp | tail -2
 1425316620      None
