@@ -329,10 +329,18 @@ root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apac
 
 ##### troubleshooting guide
 * [impact] graphs has no data.
+  * check whistper
+  * check carbon
+  * run carbon in debugging mode
 ```
 root@server1 1068 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apache/Graphite/apache_requests.wsp | tail -2
 1425316620      None
 1425316680      None
+
+root@server1 1098 \> /usr/bin/carbon-cache --config=/etc/carbon/carbon.conf status
+carbon-cache (instance a) is running with pid 26298
+
+root@server1 1107 \> /usr/bin/carbon-cache --config=/etc/carbon/carbon.conf --debug start
 ```
 
 ##### Install Graphite Production Mode
