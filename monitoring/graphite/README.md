@@ -188,6 +188,36 @@ Scoreboard: W_____.............
 $ ls /usr/lib64/collectd/ [<-- plugin ]
 $ ls /etc/collectd.d/ [<-- config file ]
 ```
+* [collectd] check data from tcpdump port 2003
+```
+root@vmk1 583 $ tcpdump -s0 -A 'port 2003'
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on enp0s3, link-type EN10MB (Ethernet), capture size 65535 bytes
+
+vmk1_cracker_org.apache.Graphite.apache_scoreboard.logging 0.000000 1425282158
+vmk1_cracker_org.apache.Graphite.apache_scoreboard.finishing 0.000000 1425282158
+vmk1_cracker_org.apache.Graphite.apache_scoreboard.idle_cleanup 0.000000 1425282158
+vmk1_cracker_org.cpu.0.cpu.system 28055 1425282158
+vmk1_cracker_org.cpu.0.cpu.idle 13881382 1425282158
+vmk1_cracker_org.cpu.0.cpu.wait 4779 1425282158
+vmk1_cracker_org.apache.Graphite.apache_scoreboard.dnslookup 0.000000 1425282158
+vmk1_cracker_org.cpu.0.cpu.interrupt 268 1425282158
+vmk1_cracker_org.cpu.0.cpu.softirq 183865 1425282158
+vmk1_cracker_org.cpu.0.cpu.steal 0 1425282158
+vmk1_cracker_org.cpu.1.cpu.user 135782 1425282158
+vmk1_cracker_org.cpu.1.cpu.nice 19 1425282158
+vmk1_cracker_org.cpu.1.cpu.system 51919 1425282158
+vmk1_cracker_org.cpu.1.cpu.idle 13945742 1425282158
+vmk1_cracker_org.cpu.1.cpu.wait 3635 1425282158
+vmk1_cracker_org.cpu.1.cpu.interrupt 0 1425282158
+vmk1_cracker_org.cpu.1.cpu.softirq 1147 1425282158
+vmk1_cracker_org.apache.Graphite.apache_scoreboard.keepalive 0.000000 1425282158
+vmk1_cracker_org.cpu.1.cpu.steal 0 1425282158
+vmk1_cracker_org.apache.Graphite.apache_scoreboard.closing 0.000000 1425282158
+vmk1_cracker_org.memory.memory.used 602198016.000000 1425282158
+vmk1_cracker_org.memory.memory.buffered 0.000000 1425282158
+
+```
 * [collectd] update [plugins configuration](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
 ```
 root@vmk1 419 $ cat write_graphite.conf
