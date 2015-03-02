@@ -74,3 +74,4 @@ Po2                          notconnect   1            auto   auto
 s1#show etherchannel summary | include SD
 2      Po2(SD)         LACP      Fa1/0/47(w) Fa1/0/48(w)
 ```
+* use nmtui to reconfigure the teamd json file. use this [reference](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec-Configure_a_Network_Team_Using-the_Command_Line.html)
