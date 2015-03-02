@@ -78,6 +78,11 @@ s1#show etherchannel summary | include SD
 ![nmtui-team0](https://github.com/boonchu/opslab/blob/master/daily_linux/nmtui-team0.png)
 * look like switch shows as fall back mode.
 ```
+s1#conf t
+s1(config)# interface port-channel 2
+s1(config)# shutdown
+s1(config)# no shutdown
+s1(config)# end
 s1#show interfaces Port-channel 2 etherchannel | include Fa|Protocol
 Protocol            =   LACP
   0     00     Fa1/0/47 Active             0
