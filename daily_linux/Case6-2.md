@@ -93,3 +93,16 @@ PING 10.16.0.1 (10.16.0.1) from 10.16.0.33 team0: 56(84) bytes of data.
 ^C
 --- 10.16.0.1 ping statistics ---
 ```
+* I can remote login to switch
+```
+[root@vmk3 example_configs]# telnet 10.16.0.1
+Trying 10.16.0.1...
+Connected to 10.16.0.1.
+Escape character is '^]'.
+
+Unauthorized access is strictly prohibited.
+
+User Access Verification
+
+Password:
+```
