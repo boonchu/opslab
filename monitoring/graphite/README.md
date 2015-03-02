@@ -327,6 +327,14 @@ root@server1 1180 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apac
   * requires Apache Cassandra clusters. 
   * weakness is the hot spoot since the code from OpenTSDB.
 
+##### troubleshooting guide
+* [impact] graphs has no data.
+```
+root@server1 1068 \> whisper-fetch /var/lib/carbon/whisper/vmk1_cracker_org/apache/Graphite/apache_requests.wsp | tail -2
+1425316620      None
+1425316680      None
+```
+
 ##### Install Graphite Production Mode
 * [system] how to work with [supervisord](https://github.com/miguno/graphite-supervisord-rpm)
 * [system] another site for [supervisord](https://serversforhackers.com/monitoring-processes-with-supervisord)
