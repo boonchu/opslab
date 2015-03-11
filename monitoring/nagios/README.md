@@ -248,6 +248,31 @@ $ curl -q 'http://vmk1:8080/computer/api/json'  | python -mjson.tool | grep disp
 
 ###### see [samples of plugins](https://github.com/harisekhon/nagios-plugins) from contributor who use nagios 
 
+###### Troubleshooting
+* verify configuration change before pushing
+```
+$ /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+
+Nagios Core 4.0.7
+Copyright (c) 2009-present Nagios Core Development Team and Community Contributors
+Copyright (c) 1999-2009 Ethan Galstad
+Last Modified: 06-03-2014
+License: GPL
+
+Website: http://www.nagios.org
+Reading configuration data...
+   Read main config file okay...
+Warning: Duplicate definition found for service 'PING' on host 'localhost' (config file '/usr/local/nagios/etc/objects/clusterA/services.cfg', starting on line 1)
+Warning: Duplicate definition found for service 'Current Load' on host 'localhost' (config file '/usr/local/nagios/etc/objects/clusterA/services.cfg', starting on line 8)
+Warning: Duplicate definition found for service 'Total Processes' on host 'localhost' (config file '/usr/local/nagios/etc/objects/clusterA/services.cfg', starting on line 15)
+Error: Service description missing from list 'jenkins-servers' (config file '/usr/local/nagios/etc/objects/clusterA/servicegroups.cfg', starting at line 1)
+Error: Could not expand members specified in servicegroup 'jenkins' (config file '/usr/local/nagios/etc/objects/clusterA/servicegroups.cfg', starting at line 1)
+   Error processing object config files!
+```
+* check nagios.log 
+```
+$ tail -f /usr/local/nagios/var/nagios.log
+```
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
 - http://www.slideshare.net/nagiosinc/nagios-conference-2014-jim-prins-passive-monitoring-with-nagios
