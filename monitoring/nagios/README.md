@@ -178,10 +178,15 @@ define host {
 $ sudo systemctl reload nagios
 $ sudo systemctl reload httpd
 ```
-* [server] validate the connection
+* [client] validate the connection
 ```
+good result:
 $ /usr/lib64/nagios/plugins/check_nrpe -H 192.168.1.161
 NRPE v2.15
+
+bad result:
+$ /usr/lib64/nagios/plugins/check_nrpe -H 192.168.1.161
+CHECK_NRPE: Error - Could not complete SSL handshake.
 ```
 ![screens_output](https://github.com/boonchu/opslab/blob/master/monitoring/nagios/services_page.png)
 * noticed from web UI that still have failed status. Use this step to clear the issue
