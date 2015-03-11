@@ -269,7 +269,10 @@ Error: Service description missing from list 'jenkins-servers' (config file '/us
 Error: Could not expand members specified in servicegroup 'jenkins' (config file '/usr/local/nagios/etc/objects/clusterA/servicegroups.cfg', starting at line 1)
    Error processing object config files!
 ```
-
+* check nagios.log 
+```
+$ tail -f /usr/local/nagios/var/nagios.log
+```
 Reference:
 - http://sharadchhetri.com/2013/03/02/how-to-install-and-configure-nagios-nrpe-in-centos-and-red-hat/
 - http://www.slideshare.net/nagiosinc/nagios-conference-2014-jim-prins-passive-monitoring-with-nagios
