@@ -1,4 +1,4 @@
-###### Starting with Linux Kernl Module Programing
+###### Starting with Linux Kernl Module Programning
 * preparing host for developing kernel module
 ```
 $ sudo yum install -y kernel-devel kernel-headers gcc
