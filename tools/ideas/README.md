@@ -29,4 +29,6 @@ yum install fish
 
 * IRC chat:
   - [webchat](http://webchat.freenode.net/)
-  
+
+* Slides and Presentations
+  - [Speaker Deck](https://speakerdeck.com)
