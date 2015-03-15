@@ -170,14 +170,14 @@ host v1 {
 
 # cat v1.sh
 #! /usr/bin/env bash
-ks_location="/var/www/cobbler/ks_mirror/config/host.cfg"
+ks_location="/tmp/v1.cfg"
 os_location="http://ks.cracker.org/Kickstart/RHEL7/rhel7.1-beta-core/"
 
 virt-install --connect=qemu:///system \
     --network=bridge:vmbr0 \
     --initrd-inject="${ks_location}" \
     --extra-args="ks=file://${ks_location} console=tty0 console=ttyS0,115200" \
-    --name=vm01.cracker.org \
+    --name=v1.cracker.org \
     --disk /virtimages/vm01.qcow2,size=3 \
     --ram 1200 \
     --vcpus=3 \
