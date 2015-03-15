@@ -153,6 +153,41 @@ drwxr-xr-x. root root unconfined_u:object_r:virt_image_t:s0 .
 dr-xr-xr-x. root root system_u:object_r:root_t:s0      ..
 -rw-r--r--. root root unconfined_u:object_r:virt_image_t:s0 vm01.qcow2
 ```
+* KVM new instance creation
+```
+- add DHCP MAC/DNS resolution name
+# host 192.168.1.51
+51.1.168.192.in-addr.arpa domain name pointer v1.cracker.org.
+
+dhcpd.conf
+host v1 {
+        hardware ethernet 08:00:27:00:00:AA;
+        fixed-address 192.168.1.51;
+        option host-name "v1";
+        filename "pxelinux.0";
+        next-server 192.168.1.101;
+}
+
+# cat v1.sh
+#! /usr/bin/env bash
+ks_location="/var/www/cobbler/ks_mirror/config/host.cfg"
+os_location="http://ks.cracker.org/Kickstart/RHEL7/rhel7.1-beta-core/"
+
+virt-install --connect=qemu:///system \
+    --network=bridge:vmbr0 \
+    --initrd-inject="${ks_location}" \
+    --extra-args="ks=file://${ks_location} console=tty0 console=ttyS0,115200" \
+    --name=vm01.cracker.org \
+    --disk /virtimages/vm01.qcow2,size=3 \
+    --ram 1200 \
+    --vcpus=3 \
+    --check-cpu \
+    --accelerate \
+    --hvm \
+    --location="${os_location}" \
+    --nographics \
+    --mac=08:00:27:00:00:AA
+```
 * KVM for DevOps 
 ```
 - create a new instance 
