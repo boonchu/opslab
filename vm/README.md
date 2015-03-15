@@ -95,11 +95,16 @@ IP4.ADDRESS[1]:                         192.168.1.50/28
 * KVM for DevOps 
 ```
 - create a new instance 
-# 
-# virsh -c qemu:///system list --all
+ # virsh -c qemu:///system list --all
  Id    Name                           State
 ----------------------------------------------------
  -     vm01.cracker.org               shut off
+ 
+- retire old instance
+# virsh stop vm01.cracker.org 
+# virsh undefine vm01.cracker.org
+Domain vm01.cracker.org has been undefined
+
 ```
 * references
   - [troubleshooting](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/sect-Troubleshooting-Common_libvirt_errors_and_troubleshooting.html)
