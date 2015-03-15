@@ -1,4 +1,8 @@
 ###### Virtualzation KVM
+* check your hardware if supports virtualization. You may need to enable VT from BIOS motherboard.
+```
+$ grep '^flags' /proc/cpuinfo | grep -E --color '(vmx|svm)'
+```
 * virtualization installation
 ```
 $ sudo yum install @virt* libguestfs-tools policycoreutils-python
