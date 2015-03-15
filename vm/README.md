@@ -89,8 +89,11 @@ IP4.ADDRESS[1]:                         192.168.122.1/24
 # nmcli con down vmbr0 && nmcli con up vmbr0
 
 - new bridge should start with what subnet you needs.
+- 192.168.1.50/28 subnet, range IP 192.168.1.49 - 62, subnet mask 255.255.255.240, broadcase 192.168.1.63
+- 14 host per subnet, plus 192.168.1.48 subnet ID, plus broadcase 192.168.1.63 
+- assign gateway 192.168.1.49/28
 # nmcli con show vmbr0 | grep IP4.ADDR
-IP4.ADDRESS[1]:                         192.168.1.50/28
+IP4.ADDRESS[1]:                         192.168.1.49/28
 ```
 * KVM storage pool. The storage pool will be useful when provision storage at the production scale.
 ```
