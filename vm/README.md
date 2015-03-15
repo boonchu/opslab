@@ -127,6 +127,32 @@ Available:      2.01 GiB
 # ls -ltZ /var/lib/libvirt/images
 -rw-------. root root system_u:object_r:virt_image_t:s0 rhel7.0.qcow2
 ```
+* KVM virtual disk provision (qcow2 format)
+```
+# mkdir /virtimages
+
+# semanage fcontext --add -t virt_image_t '/virtimages(/.*)?'
+
+# restorecon -Rv /virtimages/
+restorecon reset /virtimages context unconfined_u:object_r:default_t:s0->unconfined_u:object_r:virt_image_t:s0
+
+# ls -aZ /virtimages/
+drwxr-xr-x. root root unconfined_u:object_r:virt_image_t:s0 .
+dr-xr-xr-x. root root system_u:object_r:root_t:s0      ..
+
+# semanage fcontext -l | grep virt_image_t
+/var/lib/imagefactory/images(/.*)?                 all files          system_u:object_r:virt_image_t:s0
+/var/lib/libvirt/images(/.*)?                      all files          system_u:object_r:virt_image_t:s0
+/virtimages(/.*)?                                  all files          system_u:object_r:virt_image_t:s0
+
+# qemu-img create -f qcow2 /virtimages/vm01.qcow2 3G
+Formatting '/virtimages/vm01.qcow2', fmt=qcow2 size=3221225472 encryption=off cluster_size=65536 lazy_refcounts=off
+
+# ls -aZ /virtimages/
+drwxr-xr-x. root root unconfined_u:object_r:virt_image_t:s0 .
+dr-xr-xr-x. root root system_u:object_r:root_t:s0      ..
+-rw-r--r--. root root unconfined_u:object_r:virt_image_t:s0 vm01.qcow2
+```
 * KVM for DevOps 
 ```
 - create a new instance 
