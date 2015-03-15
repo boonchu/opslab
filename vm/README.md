@@ -92,7 +92,7 @@ IP4.ADDRESS[1]:                         192.168.122.1/24
 # nmcli con show vmbr0 | grep IP4.ADDR
 IP4.ADDRESS[1]:                         192.168.1.50/28
 ```
-* KVM storage pool
+* KVM storage pool. The storage pool will be useful when provision storage at the production scale.
 ```
 - what is inside default?
 # virsh pool-info default
