@@ -198,7 +198,6 @@ Domain v1.cracker.org destroyed
 # virsh undefine v1.cracker.org
 ```
 * KVM for DevOps 
-* 
 ```
 - create a new instance 
  # virsh -c qemu:///system list --all
