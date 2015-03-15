@@ -168,6 +168,10 @@ host v1 {
         next-server 192.168.1.101;
 }
 
+- use kickstart validator utility to check syntax 
+# ksvalidator /tmp/v1.cfg
+
+- run script
 # cat v1.sh
 #! /usr/bin/env bash
 ks_location="/tmp/v1.cfg"
