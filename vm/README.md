@@ -1,4 +1,8 @@
 ###### Virtualzation KVM
+* check your hardware if supports virtualization. You may need to enable VT from BIOS motherboard.
+```
+$ grep '^flags' /proc/cpuinfo | grep -E --color '(vmx|svm)'
+```
 * virtualization installation
 ```
 $ sudo yum install @virt* libguestfs-tools policycoreutils-python
@@ -67,6 +71,150 @@ error: internal error: could not get interface XML description: File operation f
 Solution: [bugzilla 1185850](https://bugzilla.redhat.com/show_bug.cgi?id=1185850)
 This was the virtual if dev config that manually created in the past. It brake the startup libvirtd process.
 ```
+* KVM networking
+  - by default, VM has only access through 192.168.122.0/24 network internally. You must create bridge on the hypervisor host. Follows these steps to do add bridge interfaces.
+```
+- checking default bridge from software installation.
+# nmcli con show
+NAME     UUID                                  TYPE            DEVICE
+docker0  13b501c1-8667-4d4d-a0b8-a215c1b5f481  bridge          docker0
+virbr0   9d4ede10-e707-4e80-9a8e-5e7d366b06ba  bridge          virbr0
+enp0s3   2a60be4b-f64b-409f-8cc8-5ccf99c00eaf  802-3-ethernet  enp0s3
+
+- check the current bridge 192.168.122.0/24
+# nmcli con show virbr0 | grep IP4.ADDR
+IP4.ADDRESS[1]:                         192.168.122.1/24
+
+- use nmcli or nmtui from Network Manager to create new bridge. I need only 14 nodes that can talk from this bridge.
+# nmcli con down vmbr0 && nmcli con up vmbr0
+
+- new bridge should start with what subnet you needs.
+- 192.168.1.50/28 subnet, range IP 192.168.1.49 - 62, subnet mask 255.255.255.240, broadcase 192.168.1.63
+- 14 host per subnet, plus 192.168.1.48 subnet ID, plus broadcase 192.168.1.63 
+- assign gateway 192.168.1.49/28
+# nmcli con show vmbr0 | grep IP4.ADDR
+IP4.ADDRESS[1]:                         192.168.1.49/28
+```
+* KVM storage pool. The storage pool will be useful when provision storage at the production scale.
+```
+- what is inside default?
+# virsh pool-info default
+Name:           default
+UUID:           556e2d72-586d-4e7e-b822-d04677dfc583
+State:          running
+Persistent:     yes
+Autostart:      yes
+Capacity:       12.46 GiB
+Allocation:     10.45 GiB
+Available:      2.01 GiB
+
+# virsh pool-dumpxml default
+<pool type='dir'>
+  <name>default</name>
+  <uuid>556e2d72-586d-4e7e-b822-d04677dfc583</uuid>
+  <capacity unit='bytes'>13377732608</capacity>
+  <allocation unit='bytes'>11215470592</allocation>
+  <available unit='bytes'>2162262016</available>
+  <source>
+  </source>
+  <target>
+    <path>/var/lib/libvirt/images</path>
+    <permissions>
+      <mode>0755</mode>
+      <owner>-1</owner>
+      <group>-1</group>
+    </permissions>
+  </target>
+</pool>
+
+# ls -ltZ /var/lib/libvirt/images
+-rw-------. root root system_u:object_r:virt_image_t:s0 rhel7.0.qcow2
+```
+* KVM virtual disk provision (qcow2 format)
+```
+# mkdir /virtimages
+
+# semanage fcontext --add -t virt_image_t '/virtimages(/.*)?'
+
+# restorecon -Rv /virtimages/
+restorecon reset /virtimages context unconfined_u:object_r:default_t:s0->unconfined_u:object_r:virt_image_t:s0
+
+# ls -aZ /virtimages/
+drwxr-xr-x. root root unconfined_u:object_r:virt_image_t:s0 .
+dr-xr-xr-x. root root system_u:object_r:root_t:s0      ..
+
+# semanage fcontext -l | grep virt_image_t
+/var/lib/imagefactory/images(/.*)?                 all files          system_u:object_r:virt_image_t:s0
+/var/lib/libvirt/images(/.*)?                      all files          system_u:object_r:virt_image_t:s0
+/virtimages(/.*)?                                  all files          system_u:object_r:virt_image_t:s0
+
+# qemu-img create -f qcow2 /virtimages/vm01.qcow2 3G
+Formatting '/virtimages/vm01.qcow2', fmt=qcow2 size=3221225472 encryption=off cluster_size=65536 lazy_refcounts=off
+
+# ls -aZ /virtimages/
+drwxr-xr-x. root root unconfined_u:object_r:virt_image_t:s0 .
+dr-xr-xr-x. root root system_u:object_r:root_t:s0      ..
+-rw-r--r--. root root unconfined_u:object_r:virt_image_t:s0 vm01.qcow2
+```
+* KVM new instance creation
+```
+- add DHCP MAC/DNS resolution name
+# host 192.168.1.51
+51.1.168.192.in-addr.arpa domain name pointer v1.cracker.org.
+
+dhcpd.conf
+host v1 {
+        hardware ethernet 08:00:27:00:00:AA;
+        fixed-address 192.168.1.51;
+        option host-name "v1";
+        filename "pxelinux.0";
+        next-server 192.168.1.101;
+}
+
+- use kickstart validator utility to check syntax 
+# ksvalidator /tmp/v1.cfg
+
+- run script
+# cat v1.sh
+#! /usr/bin/env bash
+ks_location="/tmp/v1.cfg"
+os_location="http://ks.cracker.org/Kickstart/RHEL7/rhel7.1-beta-core/"
+
+virt-install --connect=qemu:///system \
+    --network=bridge:vmbr0 \
+    --initrd-inject="${ks_location}" \
+    --extra-args="ks=file://${ks_location} console=tty0 console=ttyS0,115200" \
+    --name=v1.cracker.org \
+    --disk /virtimages/vm01.qcow2,size=3 \
+    --ram 1200 \
+    --vcpus=3 \
+    --check-cpu \
+    --accelerate \
+    --hvm \
+    --location="${os_location}" \
+    --nographics \
+    --mac=08:00:27:00:00:AA
+
+- if you want to destroy the current instance, use the steps.
+# virsh destroy v1.cracker.org 
+Domain v1.cracker.org destroyed
+# virsh undefine v1.cracker.org
+```
+* KVM for DevOps 
+```
+- create a new instance 
+ # virsh -c qemu:///system list --all
+ Id    Name                           State
+----------------------------------------------------
+ -     vm01.cracker.org               shut off
+ 
+- retire old instance
+# virsh stop vm01.cracker.org 
+# virsh undefine vm01.cracker.org
+Domain vm01.cracker.org has been undefined
+
+```
 * references
-- [troubleshooting](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/sect-Troubleshooting-Common_libvirt_errors_and_troubleshooting.html)
-- [patches](https://rhn.redhat.com/errata/RHBA-2015-0427.html#Red%20Hat%20Enterprise%20Linux%20Server%20%28v.%207%29)
+  - [troubleshooting](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/sect-Troubleshooting-Common_libvirt_errors_and_troubleshooting.html)
+  - [patches](https://rhn.redhat.com/errata/RHBA-2015-0427.html#Red%20Hat%20Enterprise%20Linux%20Server%20%28v.%207%29)
+  - [veewee kvm provisioning tool](https://github.com/jedi4ever/veewee/blob/master/doc/kvm.md)
