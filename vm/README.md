@@ -191,8 +191,14 @@ virt-install --connect=qemu:///system \
     --location="${os_location}" \
     --nographics \
     --mac=08:00:27:00:00:AA
+
+- if you want to destroy the current instance, use the steps.
+# virsh destroy v1.cracker.org 
+Domain v1.cracker.org destroyed
+# virsh undefine v1.cracker.org
 ```
 * KVM for DevOps 
+* 
 ```
 - create a new instance 
  # virsh -c qemu:///system list --all
