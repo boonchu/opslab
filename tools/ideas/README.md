@@ -13,7 +13,7 @@
   * learning git
      - [try Git](https://try.github.io)
      - [git from code school](http://gitreal.codeschool.com)
-     - [git flow](http://danielkummer.github.io/git-flow-cheatsheet/)
+     - [git flow](http://danielkummer.github.io/git-flow-cheatsheet/) [git flow github](https://github.com/nvie/gitflow)
   - find status from branch [git-branch-status](https://github.com/alexdavid/git-branch-status)
 
 ![git_branch_status](https://github.com/boonchu/opslab/blob/master/tools/ideas/git_branch_status.png)
