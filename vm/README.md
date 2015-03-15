@@ -68,5 +68,5 @@ Solution: [bugzilla 1185850](https://bugzilla.redhat.com/show_bug.cgi?id=1185850
 This was the virtual if dev config that manually created in the past. It brake the startup libvirtd process.
 ```
 * references
-- [troubleshooting](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/sect-Troubleshooting-Common_libvirt_errors_and_troubleshooting.html)
-- [patches](https://rhn.redhat.com/errata/RHBA-2015-0427.html#Red%20Hat%20Enterprise%20Linux%20Server%20%28v.%207%29)
+  - [troubleshooting](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/sect-Troubleshooting-Common_libvirt_errors_and_troubleshooting.html)
+  - [patches](https://rhn.redhat.com/errata/RHBA-2015-0427.html#Red%20Hat%20Enterprise%20Linux%20Server%20%28v.%207%29)
