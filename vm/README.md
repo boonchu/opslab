@@ -80,10 +80,15 @@ NAME     UUID                                  TYPE            DEVICE
 docker0  13b501c1-8667-4d4d-a0b8-a215c1b5f481  bridge          docker0
 virbr0   9d4ede10-e707-4e80-9a8e-5e7d366b06ba  bridge          virbr0
 enp0s3   2a60be4b-f64b-409f-8cc8-5ccf99c00eaf  802-3-ethernet  enp0s3
+
+- check the current bridge 192.168.122.0/24
 # nmcli con show virbr0 | grep IP4.ADDR
 IP4.ADDRESS[1]:                         192.168.122.1/24
+
 - use nmcli or nmtui from Network Manager to create new bridge. I need only 14 nodes that can talk from this bridge.
 # nmcli con down vmbr0 && nmcli con up vmbr0
+
+- new bridge should start with what subnet you needs.
 # nmcli con show vmbr0 | grep IP4.ADDR
 IP4.ADDRESS[1]:                         192.168.1.50/28
 ```
