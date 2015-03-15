@@ -51,5 +51,5 @@ Case 7:
 You have a request to migrate local mariaDB data to run on Cent OS 7 with iSCSI storage. 
 ```
 ####### Reference
-* [Exam RHCSA Objective](http://www.certdepot.net/rhel7-rhcsa-exam-objectives/)
-* [Exam RHCE Objective](http://www.certdepot.net/rhel7-rhce-exam-objectives/)
+* [Exam RHCSA 7 Objective](http://www.certdepot.net/rhel7-rhcsa-exam-objectives/)
+* [Exam RHCE 7 Objective](http://www.certdepot.net/rhel7-rhce-exam-objectives/)
