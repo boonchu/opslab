@@ -71,9 +71,30 @@ error: internal error: could not get interface XML description: File operation f
 Solution: [bugzilla 1185850](https://bugzilla.redhat.com/show_bug.cgi?id=1185850)
 This was the virtual if dev config that manually created in the past. It brake the startup libvirtd process.
 ```
-* VM tricks for DevOps 
+* KVM networking
+  - by default, VM has only access through 192.168.122.0/24 network internally. You must create bridge on the hypervisor host. Follows these steps to do add bridge interfaces.
 ```
-
+- checking default bridge from software installation.
+# nmcli con show
+NAME     UUID                                  TYPE            DEVICE
+docker0  13b501c1-8667-4d4d-a0b8-a215c1b5f481  bridge          docker0
+virbr0   9d4ede10-e707-4e80-9a8e-5e7d366b06ba  bridge          virbr0
+enp0s3   2a60be4b-f64b-409f-8cc8-5ccf99c00eaf  802-3-ethernet  enp0s3
+# nmcli con show virbr0 | grep IP4.ADDR
+IP4.ADDRESS[1]:                         192.168.122.1/24
+- use nmcli or nmtui from Network Manager to create new bridge. I need only 14 nodes that can talk from this bridge.
+# nmcli con down vmbr0 && nmcli con up vmbr0
+# nmcli con show vmbr0 | grep IP4.ADDR
+IP4.ADDRESS[1]:                         192.168.1.50/28
+```
+* KVM for DevOps 
+```
+- create a new instance 
+# 
+# virsh -c qemu:///system list --all
+ Id    Name                           State
+----------------------------------------------------
+ -     vm01.cracker.org               shut off
 ```
 * references
   - [troubleshooting](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/sect-Troubleshooting-Common_libvirt_errors_and_troubleshooting.html)
