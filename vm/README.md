@@ -92,6 +92,41 @@ IP4.ADDRESS[1]:                         192.168.122.1/24
 # nmcli con show vmbr0 | grep IP4.ADDR
 IP4.ADDRESS[1]:                         192.168.1.50/28
 ```
+* KVM storage pool
+```
+- what is inside default?
+# virsh pool-info default
+Name:           default
+UUID:           556e2d72-586d-4e7e-b822-d04677dfc583
+State:          running
+Persistent:     yes
+Autostart:      yes
+Capacity:       12.46 GiB
+Allocation:     10.45 GiB
+Available:      2.01 GiB
+
+# virsh pool-dumpxml default
+<pool type='dir'>
+  <name>default</name>
+  <uuid>556e2d72-586d-4e7e-b822-d04677dfc583</uuid>
+  <capacity unit='bytes'>13377732608</capacity>
+  <allocation unit='bytes'>11215470592</allocation>
+  <available unit='bytes'>2162262016</available>
+  <source>
+  </source>
+  <target>
+    <path>/var/lib/libvirt/images</path>
+    <permissions>
+      <mode>0755</mode>
+      <owner>-1</owner>
+      <group>-1</group>
+    </permissions>
+  </target>
+</pool>
+
+# ls -ltZ /var/lib/libvirt/images
+-rw-------. root root system_u:object_r:virt_image_t:s0 rhel7.0.qcow2
+```
 * KVM for DevOps 
 ```
 - create a new instance 
