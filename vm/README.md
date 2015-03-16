@@ -123,6 +123,15 @@ br0     649a6273-00f3-4751-8d80-8fa4352b81f4  bridge          br0
 bridge name	bridge id		STP enabled	interfaces
 br0		8000.080027db949c	no		enp0s3
 virbr0		8000.000000000000	yes		
+
+- disable netfilter on bridge device
+# cat >> /etc/sysctl.conf <<EOF
+ net.bridge.bridge-nf-call-ip6tables = 0
+ net.bridge.bridge-nf-call-iptables = 0
+ net.bridge.bridge-nf-call-arptables = 0
+ EOF
+ # sysctl -p /etc/sysctl.conf
+
 ```
 * KVM storage pool. The storage pool will be useful when provision storage at the production scale.
 ```
