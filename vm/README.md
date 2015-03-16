@@ -215,23 +215,24 @@ host v1 {
 - run script
 # cat v1.sh
 #! /usr/bin/env bash
+
 ks_location="/tmp/v1.cfg"
 os_location="http://ks.cracker.org/Kickstart/RHEL7/rhel7.1-beta-core/"
 
 virt-install --connect=qemu:///system \
-    --network=bridge:vmbr0 \
+    --network bridge=br0 \
     --initrd-inject="${ks_location}" \
     --extra-args="ks=file://${ks_location} console=tty0 console=ttyS0,115200" \
     --name=v1.cracker.org \
     --disk /virtimages/vm01.qcow2,size=3 \
-    --ram 1200 \
+    --ram=1200 \
     --vcpus=3 \
     --check-cpu \
     --accelerate \
     --hvm \
     --location="${os_location}" \
-    --nographics \
-    --mac=08:00:27:00:00:AA
+    --graphics none \
+    --mac="08:00:27:00:00:AA"
 
 - if you want to destroy the current instance, use the steps.
 # virsh destroy v1.cracker.org 
