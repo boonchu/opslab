@@ -112,6 +112,11 @@ $ ip a
     inet6 fe80::a00:27ff:fedb:949c/64 scope link 
        valid_lft forever preferred_lft forever
 
+- check the bridge info
+# brctl show
+bridge name	bridge id		STP enabled	interfaces
+br0		8000.080027db949c	no		enp0s3
+virbr0		8000.000000000000	yes		
 ```
 * KVM storage pool. The storage pool will be useful when provision storage at the production scale.
 ```
