@@ -250,7 +250,7 @@ virt-install --hvm --connect qemu:///system \
 --disk path=/virtimages/vm01.qcow2,size=3 \
 --mac="08:00:27:00:00:AA"
 ```
-![vm](https://github.com/boonchu/opslab/edit/master/vm/vm.png)
+![vm](https://github.com/boonchu/opslab/blob/master/vm/vm.png)
 * KVM for DevOps 
 ```
 - create a new instance 
