@@ -194,7 +194,7 @@ drwxr-xr-x. root root unconfined_u:object_r:virt_image_t:s0 .
 dr-xr-xr-x. root root system_u:object_r:root_t:s0      ..
 -rw-r--r--. root root unconfined_u:object_r:virt_image_t:s0 vm01.qcow2
 ```
-* KVM new instance creation
+* KVM new instance creation [Method One: virt-install]
 ```
 - add DHCP MAC/DNS resolution name
 # host 192.168.1.51
@@ -238,6 +238,17 @@ virt-install --connect=qemu:///system \
 # virsh destroy v1.cracker.org 
 Domain v1.cracker.org destroyed
 # virsh undefine v1.cracker.org
+```
+* KVM new instance creation [Method TWO: pxe]
+```
+#! /usr/bin/env bash
+
+virt-install --hvm --connect qemu:///system \
+--network=bridge:br0 --pxe --graphics vnc \
+--name v1.cracker.org --ram=1200 --vcpus=2 \
+--os-type=linux --os-variant=rhel7 \
+--disk path=/virtimages/vm01.qcow2,size=3 \
+--mac="08:00:27:00:00:AA"
 ```
 * KVM for DevOps 
 ```
