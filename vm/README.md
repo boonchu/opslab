@@ -77,6 +77,7 @@ This was the virtual if dev config that manually created in the past. It brake t
 - assume you have single interface and you must work in this case on console mode only.
 - add L3 bridge interface for virtual network
 # nmcli con add type bridge autoconnect yes con-name br0 ifname br0
+# nmcli con modify bridge.stp no
 # nmcli con modify br0 ipv4.address "192.168.1.101/24" ipv4.method manual
 # nmcli con modify br0 ipv4.dns 192.168.1.99
 # nmcli con modify br0 ipv4.gateway 192.168.1.250
