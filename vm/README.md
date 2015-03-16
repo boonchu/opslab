@@ -71,29 +71,47 @@ error: internal error: could not get interface XML description: File operation f
 Solution: [bugzilla 1185850](https://bugzilla.redhat.com/show_bug.cgi?id=1185850)
 This was the virtual if dev config that manually created in the past. It brake the startup libvirtd process.
 ```
-* KVM networking
-  - by default, VM has only access through 192.168.122.0/24 network internally. You must create bridge on the hypervisor host. Follows these steps to do add bridge interfaces.
+* [KVM networking](http://wiki.libvirt.org/page/VirtualNetworking)
+  - by default, VM has only access through 192.168.122.0/24 network internally. You must create L3 network bridge on the hypervisor host. Follows these steps to do add bridge interfaces.
 ```
-- checking default bridge from software installation.
-# nmcli con show
-NAME     UUID                                  TYPE            DEVICE
-docker0  13b501c1-8667-4d4d-a0b8-a215c1b5f481  bridge          docker0
-virbr0   9d4ede10-e707-4e80-9a8e-5e7d366b06ba  bridge          virbr0
-enp0s3   2a60be4b-f64b-409f-8cc8-5ccf99c00eaf  802-3-ethernet  enp0s3
+- assume you have single interface and you must work in this case on console mode only.
+- add L3 bridge interface for virtual network
+# nmcli con add type bridge autoconnect yes con-name br0 ifname br0
+# nmcli con modify br0 ipv4.address "192.168.1.101/24" ipv4.method manual
+# nmcli con modify br0 ipv4.dns 192.168.1.99
+# nmcli con modify br0 ipv4.gateway 192.168.1.250
+# nmcli con modify br0 ipv4.dns-search CRACKER.ORG
 
-- check the current bridge 192.168.122.0/24
-# nmcli con show virbr0 | grep IP4.ADDR
-IP4.ADDRESS[1]:                         192.168.122.1/24
+- remove existing interface 
+# nmcli con delete enp0s3
 
-- use nmcli or nmtui from Network Manager to create new bridge. I need only 14 nodes that can talk from this bridge.
-# nmcli con down vmbr0 && nmcli con up vmbr0
+- reconfigure bridge slave with current interface
+# nmcli con add type bridge-slave autoconnect yes con-name enp0s3 ifname enp0s3 master br0
 
-- new bridge should start with what subnet you needs.
-- 192.168.1.50/28 subnet, range IP 192.168.1.49 - 62, subnet mask 255.255.255.240, broadcase 192.168.1.63
-- 14 host per subnet, plus 192.168.1.48 subnet ID, plus broadcase 192.168.1.63 
-- assign gateway 192.168.1.49/28
-# nmcli con show vmbr0 | grep IP4.ADDR
-IP4.ADDRESS[1]:                         192.168.1.49/28
+- it requires to restart NetworkManager
+# systemctl stop NetworkManager && systemctl start NetworkManager
+
+- check and validate with ip command
+$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP qlen 1000
+    link/ether 08:00:27:db:94:9c brd ff:ff:ff:ff:ff:ff
+4: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN 
+    link/ether c6:e0:e4:ce:e7:aa brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
+       valid_lft forever preferred_lft forever
+25: br0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP 
+    link/ether 08:00:27:db:94:9c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.101/24 brd 192.168.1.255 scope global br0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:fedb:949c/64 scope link 
+       valid_lft forever preferred_lft forever
+
 ```
 * KVM storage pool. The storage pool will be useful when provision storage at the production scale.
 ```
