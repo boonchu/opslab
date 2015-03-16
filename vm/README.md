@@ -114,6 +114,11 @@ $ ip a
        valid_lft forever preferred_lft forever
 
 - check the bridge info
+# nmcli con show
+NAME    UUID                                  TYPE            DEVICE 
+virbr0  6ceafb72-7404-46a3-857e-5a571b61a338  bridge          virbr0 
+enp0s3  9dd83a49-d910-41f5-8b8a-34bff9f19249  802-3-ethernet  enp0s3 
+br0     649a6273-00f3-4751-8d80-8fa4352b81f4  bridge          br0
 # brctl show
 bridge name	bridge id		STP enabled	interfaces
 br0		8000.080027db949c	no		enp0s3
