@@ -164,6 +164,7 @@ CentOS release 6.5 (Final)
 ```
 
 ###### 3. First Puppet Manifest
-  - [~\(:$)/~]()
-* reference
+  - [~\(:$)/~](https://github.com/boonchu/opslab/tree/vagrant1/vagrant/puppletlab1)
+  
+###### references
    - [Vagrant Crash Course](https://sysadmincasts.com/episodes/42-crash-course-on-vagrant-revised)
