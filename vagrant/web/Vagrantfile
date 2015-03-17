@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  # serach from cloud https://atlas.hashicorp.com/boxes/search
+  # find popularity and high trustworthy image file name
+  config.vm.box = "ubuntu/trusty64"
+
+  # map port from host to vm
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # run bootstrap shell script after vagrant up
+  config.vm.provision :shell, path: "bootstrap.sh"
+end
