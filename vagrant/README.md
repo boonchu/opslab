@@ -1,4 +1,4 @@
-###### Vagrant Tool
+###### Develop Sample Web with Vagrant
 * initialize new project on vagrant
 ```
 - add new web project
@@ -84,7 +84,6 @@ Release:        14.04
 Codename:       trusty
 
 - check the web local content
-```
 $ curl http://localhost
 
     _____________________________________________________
@@ -130,3 +129,40 @@ bootstrap.sh  html  Vagrantfile
 % vagrant box list
 ubuntu/trusty64 (virtualbox, 14.04)
 ```
+
+* remove them if software are no longer needed.
+```
+% vagrant destroy default
+% vagrant box remove ubuntu/trusty64
+```
+
+###### Next project with multiple instances
+* bring up the vagrant
+```
+$ cd nagios
+$ cat Vagrantfile
+$ vagrant up
+```
+
+* login to individual instance
+```
+% vagrant box list
+vchef/centos-6.5 (virtualbox, 1.0.0)
+
+% vagrant status
+Current machine states:
+
+web                       running (virtualbox)
+db                        running (virtualbox)
+file                      running (virtualbox)
+nagios                    running (virtualbox)
+
+% vagrant ssh web
+Last login: Fri Mar  7 16:57:20 2014 from 10.0.2.2
+
+[vagrant@localhost ~]$ cat /etc/redhat-release
+CentOS release 6.5 (Final)
+```
+
+* reference
+   - [Vagrant Crash Course](https://sysadmincasts.com/episodes/42-crash-course-on-vagrant-revised)
