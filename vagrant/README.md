@@ -84,6 +84,7 @@ Release:        14.04
 Codename:       trusty
 
 - check the web local content
+```
 $ curl http://localhost
 
     _____________________________________________________
@@ -103,9 +104,9 @@ $ curl http://localhost
 - content from host also shares in vagrant
 $ ls /vagrant
 bootstrap.sh  html  Vagrantfile
+```
 
 - testing from outside with port 8080
-
 ```
 % curl localhost:8080
 
