@@ -65,11 +65,10 @@ fi
 
 # restart apache
 /etc/init.d/apache2 restart
-
 ```
 
 * bring up with vagrant
-``
+```
 $ vagrant up
 
 - login to vagrant
