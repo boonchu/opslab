@@ -6,7 +6,7 @@ $ vagrant box add centos64-x86_64-minimal centos64-x86_64-minimal.box
 $ vagrant up
 ```
 
-* download puppet-firewall modules from community
+* download [puppet-firewall modules](https://forge.puppetlabs.com/puppetlabs/firewall) from community
 
 * here is tree directory structure
 ```
