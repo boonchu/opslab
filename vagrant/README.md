@@ -1,4 +1,4 @@
-###### Develop Sample Web with Vagrant
+###### 1. Develop Sample Web with Vagrant
 * initialize new project on vagrant
 ```
 - add new web project
@@ -135,7 +135,7 @@ ubuntu/trusty64 (virtualbox, 14.04)
 % vagrant box remove ubuntu/trusty64
 ```
 
-###### Next project with multiple instances
+###### 2. Next project with multiple instances
 * bring up the vagrant
 ```
 $ cd nagios
@@ -163,5 +163,7 @@ Last login: Fri Mar  7 16:57:20 2014 from 10.0.2.2
 CentOS release 6.5 (Final)
 ```
 
+###### 3. First Puppet Manifest
+  - [~\(:$)/~]()
 * reference
    - [Vagrant Crash Course](https://sysadmincasts.com/episodes/42-crash-course-on-vagrant-revised)
