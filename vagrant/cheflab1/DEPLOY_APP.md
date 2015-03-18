@@ -28,22 +28,21 @@ end
   [ "$status" -eq 0 ]
 }
 ```
-  * run kitchen. It fails from the test.
+  * run kitchen.
 ```
 $ kitchen converge
 $ kitchen verify
-
-```
-*  review again on [tomcat cookbook](https://supermarket.chef.io/cookbooks/tomcat)
-   - it listens to ipv6, not ipv4. Needs to find the way to tweak it.
-```
 $ kitchen login (to check active running port)
-
-java    17891 tomcat   35u  IPv6  69854      0t0  TCP *:webcache (LISTEN))
 
 - perfect, I can get the good result from curl. :-)
 $ curl http://localhost:8080/punter/punt/
 {'status':'ok'}
+```
+
+*  review again on [tomcat cookbook](https://supermarket.chef.io/cookbooks/tomcat) Con't later.
+   - it listens to ipv6, not ipv4. Needs to find the way to tweak it.
+```
+java    17891 tomcat   35u  IPv6  69854      0t0  TCP *:webcache (LISTEN))
 ```
 
 ###### Reference:
