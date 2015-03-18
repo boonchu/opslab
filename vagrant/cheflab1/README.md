@@ -1,4 +1,4 @@
-####### Getting start with Chef Vagrant
+###### Getting start with Chef Vagrant
 
 * Prep steps:
   - Download ChefDK for MAC, Linux, bah bah
