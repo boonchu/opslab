@@ -154,6 +154,72 @@ $ kitchen converge
 ```
 
 * how do I know if openjdk7 is properly installed?
+   - [using bats - bash automated testing systems](https://github.com/sstephenson/bats)
+   - run kitchen verify (finished in 6m, it's pretty slow)
 ```
 
+% mkdir -p test/integration/default/bats
+% vim test/integration/default/bats
+
+- verify with kitchen
+% kitchen verify
+-----> Starting Kitchen (v1.3.1)
+-----> Setting up <default-centos65-chef>...
+Fetching: thor-0.19.0.gem (100%)
+       Successfully installed thor-0.19.0
+Fetching: busser-0.6.2.gem (100%)
+       Successfully installed busser-0.6.2
+       2 gems installed
+-----> Setting up Busser
+       Creating BUSSER_ROOT in /tmp/busser
+       Creating busser binstub
+       Plugin bats installed (version 0.3.0)
+-----> Running postinstall for bats plugin
+       Installed Bats to /tmp/busser/vendor/bats/bin/bats
+       Plugin serverspec installed (version 0.5.3)
+-----> Running postinstall for serverspec plugin
+       Finished setting up <default-centos65-chef> (1m59.20s).
+-----> Verifying <default-centos65-chef>...
+       Suite path directory /tmp/busser/suites does not exist, skipping.
+       Uploading /tmp/busser/suites/bats/tomcat.bats (mode=0644)
+       Uploading /tmp/busser/suites/serverspec/default_spec.rb (mode=0644)
+       Uploading /tmp/busser/suites/serverspec/spec_helper.rb (mode=0644)
+-----> Running bats test suite
+ ✓ java is found in PATH
+ ✓ tomcat process is visible
+
+       2 tests, 0 failures
+-----> Running serverspec test suite
+-----> Installing Serverspec..
+-----> Installing Serverspec..
+Fetching: net-ssh-2.9.2.gem (100%)
+Fetching: net-scp-1.2.1.gem (100%)
+Fetching: specinfra-2.19.6.gem (100%)
+Fetching: multi_json-1.11.0.gem (100%)
+Fetching: diff-lcs-1.2.5.gem (100%)
+Fetching: rspec-support-3.2.2.gem (100%)
+Fetching: rspec-expectations-3.2.0.gem (100%)
+Fetching: rspec-core-3.2.2.gem (100%)
+Fetching: rspec-its-1.2.0.gem (100%)
+Fetching: rspec-mocks-3.2.1.gem (100%)
+Fetching: rspec-3.2.0.gem (100%)
+Fetching: serverspec-2.10.1.gem (100%)
+-----> serverspec installed (version 2.10.1)
+       /opt/chef/embedded/bin/ruby -I/tmp/busser/suites/serverspec -I/tmp/busser/gems/gems/rspec-support-3.2.2/lib:/tmp/busser/gems/gems/rspec-core-3.2.2/lib /opt/chef/embedded/bin/rspec --pattern /tmp/busser/suites/serverspec/\*\*/\*_spec.rb --color --format documentation --default-path /tmp/busser/suites/serverspec
+
+       cheflab1::default
+         does something (PENDING: Replace this with meaningful tests)
+
+       Pending: (Failures listed here are expected and do not affect your suite's status)
+
+         1) cheflab1::default does something
+            # Replace this with meaningful tests
+            # /tmp/busser/suites/serverspec/default_spec.rb:8
+
+
+       Finished in 0.00042 seconds (files took 0.23089 seconds to load)
+       1 example, 0 failures, 1 pending
+
+       Finished verifying <default-centos65-chef> (4m12.89s).
+-----> Kitchen is finished. (6m12.57s)
 ```
