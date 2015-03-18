@@ -1,7 +1,7 @@
 ###### Notes
 - Two parts of learning: using Chef and Puppet with Vagrant. First part will be Puppet and Chef has its own seperated instructions.
 
-###### 1. Develop Sample Web with Vagrant
+###### 1. Puppet Way: Develop Sample Web with Vagrant 
 * initialize new project on vagrant
 ```
 - add new web project
@@ -171,6 +171,8 @@ CentOS release 6.5 (Final)
 
 ###### 4. Second Puppet Manifest to manage IPTABLES on CentOS 6.x
   - [~\(:$)/~](https://github.com/boonchu/opslab/tree/vagrant1/vagrant/puppetlab2)
+  
+###### 5. [Chef Recipes: Vagrant on Chef]()
   
 ###### references
    - [Vagrant Crash Course](https://sysadmincasts.com/episodes/42-crash-course-on-vagrant-revised)
