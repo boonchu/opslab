@@ -152,3 +152,8 @@ $ kitchen converge
              -distroverpkg=centos-release
              -
 ```
+
+* how do I know if openjdk7 is properly installed?
+```
+
+```
