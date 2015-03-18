@@ -199,3 +199,41 @@ $ kitchen converge
 
 >>>>>> ----------------------
 ```
+* dang! forget to add 'include_recipe "java"'. 
+```
+$ kitchen converge
+       Compiling Cookbooks...
+       Converging 10 resources
+       Recipe: yum::default
+
+        (up to date)
+            (up to date)
+       Recipe: java::openjdk
+
+           - install version 1.7.0.75-2.5.4.0.el6_6 of package java-1.7.0-openjdk
+           - install version 1.7.0.75-2.5.4.0.el6_6 of package java-1.7.0-openjdk-devel
+
+       Recipe: java::set_java_home
+
+           - update content in file /etc/profile.d/jdk.sh from none to b45e89
+           --- /etc/profile.d/jdk.sh    2015-03-18 17:26:04.071777530 +0000
+           +++ /etc/profile.d/.jdk.sh20150318-16835-cj6vcr      2015-03-18 17:26:04.071777530 +0000
+
+       Recipe: tomcat::default
+
+            # Where your java installation lives
+           -JAVA_HOME=
+           +JAVA_HOME=/usr/lib/jvm/java-1.7.0
+```
+
+* verify again and pass the test.
+```
+$ kitchen verify
+-----> Running bats test suite
+ ✓ java is found in PATH
+ ✓ using java jdk 6 or 7
+ ✓ tomcat process is visible
+
+       3 tests, 0 failures
+-----> Running serverspec test suite
+```
