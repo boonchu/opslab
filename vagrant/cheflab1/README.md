@@ -237,3 +237,6 @@ $ kitchen verify
        3 tests, 0 failures
 -----> Running serverspec test suite
 ```
+
+* Reference:
+  - [really inspired by this instruction, love it](http://tcotav.github.io/chefdk_getting_started.html)
