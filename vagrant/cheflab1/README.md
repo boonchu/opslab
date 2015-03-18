@@ -2,6 +2,7 @@
 
 * Prep steps:
   - Download ChefDK for MAC, Linux, bah bah
+  - [kitchen from ChefDK](https://docs.chef.io/config_yml_kitchen.html)
   - Git repository for your recipes
   - Bare Metal virtual box image for vagrant
   
