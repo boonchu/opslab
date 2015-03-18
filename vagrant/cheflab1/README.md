@@ -104,7 +104,7 @@ $ kitchen converge
 ```
 
 * now satisfied with result. jump to first cookbook recipe
-  - review attributes on the supermarket's (java cookbook](https://supermarket.chef.io/cookbooks/java)
+  - review attributes on the supermarket's [java cookbook](https://supermarket.chef.io/cookbooks/java)
   - create 'attributes/default.rb' file
 ```
 % cat attributes/default.rb
