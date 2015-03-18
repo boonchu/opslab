@@ -41,11 +41,9 @@ $ kitchen login (to check active running port)
 
 java    17891 tomcat   35u  IPv6  69854      0t0  TCP *:webcache (LISTEN))
 
+- perfect, I can get the good result from curl. :-)
 $ curl http://localhost:8080/punter/punt/
 {'status':'ok'}
 ```
-* perfect, I can get the good result from curl. :-)
-
-
 ###### Reference:
 	* [learning kitchen from vagrant](https://github.com/test-kitchen/kitchen-vagrant)
