@@ -47,3 +47,4 @@ java    17891 tomcat   35u  IPv6  69854      0t0  TCP *:webcache (LISTEN))
 
 ###### Reference:
    * [learning kitchen from vagrant](https://github.com/test-kitchen/kitchen-vagrant)
+   * [writing the kitchen test](http://kitchen.ci/docs/getting-started/writing-server-test)
