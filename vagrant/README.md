@@ -172,7 +172,7 @@ CentOS release 6.5 (Final)
 ###### 4. Second Puppet Manifest to manage IPTABLES on CentOS 6.x
   - [~\(:$)/~](https://github.com/boonchu/opslab/tree/vagrant1/vagrant/puppetlab2)
   
-###### 5. [Chef Recipes: Vagrant on Chef]()
+###### 5. [Chef Recipes: Vagrant on Chef](https://github.com/boonchu/opslab/tree/vagrant1/vagrant/cheflab1)
   
 ###### references
    - [Vagrant Crash Course](https://sysadmincasts.com/episodes/42-crash-course-on-vagrant-revised)
