@@ -1,3 +1,6 @@
+###### Notes
+- Two parts of learning: using Chef and Puppet with Vagrant. First part will be Puppet and Chef has its own seperated instructions.
+
 ###### 1. Develop Sample Web with Vagrant
 * initialize new project on vagrant
 ```
