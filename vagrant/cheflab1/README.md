@@ -11,7 +11,6 @@ $ cd /tmp
 $ chef generate cookbook cheflab1
 
 - prepare .kitchen.yml
-```
 ---
 driver:
   name: vagrant
