@@ -1,4 +1,5 @@
 ###### Testing through server spec
+  * noted when I started with bats to test my apps. Serverspec is similar and what Chef want to use as test suite.
   * look at tree structure
 ```
 - tree structure for test suite
