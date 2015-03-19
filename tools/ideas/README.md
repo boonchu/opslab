@@ -1,5 +1,9 @@
 ##### Experimented in codes and tools and other ideas
 
+* Admin Solutions:
+  - [stackexchange](http://unix.stackexchange.com)
+  - [stackoverflow](http://www.stackoverflow.com)
+
 * Coders:
   - [write code every day](http://ejohn.org/blog/write-code-every-day/)
 
