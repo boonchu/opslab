@@ -7,6 +7,25 @@
   - [list of shell feature comparison](http://hyperpolyglot.org/unix-shells)
   - to ensure prompt is git-awared. If it is not git, then prompt will be resetting to default shell prompt.
 
+* fish:
+  - new cool shell, [link](http://fishshell.com/)
+```bash
+yum-config-manager --add-repo http://fishshell.com/files/linux/RedHat_RHEL-6/fish.release:2.repo
+yum install fish
+```
+
+* zsh:
+  - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+```
+If you're on MAC, it is supur simple. 
+- make sure yr are zsh > 5.x
+- run 'curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh'
+
+Starting with themes settting and make it to random.
+- vi ~/.zshrc
+- set theme "ZSH_THEME=random"
+```
+
 ![git_prompt](https://github.com/boonchu/opslab/blob/master/tools/ideas/git_prompt.png)
 
 * git:
@@ -17,13 +36,6 @@
   - find status from branch [git-branch-status](https://github.com/alexdavid/git-branch-status)
 
 ![git_branch_status](https://github.com/boonchu/opslab/blob/master/tools/ideas/git_branch_status.png)
-
-* fish:
-  - new cool shell, [link](http://fishshell.com/)
-```bash
-yum-config-manager --add-repo http://fishshell.com/files/linux/RedHat_RHEL-6/fish.release:2.repo
-yum install fish
-```
 
 * tmuxinator awesome custom tmux screen layout:
   - [link](https://github.com/tmuxinator/tmuxinator)
