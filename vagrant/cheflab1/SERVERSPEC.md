@@ -85,6 +85,7 @@ describe file('/etc/tomcat6/tomcat6.conf') do
   its(:content) { should match /^SECURITY_MANAGER?=?"false?"$/ }
 end
 
+- run test
 $ kitchen verify
        File "/etc/tomcat6/tomcat6.conf"
          content
@@ -93,3 +94,5 @@ $ kitchen verify
        Finished in 0.12495 seconds (files took 0.23783 seconds to load)
        8 examples, 0 failures
 ```
+###### Reference:
+  * [ServerSpec Test](https://github.com/enovance/openstack-serverspec/tree/master/spec/tests)
