@@ -44,6 +44,10 @@ $ curl http://localhost:8080/punter/punt/
 ```
 java    17891 tomcat   35u  IPv6  69854      0t0  TCP *:webcache (LISTEN))
 ```
+   - updated [march 19th] from stackoverflow [solution](http://serverfault.com/questions/390840/how-does-one-get-tomcat-to-bind-to-ipv4-address)
+```
+
+```
 
 ###### Reference:
    * [learning kitchen from vagrant](https://github.com/test-kitchen/kitchen-vagrant)
