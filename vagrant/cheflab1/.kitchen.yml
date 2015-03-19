@@ -1,0 +1,20 @@
+---
+driver:
+  name: vagrant
+  network:
+    - ["forwarded_port", {guest: 8080, host: 8080}]
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos65-chef
+    driver:
+      box: centos-6.5-x86_64-minimal
+      box_url: http://ks.cracker.org/Kickstart/centos7/centos64-x86_64-minimal.box
+
+suites:
+  - name: default
+    run_list:
+      - recipe[cheflab1::default]
+    attributes:
