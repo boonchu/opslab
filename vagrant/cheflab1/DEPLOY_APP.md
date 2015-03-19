@@ -49,7 +49,15 @@ java    17891 tomcat   35u  IPv6  69854      0t0  TCP *:webcache (LISTEN))
 ```
 ```
 solution:
+- change attribute setting, 'attributes/default.rb'
+node.default['tomcat']['catalina_options'] = '-Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses'
 
+- at convergence time, kicthen restarted tomcat6
+         * execute[wait for tomcat6] action nothing (skipped due to action :nothing)
+       Recipe: cheflab1::default
+        (up to date)
+         * service[tomcat6] action restart
+           - restart service service[tomcat6]
 ```
 
 ###### Reference:
