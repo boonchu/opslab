@@ -4,7 +4,7 @@
   - Download ChefDK for MAC, Linux, bah bah
   - [kitchen from ChefDK](https://docs.chef.io/config_yml_kitchen.html)
   - Git repository for your recipes
-  - Test from Bare Metal virtual box CentOS 6.5 image for vagrant
+  - Test from [Bare Metal/Based box CentOS 6.5 image](http://www.vagrantbox.es/) for vagrant
   
 * Setup: 
 ```
