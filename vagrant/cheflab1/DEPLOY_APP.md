@@ -1,5 +1,5 @@
 ###### Starting to deploy application
-  * setup with simple war app
+  * setup with [punter simple war app](https://github.com/tcotav/punter)
 ```
 $ cd /tmp && git clone git@github.com:tcotav/punter.git
 $ cp /tmp/punter/punter.war [chef cookbook folder]/files/default/
