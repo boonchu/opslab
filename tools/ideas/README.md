@@ -16,6 +16,7 @@ yum install fish
 
 * zsh:
   - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+  - [don't forget about theme](https://github.com/robbyrussell/oh-my-zsh/wiki/themes)
 ```
 If you're on MAC, it is supur simple. 
 - make sure yr are zsh > 5.x
