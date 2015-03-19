@@ -60,9 +60,9 @@ node.default['tomcat']['catalina_options'] = '-Djava.net.preferIPv4Stack=true -D
            - restart service service[tomcat6]
 ```
 
-* when I play with it, as system admin. I felt like the bare metal image need to be tweaking. Since it has no lsof, no system admin tools, firewall protected, etc. Firewall is the problem for me, since I need this guest instance to be exposeable at port 8080 to outside. A lot of work to be done. Stay tuned in next chapter after ServerSpec.
+* when I play with it, as system admin. I felt like the bare metal image need to be tweaking. Since it has no lsof, no system admin tools, firewall protected, etc. Firewall is the problem for me, since I need this guest instance to be exposure port 8080 to outside. A lot of work to be done. Stay tuned in next chapter after ServerSpec.
 ```
-hain INPUT (policy ACCEPT 0 packets, 0 bytes)
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
  257K  212M ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
     0     0 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
