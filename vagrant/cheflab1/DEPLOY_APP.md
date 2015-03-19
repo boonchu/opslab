@@ -60,6 +60,8 @@ node.default['tomcat']['catalina_options'] = '-Djava.net.preferIPv4Stack=true -D
            - restart service service[tomcat6]
 ```
 
+* when I play with it, as system admin. I felt like the bare metal image need to be tweaking. Since it has no lsof, no system admin tools, firewall protected, etc. Firewall is the problem for me, since I need this guest instance to be exposeable at port 8080 to outside. A lot of work to be done. Stay tuned in next chapter after ServerSpec.
+
 ###### Reference:
    * [learning kitchen from vagrant](https://github.com/test-kitchen/kitchen-vagrant)
    * [writing the kitchen test](http://kitchen.ci/docs/getting-started/writing-server-test)
