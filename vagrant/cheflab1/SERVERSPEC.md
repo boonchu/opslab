@@ -78,3 +78,18 @@ $ kitchen verify
 
        Finished verifying <default-centos65-chef> (0m2.45s).
 ```
+* add content validation test on guest instance. For instance, I want to check /etc/tomcat6/tomcat6.conf if it contains bah bah configuration parameter.
+```
+- append to default server spec file, 'test/integration/default/serverspec/default_spec.rb'
+describe file('/etc/tomcat6/tomcat6.conf') do
+  its(:content) { should match /^SECURITY_MANAGER?=?"false?"$/ }
+end
+
+$ kitchen verify
+       File "/etc/tomcat6/tomcat6.conf"
+         content
+           should match /^SECURITY_MANAGER?=?"false?"$/
+
+       Finished in 0.12495 seconds (files took 0.23783 seconds to load)
+       8 examples, 0 failures
+```
