@@ -33,3 +33,8 @@ Chain tomcat (1 references)
  pkts bytes target     prot opt in     out     source               destination
     0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp dpt:8080 /* tomcat */
 ```
+* test it from outside guest instance. After firewall change, everything looks fine.
+```
+cheflab1 [vagrant1] curl http://localhost:8080/punter/punt/
+{'status':'ok'}%
+```
