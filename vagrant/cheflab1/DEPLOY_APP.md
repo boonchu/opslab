@@ -41,11 +41,14 @@ $ curl http://localhost:8080/punter/punt/
 
 *  review again on [tomcat cookbook](https://supermarket.chef.io/cookbooks/tomcat) Con't later.
    - it listens to ipv6, not ipv4. Needs to find the way to tweak it.
+   - updated [march 19th] from stackoverflow [solution](http://serverfault.com/questions/390840/how-does-one-get-tomcat-to-bind-to-ipv4-address)
+
 ```
+problem:
 java    17891 tomcat   35u  IPv6  69854      0t0  TCP *:webcache (LISTEN))
 ```
-   - updated [march 19th] from stackoverflow [solution](http://serverfault.com/questions/390840/how-does-one-get-tomcat-to-bind-to-ipv4-address)
 ```
+solution:
 
 ```
 
