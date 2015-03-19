@@ -61,7 +61,15 @@ node.default['tomcat']['catalina_options'] = '-Djava.net.preferIPv4Stack=true -D
 ```
 
 * when I play with it, as system admin. I felt like the bare metal image need to be tweaking. Since it has no lsof, no system admin tools, firewall protected, etc. Firewall is the problem for me, since I need this guest instance to be exposeable at port 8080 to outside. A lot of work to be done. Stay tuned in next chapter after ServerSpec.
-
+```
+hain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+ 257K  212M ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
+    0     0 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
+    7   420 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
+    8   352 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           state NEW tcp dpt:22
+   21   920 REJECT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           reject-with icmp-host-prohibited
+```
 ###### Reference:
    * [learning kitchen from vagrant](https://github.com/test-kitchen/kitchen-vagrant)
    * [writing the kitchen test](http://kitchen.ci/docs/getting-started/writing-server-test)
