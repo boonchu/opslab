@@ -2,7 +2,7 @@
 
 * start with centos box image and bring up the instance
 ```
-$ vagrant box add centos64-x86_64-minimal centos64-x86_64-minimal.box
+$ vagrant box add centos64-x86_64-minimal http://ks.cracker.org/Kickstart/centos7/centos64-x86_64-minimal.box
 $ vagrant up
 ```
 
