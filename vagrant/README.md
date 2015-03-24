@@ -14,7 +14,7 @@ $ vagrant init
 $ vagrant box list
 ```
 
-* check out https://atlas.hashicorp.com/boxes/search and choose image
+* check out https://atlas.hashicorp.com/boxes/search and choose image from catalog.
 
 * preparing the Vagrantfile
 ```
