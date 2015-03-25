@@ -191,6 +191,19 @@ $ sudo puppet apply --modulepath '/tmp/vagrant-puppet-3/modules-0:/etc/puppet/mo
 	--manifestdir /tmp/vagrant-puppet-3/manifests \
 	--detailed-exitcodes \
 	/tmp/vagrant-puppet-3/manifests/centos64-x86_64-minimal.pp
+
+- how you can manually run puppet inside vagrant instance
+[vagrant@localhost ~]$ sudo puppet module list --modulepath /vagrant/puppet/modules/
+Warning: Missing dependency 'puppetlabs-stdlib':
+  'jfryman-selinux' (v0.2.3) requires 'puppetlabs-stdlib' (>= 0.0.0)
+/vagrant/puppet/modules
+├── fw (???)
+├── httpd (???)
+├── jfryman-selinux (v0.2.3)
+├── motd (???)
+├── ntp (???)
+├── openssh (???)
+└── puppetlabs-firewall (v1.4.0)
 ```
 
 ###### references
