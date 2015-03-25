@@ -1,7 +1,6 @@
 ###### How to install puppet master on CentOS 7
 
-* standard puppet master
-* https://docs.puppetlabs.com/guides/install_puppet/post_install.html
+* [standard puppet master](https://docs.puppetlabs.com/guides/install_puppet/post_install.html)
 
 * enable puppet yum repository
 ```
@@ -32,8 +31,7 @@ $ puppet cert list -all
 + "server1.cracker.org" (SHA256) E4:E1:18:49:5F:3F:03:42:7B:62:38:34:58:55:D4:66:64:D3:0E:09:F6:81:4F:76:22:13:91:F8:78:23:DC:39 (alt names: "DNS:puppet", "DNS:puppet.cracker.org", "DNS:server1.cracker.org")
 ```
 
-* enterprise puppet master 
-* https://docs.puppetlabs.com/pe/latest/install_basic.html#the-puppet-master
+* [enterprise puppet master](https://docs.puppetlabs.com/pe/latest/install_basic.html#the-puppet-master)
 ```
 - remove standard puppet master
 # systemctl stop puppetmaster
@@ -41,7 +39,8 @@ $ puppet cert list -all
 ./puppet-enterprise-installer
 Please go to https://server1.cracker.org:3000 in your browser to continue installation.
 
-- listen to port https
+- enable firewalld to allow port 3000, 8184
+- [verify] web UI listens to port https
 # lsof -i :443
 COMMAND    PID      USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 pe-httpd 17309      root    5u  IPv4 110658      0t0  TCP *:https (LISTEN)
@@ -76,7 +75,7 @@ pe-httpd.service - Puppet Enterprise Apache HTTP Server
            ├─21760 /opt/puppet/sbin/pe-httpd -k start
            └─21779 Passenger RackApp: /opt/puppet/share/puppet-dashboard
 
-- listen to port 8140
+- [verify] puppet listens to port 8140
 # lsof -i :8140
 COMMAND   PID      USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
 java    14773 pe-puppet  127u  IPv6  98982      0t0  TCP *:8140 (LISTEN)
@@ -99,8 +98,7 @@ pe-puppetserver.service                     enabled
 - access from UI, https://server1.cracker.org
 ```
 
-* install enterprise puppet agents
-* https://docs.puppetlabs.com/pe/latest/install_agents.html
+* [install enterprise puppet agents](https://docs.puppetlabs.com/pe/latest/install_agents.html)
 ```
 $ curl -k https://server1.cracker.org:8140/packages/current/install.bash | sudo bash
 ```
@@ -119,8 +117,7 @@ Info: Applying configuration version '1427311187'
 Notice: Finished catalog run in 0.52 seconds
 ```
 
-* add first ntp modules
-* https://docs.puppetlabs.com/pe/latest/quick_start_ntp.html
+* [add first ntp modules](https://docs.puppetlabs.com/pe/latest/quick_start_ntp.html)
 ```
 $ sudo puppet module install puppetlabs-ntp
 etc/puppet/modules
