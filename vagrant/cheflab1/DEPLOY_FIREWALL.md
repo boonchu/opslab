@@ -35,6 +35,6 @@ Chain tomcat (1 references)
 ```
 * test it from outside guest instance. After firewall change, everything looks fine.
 ```
-cheflab1 [vagrant1] curl http://localhost:8080/punter/punt/
+cheflab1 [vagrant1] curl http://localhost:8081/punter/punt/
 {'status':'ok'}%
 ```
