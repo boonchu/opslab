@@ -204,6 +204,15 @@ Warning: Missing dependency 'puppetlabs-stdlib':
 ├── ntp (???)
 ├── openssh (???)
 └── puppetlabs-firewall (v1.4.0)
+
+- find the parameters for config path, template dir:
+$ puppet master --configprint modulepath
+$ puppet master --configprint templatedir
+
+- how to switch on debug mode on Vagrant
+  config.vm.provision :puppet do |puppet|
+    puppet.options = "--verbose --debug"
+  end
 ```
 
 ###### references
