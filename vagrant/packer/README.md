@@ -2,6 +2,8 @@
 * follow this instruction
 ```
 https://github.com/shiguredo/packer-templates
+$ brew tap homebrew/binary
+$ brew install packer
 ```
 * building box image
 ```
