@@ -20,3 +20,7 @@ Build 'virtualbox-iso' finished.
 ==> Builds finished. The artifacts of successful builds are:
 --> virtualbox-iso: 'virtualbox' provider box: centos-7-0-x64-virtualbox.box
 ```
+* make to be availble for my own web site for download from vagrant
+```
+http://ks.cracker.org/Kickstart/centos7/centos-7-0-x64-virtualbox.box
+```
