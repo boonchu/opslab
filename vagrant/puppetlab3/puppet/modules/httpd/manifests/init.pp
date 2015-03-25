@@ -22,12 +22,16 @@ class httpd {
     group   => 'root',
     mode    => '0644',
     source  => "puppet:///modules/httpd/httpd.conf",
+    require => Package['httpd'],
+    notify  => Service['httpd'],
   }
   
   service { 'httpd':
     ensure     => running,
     enable     => true,
     subscribe  => File['/etc/httpd/conf/httpd.conf'],
+    hasstatus  => true,
+    hasrestart => true,
   }
 
 }

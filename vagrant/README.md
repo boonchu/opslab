@@ -185,6 +185,12 @@ centos64-x86_64-minimal   (virtualbox, 0)
 bigchoo at vm1 in ~/Documents/opslab/vagrant/puppetlab3 (master●)
 $ vagrant box remove centos64-x86_64-minimal
 Removing box 'centos64-x86_64-minimal' (v0) with provider 'virtualbox'...
+
+- how vagrant run puppet
+$ sudo puppet apply --modulepath '/tmp/vagrant-puppet-3/modules-0:/etc/puppet/modules' \
+	--manifestdir /tmp/vagrant-puppet-3/manifests \
+	--detailed-exitcodes \
+	/tmp/vagrant-puppet-3/manifests/centos64-x86_64-minimal.pp
 ```
 
 ###### references

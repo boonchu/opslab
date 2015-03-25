@@ -4,6 +4,16 @@
 
 # .../puppet/manifests/site.pp
 
+user { 'dave':
+  ensure => absent,
+}
+
+user { 'katie':
+  ensure => 'present',
+  home   => '/home/katie',
+  shell  => '/bin/bash'
+}
+
 package { 'firewalld':
     ensure => absent,
 }
@@ -40,4 +50,4 @@ class { 'selinux': mode => 'enforcing', }
 include motd
 include openssh
 include httpd
-
+include ntp
