@@ -173,6 +173,19 @@ CentOS release 6.5 (Final)
   - [~\(:$)/~](https://github.com/boonchu/opslab/tree/vagrant1/vagrant/puppetlab2)
   
 ###### 5. [Chef Recipes: Vagrant on Chef](https://github.com/boonchu/opslab/tree/vagrant1/vagrant/cheflab1)
-  
+
+###### Notes:
+```
+- if you are running out of space, try to remove some images.
+bigchoo at vm1 in ~/Documents/opslab/vagrant/puppetlab3 (master●)
+$ vagrant box list
+centos-6.5-x86_64-minimal (virtualbox, 0)
+centos64-x86_64-minimal   (virtualbox, 0)
+
+bigchoo at vm1 in ~/Documents/opslab/vagrant/puppetlab3 (master●)
+$ vagrant box remove centos64-x86_64-minimal
+Removing box 'centos64-x86_64-minimal' (v0) with provider 'virtualbox'...
+```
+
 ###### references
    - [Vagrant Crash Course](https://sysadmincasts.com/episodes/42-crash-course-on-vagrant-revised)
