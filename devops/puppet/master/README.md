@@ -120,7 +120,26 @@ Notice: Finished catalog run in 0.52 seconds
 * [add first ntp modules](https://docs.puppetlabs.com/pe/latest/quick_start_ntp.html)
 ```
 $ sudo puppet module install puppetlabs-ntp
-etc/puppet/modules
-└─┬ puppetlabs-ntp (v3.3.0)
-  └── puppetlabs-stdlib (v4.5.1)
+$ sudo puppet module list
+/etc/puppet/modules
+├── puppetlabs-ntp (v3.3.0)
+└── puppetlabs-stdlib (v4.5.1)
+/usr/share/puppet/modules (no modules installed)
+ \> tree /etc/puppet/modules/ntp -d
+/etc/puppet/modules/ntp
+├── lib
+│   └── puppet
+│       └── parser
+│           └── functions
+├── manifests
+├── spec
+│   ├── acceptance
+│   │   └── nodesets
+│   ├── classes
+│   └── unit
+│       └── puppet
+│           ├── provider
+│           └── type
+├── templates
+└── tests
 ```
