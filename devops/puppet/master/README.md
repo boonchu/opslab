@@ -143,3 +143,5 @@ $ sudo puppet module list
 ├── templates
 └── tests
 ```
+###### Reference
+  * [Courseware-LMS](https://github.com/puppetlabs/courseware-lms-content/tree/master/courses)
