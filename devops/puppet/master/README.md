@@ -145,3 +145,4 @@ $ sudo puppet module list
 ```
 ###### Reference
   * [Courseware-LMS](https://github.com/puppetlabs/courseware-lms-content/tree/master/courses)
+  * [PCP Certified Exam](https://puppetlabs.com/services/certification/puppet-professional/2015)
