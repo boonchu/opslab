@@ -1,5 +1,5 @@
 ###### Starting with puppet lab 3 SELinux and ntp
-* this main reason that I am examining this because of attending RHCSA/RHCE 7 certification exam.
+* It would be pretty cool if I can apply server setup through Puppet with instructions from RHCSA/RHCE 7 training.
 
 * I prepared own centos 7 image with Packer. Start with vagrant box add;
 ```
