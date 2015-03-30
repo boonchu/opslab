@@ -1,0 +1,12 @@
+ip link set dev team0 down
+teamd -t team0 -k
+
+nmcli con delete team0
+nmcli con delete enp0s8
+nmcli con delete enp0s9
+ip link set down enp0s8
+ip link set down enp0s9
+
+nmcli con show
+
+nmcli dev status

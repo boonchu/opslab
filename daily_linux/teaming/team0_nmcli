@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+
+input=$1
+
+if [ "$input" = 'down' ] ; then
+	teamnl team0 ports
+	nmcli con down team0-slave1
+	nmcli con down team0-slave2
+	nmcli con down team0
+	nmcli con delete team0
+	nmcli con delete team0-slave1
+	nmcli con delete team0-slave2
+	nmcli con show
+fi
+
+if [ "$input" = 'up' ] ; then
+	nmcli con add type team con-name team0 ifname team0 \
+		config '{"runner": {"name": "activebackup"}}'
+	nmcli con mod team0 ipv4.addresses '10.16.0.10/24'
+	nmcli con mod team0 ipv4.method manual
+	nmcli con add type team-slave con-name team0-slave1 ifname enp0s8 master team0
+	nmcli con add type team-slave con-name team0-slave2 ifname enp0s9 master team0
+fi

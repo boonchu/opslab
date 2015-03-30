@@ -1,0 +1,9 @@
+teamd -g -f ./teaming.cfg -d
+ip addr add 10.16.0.10/24 dev team0
+ip link set dev team0 up
+
+teamnl team0 ports
+echo "wait for teaming..."
+sleep 45
+echo "ping gateway"
+ping -c 2 10.16.0.1
