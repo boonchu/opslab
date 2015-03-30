@@ -1,5 +1,5 @@
 ###### Daily linux
-I am Redhat Certified Engineer. I am dealing with linux daily user 
+I am [Redhat Certified Engineer](https://www.redhat.com/wapps/training/certification/verify.html?certNumber=110-110-053). I am dealing with linux daily user 
 case from many users. Sharing what were user requests and how to 
 resolve it.
 ```
