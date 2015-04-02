@@ -36,6 +36,11 @@ $ puppet cert list -all
 - remove standard puppet master
 # systemctl stop puppetmaster
 # systemctl mask puppetmaster
+- verify installer
+wget -O - https://downloads.puppetlabs.com/puppetlabs-gpg-signing-key.pub | gpg --import
+gpg --fingerprint 0x1054b7a24bd6ec30
+gpg --verify puppet-enterprise-<version>-<platform>.tar.gz.asc
+- install package
 ./puppet-enterprise-installer
 Please go to https://server1.cracker.org:3000 in your browser to continue installation.
 
