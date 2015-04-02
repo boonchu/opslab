@@ -113,6 +113,7 @@ method 1:
 - Click runonce action and run to trigger a puppet run
 - ssh to client to install agent
 $ curl -k https://server1.cracker.org:8140/packages/current/install.bash | sudo bash
+
 method 2:
 - extract .deb package from https://puppetlabs.com/misc/pe-files/agent-downloads
 - install .deb to web server
