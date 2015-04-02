@@ -12,4 +12,6 @@ systemctl restart pe-httpd
 ```
 # puppet config print confdir
 /etc/puppetlabs/puppet
+- restart after config change
+# service pe-puppet restart
 ```
