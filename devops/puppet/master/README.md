@@ -100,6 +100,17 @@ pe-puppetserver.service                     enabled
 
 * [install enterprise puppet agents](https://docs.puppetlabs.com/pe/latest/install_agents.html)
 ```
+** for instance, you want to add agent to ubuntu node **
+- Use console to add pe_repo::platform::ubuntu_1404_amd64
+- Add class, search available classes and select "pe_repo::platform::ubuntu_1404_amd64" from list
+- Add selected classes
+- Navigate to node page for puppet master
+- Edit and type "pe_repo::platform::ubuntu_1404_amd64" in class field
+- Update
+- From Live management, select control puppet
+- Select only puppet master node
+- Click runonce action and run to trigger a puppet run
+- ssh to client to install agent
 $ curl -k https://server1.cracker.org:8140/packages/current/install.bash | sudo bash
 ```
 - add node to PE puppet
