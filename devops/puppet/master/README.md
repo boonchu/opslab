@@ -133,6 +133,9 @@ gpg -a --export 4BD6EC30 | apt-key add -
 $ sudo /usr/local/bin/puppet agent -t
 Exiting; no certificate found and waitforcert is disabled
 - add from console and rerun 
+or
+- trigger by cert sign client node at master 
+# puppet cert sign vmk3
 $ sudo /usr/local/bin/puppet agent -t
 Info: Retrieving pluginfacts
 Info: Retrieving plugin
