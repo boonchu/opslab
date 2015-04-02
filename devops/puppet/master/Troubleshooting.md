@@ -1,4 +1,4 @@
-* when you have issue with 
+* when you have issue after running puppet agent -t
 ```
 Error: /File[/var/opt/lib/pe-puppet/lib]: Failed to generate additional resources using 'eval_generate': SSL_connect returned=1 errno=0 state=unknown state: certificate verify failed: [unable to get local issuer certificate for /CN=server1.cracker.org]
 ```
