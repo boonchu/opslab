@@ -35,3 +35,5 @@ systemctl restart pe-httpd
 - restart after config change
 # service pe-puppet restart
 ```
+###### Reference
+   * [Troubleshooting](https://docs.puppetlabs.com/guides/troubleshooting.html)
