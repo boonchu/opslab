@@ -118,9 +118,13 @@ method 2:
 - install .deb to web server
 - setup /etc/apt/sources.list to point to web server
 deb http://server1.cracker.org/cobbler/pub/ubuntu-14.04-amd64/ /
-- run apt-get update -y
 - import gpg key
-$ wget -qO - http://server1.cracker.org/cobbler/pub/ubuntu-14.04-amd64/Release.gpg | apt-key add -
+wget http://apt.puppetlabs.com/pubkey.gpg
+gpg --import pubkey.gpg
+gpg -a --export 4BD6EC30 | apt-key add -
+- run apt-get update -y
+- install pe-puppet agent
+# apt-get install pe-agent -y
 ```
 - add node to PE puppet
 ```
