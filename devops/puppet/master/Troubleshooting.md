@@ -8,3 +8,8 @@ puppet cert clean server1.cracker.org
 puppet cert generate server1.cracker.org
 systemctl restart pe-httpd
 ```
+* find place to keep puppet.conf 
+```
+# puppet config print confdir
+/etc/puppetlabs/puppet
+```
