@@ -168,6 +168,7 @@ $ sudo puppet module list
 ├── templates
 └── tests
 ```
+* use example [video](https://puppetlabs.com/webinars/how-manage-ntp) to setup NTP
 ###### Reference
   * [Courseware-LMS](https://github.com/puppetlabs/courseware-lms-content/tree/master/courses)
   * [PCP Certified Exam](https://puppetlabs.com/services/certification/puppet-professional/2015)
