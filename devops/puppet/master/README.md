@@ -167,6 +167,18 @@ $ sudo puppet module list
 │           └── type
 ├── templates
 └── tests
+- From the console, click Classification in the top navigation bar.
+- classification selection
+- From the Classification page, select the default group.
+- Click the Classes tab.
+- In the Class name field, begin typing ntp, and select it from the autocomplete list.
+  - Tip: You only need to add the main ntp class; it contains the other classes from the module.
+- Click Add class.
+- Click Commit 1 change.
+  - Note: The ntp class now appears in the list of classes for the default group, but it has not yet been configured on your nodes. For that to happen, you need to kick off a Puppet run.
+- Navigate to the live management page, and select the Control Puppet tab.
+- Click the runonce action and then Run. This will configure the nodes using the newly-assigned classes.
+
 ```
 * use example [video](https://puppetlabs.com/webinars/how-manage-ntp) to setup NTP
 
