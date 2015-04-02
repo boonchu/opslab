@@ -2,7 +2,16 @@
 ```
 Error: /File[/var/opt/lib/pe-puppet/lib]: Failed to generate additional resources using 'eval_generate': SSL_connect returned=1 errno=0 state=unknown state: certificate verify failed: [unable to get local issuer certificate for /CN=server1.cracker.org]
 ```
-use solution from below to clean up cert and regenerate 
+clean up client cert on master, if any
+```
+$ puppet cert clean <client>
+```
+clean up client cert on client
+```
+$ find /etc/puppetlabs/puppet/ssl -name <client>.pem -delete
+$ puppet agent -t
+```
+if cert clean up on client not helpful, use solution from below to clean up cert and regenerate on master
 ```
 puppet cert clean server1.cracker.org
 puppet cert generate server1.cracker.org
