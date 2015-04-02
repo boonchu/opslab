@@ -120,8 +120,7 @@ method 2:
 - setup /etc/apt/sources.list to point to web server
 deb http://server1.cracker.org/cobbler/pub/ubuntu-14.04-amd64/ /
 - import gpg key
-wget http://apt.puppetlabs.com/pubkey.gpg
-gpg --import pubkey.gpg
+wget -O - https://downloads.puppetlabs.com/puppetlabs-gpg-signing-key.pub | gpg --import
 gpg -a --export 4BD6EC30 | apt-key add -
 - run apt-get update -y
 - install pe-puppet agent
