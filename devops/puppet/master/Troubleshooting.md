@@ -1,9 +1,11 @@
 * verify cert on master and node
 ```
+- on master
 # puppet config print certname
 server1.cracker.org
 # puppet config print dns_alt_names
 server1,server1.cracker.org
+- on node
 # puppet config print --section agent server
 server1.cracker.org
 ```
