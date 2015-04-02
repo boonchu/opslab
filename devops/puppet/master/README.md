@@ -157,3 +157,5 @@ $ sudo puppet module list
 ###### Reference
   * [Courseware-LMS](https://github.com/puppetlabs/courseware-lms-content/tree/master/courses)
   * [PCP Certified Exam](https://puppetlabs.com/services/certification/puppet-professional/2015)
+  * [PE puppet installation](https://github.com/puppetlabs/puppet-docs/blob/master/source/pe/3.7/install_basic.markdown#platform-specific-install-script)
+  * [PE puppet agent installation]()
