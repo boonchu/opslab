@@ -16,7 +16,10 @@ http://fatmin.com/2014/11/09/puppet-how-not-to-generate-a-certificate-with-your-
 ```
 clean up client cert on master, if any
 ```
-$ puppet cert clean <client>
+$ puppet cert clean vmk3
+or
+$ find /etc/puppetlabs/puppet/ssl/ca/signed/ -name vmk3.pem -print -delete
+/etc/puppetlabs/puppet/ssl/ca/signed/vmk3.pem
 ```
 clean up client cert on client
 ```
@@ -26,7 +29,7 @@ $ find /etc/puppetlabs/puppet/ssl -name vmk3* -print -delete
 /etc/puppetlabs/puppet/ssl/certs/vmk3.pem
 $ puppet agent -t
 ```
-if cert clean up on client not helpful, use solution from below to clean up cert and regenerate on master
+[never test - DON't use] if cert clean up on client not helpful, use solution from below to clean up cert and regenerate on master
 ```
 puppet cert clean server1.cracker.org
 puppet cert generate server1.cracker.org
