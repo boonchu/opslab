@@ -104,6 +104,7 @@ pe-puppetserver.service                     enabled
 ```
 
 * [install enterprise puppet agents](https://docs.puppetlabs.com/pe/latest/install_agents.html)
+  - [ubuntu kickstart](https://github.com/boonchu/opslab/blob/master/devops/puppet/master/kickstart/ubuntu/ks.cfg)
 ```
 ** for instance, you want to add agent to ubuntu node **
 method 1:
