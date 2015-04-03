@@ -7,11 +7,12 @@ sudo start network-manager
 - start with configuration tool
 $ sudo nm-connection-editor
 
-- check device status
+- check device status after bonding setup
 $ nmcli d
 DEVICE     TYPE              STATE
-eth2       802-3-ethernet    disconnected
-eth1       802-3-ethernet    disconnected
+bond0      bond              connected
+eth2       802-3-ethernet    connecting (getting IP configuration)
+eth1       802-3-ethernet    connected
 eth0       802-3-ethernet    unmanaged
 ```
 * setup time server
