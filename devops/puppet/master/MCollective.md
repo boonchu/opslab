@@ -53,3 +53,9 @@ Summary statistics for 1 nodes:
          Total run-time (seconds): ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 33.2   max: 33.2
     Time since last run (seconds): ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 536.0  max: 536.0
 ```
+* runonce with splay
+```
+$ mco puppet runonce --splay --splaylimit 12
+
+ * [ ============================================================> ] 1 / 1
+```
