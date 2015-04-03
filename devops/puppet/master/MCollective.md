@@ -59,3 +59,8 @@ $ mco puppet runonce --splay --splaylimit 12
 
  * [ ============================================================> ] 1 / 1
 ```
+* find which nodes has delay when pulling config
+```
+$ mco find -S "resource().config_retrieval_time > 1"
+server1.cracker.org
+```
