@@ -37,3 +37,8 @@ $ timedatectl set-timezone America/Los_Angeles
 interactive tool
 $ sudo dpkg-reconfigure tzdata
 ```
+* setup firewall
+```
+# ufw status
+Status: inactive
+```
