@@ -40,4 +40,16 @@ Summary of Total Time:
 
    Average: 33.22
 ```
+* Summary report
+```
+$ mco puppet summary
+Summary statistics for 1 nodes:
 
+                  Total resources: ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 378.0  max: 378.0
+            Out Of Sync resources: ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 2.0    max: 2.0
+                 Failed resources: ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 1.0    max: 1.0
+                Changed resources: ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 1.0    max: 1.0
+  Config Retrieval time (seconds): ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 3.0    max: 3.0
+         Total run-time (seconds): ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 33.2   max: 33.2
+    Time since last run (seconds): ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁  min: 536.0  max: 536.0
+```
