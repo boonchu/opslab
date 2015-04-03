@@ -25,4 +25,19 @@ Nodes currently doing puppet runs: 0
     Nodes without daemons started: 0
        Daemons started but idling: 1
 ```
+* Show last run summary
+```
+$ mco rpc puppet last_run_summary
+Summary of Config Retrieval Time:
+
+   Average: 3.02
+
+Summary of Total Resources:
+
+   Average: 378
+
+Summary of Total Time:
+
+   Average: 33.22
+```
 
