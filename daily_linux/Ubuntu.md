@@ -17,8 +17,12 @@ eth0       802-3-ethernet    unmanaged
 ```
 * setup time server
 ```
+command line (14.04 trusty)
 - use tzselect to consult TZ
 $ tzselect
 - use timedatectl
 $ timedatectl set-timezone America/Los_Angeles
+
+interactive tool
+$ sudo dpkg-reconfigure tzdata
 ```
