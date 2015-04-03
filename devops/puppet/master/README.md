@@ -228,7 +228,14 @@ Notice: /Stage[main]/My_fw/Firewall[9002 9cdbf91f22d3f4dbc5790ea55bc05aba]/ensur
 ```
 * tune TimeZone
 ```
+- install module Time zone
 $ sudo puppet module install saz-timezone
+
+- change time zone value to "UTC"
+
+- converge at node with puppet agent -t
+# timedatectl | grep 'Timezone'
+        Timezone: UTC (UTC, +0000)
 ```
 * tune [SUDO](https://docs.puppetlabs.com/pe/latest/quick_start_sudo.html)
 
