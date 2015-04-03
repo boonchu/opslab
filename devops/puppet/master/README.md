@@ -190,7 +190,18 @@ $ sudo puppet module list
 
 ```
 * use example [video](https://puppetlabs.com/webinars/how-manage-ntp) to setup NTP
-
+* tune NTP 
+```
+- Add "System Group" to "default"
+- Add "ntp" class 
+  - service_enable = true
+  - servers = [ "time.cracker.org" ]
+- run puppet agent -t
+```
+* tune Firewall
+```
+- Add "my_fw" class
+```
 
 ###### Reference
   * [Courseware-LMS](https://github.com/puppetlabs/courseware-lms-content/tree/master/courses)
