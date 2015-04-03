@@ -225,6 +225,9 @@ Notice: /Stage[main]/My_fw/Firewall[9001 9cdbf91f22d3f4dbc5790ea55bc05aba]/ensur
 Notice: /Stage[main]/My_fw/Firewall[9002 9cdbf91f22d3f4dbc5790ea55bc05aba]/ensure: removed
 
 ```
+* tune [DNS](https://docs.puppetlabs.com/pe/latest/quick_start_dns.html)
+
+* tune [SSH](https://docs.puppetlabs.com/pe/latest/quick_start_ssh.html)
 
 ###### Reference
   * [Courseware-LMS](https://github.com/puppetlabs/courseware-lms-content/tree/master/courses)
