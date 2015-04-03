@@ -1,4 +1,4 @@
-###### MCollective
+###### [MCollective](https://github.com/puppetlabs/mcollective-puppet-agent)
 
 * Check mco live?
 ```
