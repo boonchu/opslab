@@ -202,6 +202,24 @@ $ sudo puppet module list
 * tune [Firewall](https://docs.puppetlabs.com/pe/latest/quick_start_firewall.html)
 ```
 - Add "my_fw" class
+- Can see port 22 SSHD from firewall table
+
+    0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            multiport ports 22 /* 100 allow ssh access */
+    
+- Test Idempotent operation. it all clear afer puppet agent -t
+
+# iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8449 -j ACCEPT
+# iptables -vnL
+Chain INPUT (policy ACCEPT 1 packets, 334 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:8449
+    0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:8449
+
+# puppet agent -t
+
+Notice: /Stage[main]/My_fw/Firewall[9001 9cdbf91f22d3f4dbc5790ea55bc05aba]/ensure: removed
+Notice: /Stage[main]/My_fw/Firewall[9002 9cdbf91f22d3f4dbc5790ea55bc05aba]/ensure: removed
+
 ```
 
 ###### Reference
