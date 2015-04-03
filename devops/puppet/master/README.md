@@ -226,6 +226,10 @@ Notice: /Stage[main]/My_fw/Firewall[9001 9cdbf91f22d3f4dbc5790ea55bc05aba]/ensur
 Notice: /Stage[main]/My_fw/Firewall[9002 9cdbf91f22d3f4dbc5790ea55bc05aba]/ensure: removed
 
 ```
+* tune TimeZone
+```
+$ sudo puppet module install saz-timezone
+```
 * tune [SUDO](https://docs.puppetlabs.com/pe/latest/quick_start_sudo.html)
 
 * tune [DNS](https://docs.puppetlabs.com/pe/latest/quick_start_dns.html)
