@@ -201,6 +201,10 @@ $ sudo puppet module list
 ![ntp](https://github.com/boonchu/opslab/blob/master/devops/puppet/master/ntp.png)
 * tune [Firewall](https://docs.puppetlabs.com/pe/latest/quick_start_firewall.html)
 ```
+- Install puppet firewall module
+
+# puppet module install puppetlabs-firewall
+
 - Add "my_fw" class
 - Can see port 22 SSHD from firewall table
 
