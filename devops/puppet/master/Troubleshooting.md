@@ -16,8 +16,8 @@ http://fatmin.com/2014/11/09/puppet-how-not-to-generate-a-certificate-with-your-
 ```
 clean up client cert on master, if any
 ```
+$ puppet node deactivate vmk3
 $ puppet cert clean vmk3
-or
 $ find /etc/puppetlabs/puppet/ssl/ca/signed/ -name vmk3.pem -print -delete
 /etc/puppetlabs/puppet/ssl/ca/signed/vmk3.pem
 ```
