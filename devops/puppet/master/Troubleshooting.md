@@ -23,10 +23,12 @@ $ find /etc/puppetlabs/puppet/ssl/ca/signed/ -name vmk3.pem -print -delete
 ```
 clean up client cert on client
 ```
+$ service pe-puppet stop
 $ find /etc/puppetlabs/puppet/ssl -name vmk3* -print -delete
 /etc/puppetlabs/puppet/ssl/public_keys/vmk3.pem
 /etc/puppetlabs/puppet/ssl/private_keys/vmk3.pem
 /etc/puppetlabs/puppet/ssl/certs/vmk3.pem
+$ service pe-puppet start
 $ puppet agent -t
 ```
 [never test - DON't use] if cert clean up on client not helpful, use solution from below to clean up cert and regenerate on master
