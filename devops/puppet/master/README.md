@@ -151,6 +151,8 @@ Notice: Finished catalog run in 0.52 seconds
 
 * [add first ntp modules](https://docs.puppetlabs.com/pe/latest/quick_start_ntp.html)
 ```
+$ sudo puppet config set modulepath /etc/puppetlabs/puppet/modules
+$ sudo puppet config print modulepath
 $ sudo puppet module install puppetlabs-ntp
 $ sudo puppet module list
 /etc/puppet/modules
