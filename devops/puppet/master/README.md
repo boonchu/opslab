@@ -198,6 +198,7 @@ $ sudo puppet module list
   - servers = [ "time.cracker.org" ]
 - run puppet agent -t
 ```
+![ntp](https://github.com/boonchu/opslab/blob/master/devops/puppet/master/ntp.png)
 * tune [Firewall](https://docs.puppetlabs.com/pe/latest/quick_start_firewall.html)
 ```
 - Add "my_fw" class
