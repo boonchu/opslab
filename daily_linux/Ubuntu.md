@@ -17,6 +17,10 @@ eth0       802-3-ethernet    unmanaged
 ```
 * setup time server
 ```
+command line 
+$ echo "America/Los_Angeles" | sudo tee /etc/timezone
+$ sudo dpkg-reconfigure --frontend noninteractive tzdata
+
 command line (14.04 trusty)
 - use tzselect to consult TZ
 $ tzselect
