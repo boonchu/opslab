@@ -198,7 +198,7 @@ $ sudo puppet module list
   - servers = [ "time.cracker.org" ]
 - run puppet agent -t
 ```
-* tune Firewall
+* tune [Firewall](https://docs.puppetlabs.com/pe/latest/quick_start_firewall.html)
 ```
 - Add "my_fw" class
 ```
