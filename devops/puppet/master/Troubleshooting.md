@@ -12,6 +12,7 @@ server1.cracker.org
 * when you have issue after running puppet agent -t
 ```
 Error: Could not request certificate: The certificate retrieved from the master does not match the agent's private key.
+http://fatmin.com/2014/11/09/puppet-how-not-to-generate-a-certificate-with-your-correct-hostname/
 ```
 clean up client cert on master, if any
 ```
