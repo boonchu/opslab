@@ -64,3 +64,15 @@ $ mco puppet runonce --splay --splaylimit 12
 $ mco find -S "resource().config_retrieval_time > 1"
 server1.cracker.org
 ```
+* find status from node
+```
+$ mco service httpd status
+
+ * [ ============================================================> ] 1 / 1
+
+   server1.cracker.org: running
+
+Summary of Service Status:
+
+   running = 1
+```
