@@ -70,3 +70,4 @@ https://github.com/nathanielksmith/puppet-tilde/issues/17
 ###### Reference
    * [Troubleshooting](https://docs.puppetlabs.com/guides/troubleshooting.html)
    * [Troubleshooting 2](https://docs.puppetlabs.com/pe/latest/trouble_comms.html)
+   * [Puppet Enterprise Troubleshooting](http://www.slideshare.net/PuppetLabs/puppet-conf-slides-25547169)
