@@ -1,5 +1,7 @@
 class resolver (
    $nameservers,
+   $domain_name,
+   $search_domain
  ) {
 
    file { '/etc/resolv.conf':
