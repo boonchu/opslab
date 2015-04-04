@@ -78,3 +78,4 @@ Summary of Service Status:
 ```
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
+  - [Mcollective configuration](https://docs.puppetlabs.com/mcollective/configure/server.html)
