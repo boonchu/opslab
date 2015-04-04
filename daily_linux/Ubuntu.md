@@ -42,3 +42,23 @@ $ sudo dpkg-reconfigure tzdata
 # ufw status
 Status: inactive
 ```
+* list package content
+```
+# dpkg-query -L pe-puppet | head -10
+/.
+/var
+/var/log
+/var/log/pe-puppet
+/var/opt
+/var/opt/lib
+/var/opt/lib/pe-puppet
+/var/opt/lib/pe-puppet/reports
+/var/opt/lib/pe-puppet/ssl
+/usr
+
+# dpkg-query -c pe-puppet | head -10
+/var/lib/dpkg/info/pe-puppet.prerm
+/var/lib/dpkg/info/pe-puppet.postinst
+/var/lib/dpkg/info/pe-puppet.md5sums
+/var/lib/dpkg/info/pe-puppet.postrm
+```
