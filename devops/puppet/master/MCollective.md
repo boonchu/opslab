@@ -96,6 +96,11 @@ $ ps -u -p 18639
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root     18639  0.0  1.9 224924 20108 ?        Sl   03:16   0:22 /opt/puppet/bin/ruby /opt/puppet/sbin/mcollectived --pid /var/run/pe-mcollective.pid
 
+- allow the port 61613 on puppet master
+$ firewall-cmd --permanent --add-port=61613/tcp
+success
+$ firewall-cmd --reload
+success
 ```
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
