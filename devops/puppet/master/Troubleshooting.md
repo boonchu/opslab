@@ -60,6 +60,21 @@ solution:
 ```
 https://github.com/nathanielksmith/puppet-tilde/issues/17
 ```
+* found weird issue from PE puppet since I previously installed standard puppet and overwrite with enterprise edition. When I run the puppet agent -t, it fails and thrown with CA error.
+```
+-- test run --
+$ /opt/puppet/bin/puppet agent --onetime --no-daemonize \
+  --color=false --show_diff --verbose --splay --splaylimit 120
+-- move binary puppet --  
+$  ln -s /opt/puppet/bin/puppet /bin/puppet
+\> puppet agent -t
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Loading facts
+Info: Caching catalog for server1.cracker.org
+Info: Applying configuration version '1428163129'
+Notice: Finished catalog run in 7.90 seconds
+```
 * find place to keep puppet.conf 
 ```
 # puppet config print confdir
