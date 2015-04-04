@@ -9,11 +9,26 @@ server1,server1.cracker.org
 # puppet config print --section agent server
 server1.cracker.org
 ```
+* when you see message after running puppet agent -t
+```
+Exiting; no certificate found and waitforcert is disabled
+```
+solution:
+```
+# puppet agent --no-daemonize --onetime --verbose
+Exiting; no certificate found and waitforcert is disabledv
+
+# puppet config set certificate_revocation false
+
+# puppet agent --no-daemonize --server server1.cracker.org --onetime --verbose
+Exiting; no certificate found and waitforcert is disabled
+```
 * when you have issue after running puppet agent -t
 ```
 Error: Could not request certificate: The certificate retrieved from the master does not match the agent's private key.
 http://fatmin.com/2014/11/09/puppet-how-not-to-generate-a-certificate-with-your-correct-hostname/
 ```
+solution:
 clean up client cert on master, if any
 ```
 $ puppet node deactivate vmk3
