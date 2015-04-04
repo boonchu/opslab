@@ -92,3 +92,12 @@ deb http://us-west-2.ec2.archive.ubuntu.com/ubuntu/ precise main restricted univ
 deb http://us-west-2.ec2.archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse
 deb http://us-west-2.ec2.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse
 ```
+* trusty soruces repository guide
+```
+http://ubuntuguide.org/wiki/Ubuntu_Trusty_Packages_and_Repositories
+
+- clean up after update
+$ sudo apt-get update 
+$ sudo apt-get clean
+$ sudo apt-get autoremove
+```
