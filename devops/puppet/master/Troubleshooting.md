@@ -61,3 +61,4 @@ systemctl restart pe-httpd
 ```
 ###### Reference
    * [Troubleshooting](https://docs.puppetlabs.com/guides/troubleshooting.html)
+   * [Troubleshooting 2](https://docs.puppetlabs.com/pe/latest/trouble_comms.html)
