@@ -78,7 +78,7 @@ Summary of Service Status:
 ```
 * test remote port (61613) on vmk3
 ```
-$ mco ping -I vmk3.cracker.org
+$ mco ping -I vmk3
 ---- ping statistics ----
 No responses received
 
@@ -101,6 +101,11 @@ $ firewall-cmd --permanent --add-port=61613/tcp
 success
 $ firewall-cmd --reload
 success
+
+$ mco ping -I vmk3
+vmk3                                     time=49.64 ms
+---- ping statistics ----
+1 replies max: 49.64 min: 49.64 avg: 49.64
 ```
 * puppet runonce
 ```
