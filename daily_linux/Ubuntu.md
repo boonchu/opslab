@@ -81,4 +81,14 @@ W: Failed to fetch http://us.archive.ubuntu.com/ubuntu/dists/trusty-updates/univ
 try this solution:
 http://askubuntu.com/questions/37753/how-can-i-get-apt-to-use-a-mirror-close-to-me-or-choose-a-faster-mirror
 
+here is mine apt sources.lst
+# West Coast US (California):
+deb http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse
+deb http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse
+deb http://us-west-1.ec2.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse
+
+# West Coast US (Oregon):
+deb http://us-west-2.ec2.archive.ubuntu.com/ubuntu/ precise main restricted universe multiverse
+deb http://us-west-2.ec2.archive.ubuntu.com/ubuntu/ precise-updates main restricted universe multiverse
+deb http://us-west-2.ec2.archive.ubuntu.com/ubuntu/ precise-security main restricted universe multiverse
 ```
