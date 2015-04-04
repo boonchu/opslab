@@ -102,6 +102,12 @@ success
 $ firewall-cmd --reload
 success
 ```
+* puppet runonce
+```
+$ mco puppet runonce -I vmk3
+ * [ ============================================================> ] 1 / 1
+Finished processing 1 / 1 hosts in 647.33 ms
+```
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
   - [Mcollective configuration](https://docs.puppetlabs.com/mcollective/configure/server.html)
