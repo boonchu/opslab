@@ -76,6 +76,12 @@ Summary of Service Status:
 
    running = 1
 ```
+* test remote port (61613) on vmk3
+```
+$ mco ping -I vmk3.cracker.org
+---- ping statistics ----
+No responses received
+```
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
   - [Mcollective configuration](https://docs.puppetlabs.com/mcollective/configure/server.html)
