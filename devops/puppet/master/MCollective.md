@@ -81,6 +81,8 @@ Summary of Service Status:
 $ mco ping -I vmk3.cracker.org
 ---- ping statistics ----
 No responses received
+see solution if mcollective daemon is not binding to network port
+http://serverfault.com/questions/342653/mcollective-daemon-not-binding-a-network-socket
 ```
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
