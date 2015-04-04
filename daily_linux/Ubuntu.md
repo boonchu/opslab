@@ -62,3 +62,15 @@ Status: inactive
 /var/lib/dpkg/info/pe-puppet.md5sums
 /var/lib/dpkg/info/pe-puppet.postrm
 ```
+* firewall troubleshooting
+```
+- if puppet firewall has been set, you may need to turn off
+sudo iptables-save > /root/firewall.rules
+iptables --flush
+iptables --table nat --flush
+iptables --delete-chain
+iptables --table nat --delete-chain
+echo "1" > /proc/sys/net/ipv4/ip_forward
+iptables -F
+
+```
