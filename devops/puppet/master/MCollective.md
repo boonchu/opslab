@@ -85,3 +85,4 @@ No responses received
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
   - [Mcollective configuration](https://docs.puppetlabs.com/mcollective/configure/server.html)
+  - [Getting started](https://docs.puppetlabs.com/mcollective/reference/basic/gettingstarted_redhat.html)
