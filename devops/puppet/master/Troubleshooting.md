@@ -52,6 +52,14 @@ puppet cert clean server1.cracker.org
 puppet cert generate server1.cracker.org
 systemctl restart pe-httpd
 ```
+* error from puppet agent -t
+```
+Error: /File[/var/lib/puppet/facts.d]: Could not evaluate: Could not retrieve file metadata for puppet://puppet/pluginfacts: getaddrinfo: Name or service not known
+```
+solution:
+```
+https://github.com/nathanielksmith/puppet-tilde/issues/17
+```
 * find place to keep puppet.conf 
 ```
 # puppet config print confdir
