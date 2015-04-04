@@ -74,3 +74,11 @@ echo "1" > /proc/sys/net/ipv4/ip_forward
 iptables -F
 
 ```
+* if you are encountering like this sources, so frastrating.
+```
+W: Failed to fetch http://us.archive.ubuntu.com/ubuntu/dists/trusty-updates/universe/i18n/Translation-en  Cannot initiate the connection to us.archive.ubuntu.com:80 (2001:67c:1562::13). - connect (101: Network is unreachable) [IP: 2001:67c:1562::13 80]
+
+try this solution:
+http://askubuntu.com/questions/37753/how-can-i-get-apt-to-use-a-mirror-close-to-me-or-choose-a-faster-mirror
+
+```
