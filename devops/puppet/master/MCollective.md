@@ -81,8 +81,21 @@ Summary of Service Status:
 $ mco ping -I vmk3.cracker.org
 ---- ping statistics ----
 No responses received
+
 see solution if mcollective daemon is not binding to network port
 http://serverfault.com/questions/342653/mcollective-daemon-not-binding-a-network-socket
+
+==> /var/log/pe-mcollective/mcollective.log <==
+I, [2015-04-04T16:25:21.340242 #18639]  INFO -- : activemq.rb:138:in `on_ssl_connecting' Establishing SSL session with stomp+ssl://mcollective@server1.cracker.org:61613
+E, [2015-04-04T16:25:21.342266 #18639] ERROR -- : activemq.rb:148:in `on_ssl_connectfail' SSL session creation with stomp+ssl://mcollective@server1.cracker.org:61613 failed: No route to host - connect(2)
+I, [2015-04-04T16:25:21.342346 #18639]  INFO -- : activemq.rb:128:in `on_connectfail' TCP Connection to stomp+ssl://mcollective@server1.cracker.org:61613 failed on attempt 1587
+
+$ sudo cat /var/run/pe-mcollective.pid
+18639
+$ ps -u -p 18639
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root     18639  0.0  1.9 224924 20108 ?        Sl   03:16   0:22 /opt/puppet/bin/ruby /opt/puppet/sbin/mcollectived --pid /var/run/pe-mcollective.pid
+
 ```
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
