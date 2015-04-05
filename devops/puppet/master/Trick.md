@@ -31,7 +31,7 @@ $ puppet parser dump pre.pp
 # puppet config print --section agent config
 /etc/puppetlabs/puppet/puppet.conf
 ```
-* enable noop mode
+* enable [noop mode](http://nrvale0.github.io/blog/2014/04/10/the-basics-of-puppet-noop/)
 ```
 [agent]
   noop = true
