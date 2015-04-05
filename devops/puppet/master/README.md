@@ -149,7 +149,8 @@ Info: Caching catalog for vmk3.cracker.org
 Info: Applying configuration version '1427311187'
 Notice: Finished catalog run in 0.52 seconds
 ```
-
+* how puppet agent get catalog to deploy?
+![puppet flow](https://github.com/boonchu/opslab/blob/master/devops/puppet/master/puppet_flow.png)
 * [add first ntp modules](https://docs.puppetlabs.com/pe/latest/quick_start_ntp.html)
 ```
 $ sudo puppet config set modulepath /etc/puppetlabs/puppet/modules
