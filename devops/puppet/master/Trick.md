@@ -39,5 +39,7 @@ $ puppet parser dump pre.pp
 * run with noop mode
 ```
 $ puppet agent -t --noop
-$ puppet apply --noop /path/to/puppetcode.pp
+$ puppet apply --noop init.pp
+Notice: Compiled catalog for server1.cracker.org in environment production in 0.01 seconds
+Notice: Finished catalog run in 0.21 seconds
 ```
