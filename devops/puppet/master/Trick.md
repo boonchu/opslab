@@ -26,3 +26,18 @@ $ puppet parser dump pre.pp
       (action => accept)))
 ))
 ```   
+* find config location from puppet agent
+```
+# puppet config print --section agent config
+/etc/puppetlabs/puppet/puppet.conf
+```
+* enable noop mode
+```
+[agent]
+  noop = true
+```
+* run with noop mode
+```
+$ puppet agent -t --noop
+$ puppet apply --noop /path/to/puppetcode.pp
+```
