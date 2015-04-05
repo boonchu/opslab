@@ -2,8 +2,10 @@
   * [how to configure Class parameter input in puppet](https://docs.puppetlabs.com/pe/latest/puppet_assign_configurations.html)
   * [SSHD with Hiera](https://puppetlabs.com/blog/first-look-installing-and-using-hiera)
   * [resolv.conf with Hiera](https://puppetlabs.com/blog/the-problem-with-separating-data-from-puppet-code)
+  * [Quick tips how to use Hiera](https://dmsimard.com/2014/02/15/quick-hiera-tips/)
 
 ###### example: from git
+* use code from https://github.com/boonchu/opslab/tree/master/devops/puppet/master/Hiera
 * use three simple way for configure /etc/test_file[X].conf
 ```
 - from three test case from s1, s2, and s3 module
