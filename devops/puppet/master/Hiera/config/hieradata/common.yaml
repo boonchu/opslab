@@ -1,0 +1,3 @@
+---
+dnsserver    : '4.4.4.4'
+searchdomain : 'puppetlabs.s4'
