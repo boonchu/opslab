@@ -3,6 +3,7 @@
   * [SSHD with Hiera](https://puppetlabs.com/blog/first-look-installing-and-using-hiera)
   * [resolv.conf with Hiera](https://puppetlabs.com/blog/the-problem-with-separating-data-from-puppet-code)
   * [Quick tips how to use Hiera](https://dmsimard.com/2014/02/15/quick-hiera-tips/)
+  * [Hiera Data Encryption](https://github.com/TomPoulton/hiera-eyaml)
 
 ###### example: from git
 * use code from https://github.com/boonchu/opslab/tree/master/devops/puppet/master/Hiera
