@@ -1,4 +1,5 @@
 ###### [MCollective](https://github.com/puppetlabs/mcollective-puppet-agent)
+  - MCollective use [Pub/Sub MQ like ActiveMQ or RabbitMQ](http://docs.puppetlabs.com/mcollective/deploy/middleware/) technology 
   - Testing with CentOS 7
 
 * Check mco live?
