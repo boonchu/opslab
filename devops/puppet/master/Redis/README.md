@@ -167,6 +167,20 @@ vmk3.cracker.org:6379> zrange countries 0 -1
 3) "thailand"
 4) "USA"
 5) "maxico"
+
+- hashing
+vmk3.cracker.org:6379> hmset userinfo:1 username boonchu password redis email bigchoo@gmail.com
+OK
+vmk4.cracker.org:6379> hgetall userinfo:1
+1) "username"
+2) "boonchu"
+3) "password"
+4) "redis"
+5) "email"
+6) "bigchoo@gmail.com"
+vmk4.cracker.org:6379> hmget userinfo:1 username email
+1) "boonchu"
+2) "bigchoo@gmail.com"
 ```
 * This is good slide to explain how [Redis cluster](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0CCUQFjAB&url=http%3A%2F%2Fredis.io%2Fpresentation%2FRedis_Cluster.pdf&ei=TDkkVbajH8OrogTpl4CACQ&usg=AFQjCNFgKv0Vvqs1wRFGz_Egx1wIotzMTg&sig2=Za00HII1Dw0xh9dUJxpVPg&bvm=bv.90237346,d.cGU) works
 * This is other two projects that I want to test with this redis cluster. Since my host is running out memory, I have to stop right here. I perhaps consider ec2 for server deployment, not using local centos/ubuntu kickstart host.
