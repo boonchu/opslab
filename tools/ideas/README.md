@@ -1,5 +1,8 @@
 ##### Experimented in codes and tools and other ideas
 
+* Other good links 
+  - [Free for dev](https://github.com/ripienaar/free-for-dev)
+
 * Admin Solutions:
   - [stackexchange](http://unix.stackexchange.com)
   - [stackoverflow](http://www.stackoverflow.com)
