@@ -150,6 +150,23 @@ vmk3.cracker.org:6379> EXEC
 2) (integer) 16
 3) (integer) 17
 
+- sorting
+vmk3.cracker.org:6379> zadd countries 9 thailand
+(integer) 1
+vmk3.cracker.org:6379> zadd countries 10 USA
+(integer) 1
+vmk3.cracker.org:6379> zadd countries 0.8 japan
+(integer) 1
+vmk3.cracker.org:6379> zadd countries 0.5 korea
+(integer) 1
+vmk3.cracker.org:6379> zadd countries 100 maxico
+(integer) 1
+vmk3.cracker.org:6379> zrange countries 0 -1
+1) "korea"
+2) "japan"
+3) "thailand"
+4) "USA"
+5) "maxico"
 ```
 * This is good slide to explain how [Redis cluster](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0CCUQFjAB&url=http%3A%2F%2Fredis.io%2Fpresentation%2FRedis_Cluster.pdf&ei=TDkkVbajH8OrogTpl4CACQ&usg=AFQjCNFgKv0Vvqs1wRFGz_Egx1wIotzMTg&sig2=Za00HII1Dw0xh9dUJxpVPg&bvm=bv.90237346,d.cGU) works
 * This is other two projects that I want to test with this redis cluster. Since my host is running out memory, I have to stop right here. I perhaps consider ec2 for server deployment, not using local centos/ubuntu kickstart host.
