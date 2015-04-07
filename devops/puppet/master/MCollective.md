@@ -1,4 +1,5 @@
 ###### [MCollective](https://github.com/puppetlabs/mcollective-puppet-agent)
+  - Use for building server orchestration or parallel job execution
   - MCollective use [Pub/Sub MQ like ActiveMQ or RabbitMQ](http://docs.puppetlabs.com/mcollective/deploy/middleware/) technology 
   - Testing with CentOS 7
 
