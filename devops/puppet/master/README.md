@@ -241,6 +241,7 @@ $ sudo puppet module install saz-timezone
 * tune [SUDO](https://docs.puppetlabs.com/pe/latest/quick_start_sudo.html)
 
 * tune [DNS](https://docs.puppetlabs.com/pe/latest/quick_start_dns.html)
+  - refer to this doc for [templates with ruby code](https://docs.puppetlabs.com/guides/templating.html#referencing-variables)
 ```
 class resolver (
    $nameservers,
