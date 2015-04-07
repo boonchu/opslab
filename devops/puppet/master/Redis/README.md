@@ -107,3 +107,25 @@ Chain INPUT (policy ACCEPT 14 packets, 1599 bytes)
 [9096] 07 Apr 12:35:09.113 * MASTER <-> SLAVE sync: Loading DB in memory
 [9096] 07 Apr 12:35:09.113 * MASTER <-> SLAVE sync: Finished with success
 ```
+###### Testing Redis cluster
+```
+- pushing from master
+[bigchoo@vmk2 ~]$ redis-cli -h vmk3.cracker.org
+- you need basic authentication before setting key-value
+vmk3.cracker.org:6379> set a "hello"
+(error) NOAUTH Authentication required.
+vmk3.cracker.org:6379> auth redis
+OK
+vmk3.cracker.org:6379> set a "hello"
+OK
+vmk3.cracker.org:6379> get a
+"hello"
+vmk3.cracker.org:6379>quit
+
+- retrieving from slave
+[bigchoo@vmk2 ~]$ redis-cli -h vmk4.cracker.org
+vmk4.cracker.org:6379> auth redis
+OK
+vmk4.cracker.org:6379> get a
+"hello"
+```
