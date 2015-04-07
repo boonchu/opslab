@@ -89,4 +89,14 @@ class my_redis(
                 proto  => tcp,
                 action => accept,
         }
+        
+# iptables -vnL
+Chain INPUT (policy ACCEPT 14 packets, 1599 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0            /* 000 accept all icmp */
+    0     0 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0            /* 001 accept all to lo interface */
+ 6953 3604K ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* 002 accept related established rules */ state RELATED,ESTABLISHED
+    0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            multiport ports 6379 /* 100 allow redis access */
+    3   192 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            multiport ports 22 /* 100 allow ssh access */
+    0     0 DROP       tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            /* 999 drop all other requests */
 ```
