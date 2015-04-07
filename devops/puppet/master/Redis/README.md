@@ -79,5 +79,31 @@ class my_redis(
 [9096] 07 Apr 12:13:16.601 * Connecting to MASTER vmk3.cracker.org:6379
 [9096] 07 Apr 12:13:16.605 * MASTER <-> SLAVE sync started
 
-- if you notice, server still block the 6379 port. firewall need to be modified for allowing service.
+- if you notice, MASTER still block the 6379 port. firewall need to be modified for allowing service.
+```
+* adding firewall port 6379
+```
+        # Allow Redis
+        firewall { '100 allow redis access':
+                port   => '6379',
+                proto  => tcp,
+                action => accept,
+        }
+        
+# iptables -vnL
+Chain INPUT (policy ACCEPT 14 packets, 1599 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0            /* 000 accept all icmp */
+    0     0 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0            /* 001 accept all to lo interface */
+ 6953 3604K ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* 002 accept related established rules */ state RELATED,ESTABLISHED
+    0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            multiport ports 6379 /* 100 allow redis access */
+    3   192 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            multiport ports 22 /* 100 allow ssh access */
+    0     0 DROP       tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            /* 999 drop all other requests */
+```
+* log looks sync after firewall allows port
+```
+[9096] 07 Apr 12:35:09.112 * MASTER <-> SLAVE sync: receiving 18 bytes from master
+[9096] 07 Apr 12:35:09.112 * MASTER <-> SLAVE sync: Flushing old data
+[9096] 07 Apr 12:35:09.113 * MASTER <-> SLAVE sync: Loading DB in memory
+[9096] 07 Apr 12:35:09.113 * MASTER <-> SLAVE sync: Finished with success
 ```
