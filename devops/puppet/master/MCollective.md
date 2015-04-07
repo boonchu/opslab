@@ -1,4 +1,5 @@
 ###### [MCollective](https://github.com/puppetlabs/mcollective-puppet-agent)
+  - Testing with CentOS 7
 
 * Check mco live?
 ```
