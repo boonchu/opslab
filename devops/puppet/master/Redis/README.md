@@ -79,5 +79,5 @@ class my_redis(
 [9096] 07 Apr 12:13:16.601 * Connecting to MASTER vmk3.cracker.org:6379
 [9096] 07 Apr 12:13:16.605 * MASTER <-> SLAVE sync started
 
-- if you notice, server still block the 6379 port. firewall need to be modified for allowing service.
+- if you notice, MASTER still block the 6379 port. firewall need to be modified for allowing service.
 ```
