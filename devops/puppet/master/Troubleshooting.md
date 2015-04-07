@@ -45,6 +45,9 @@ $ find /etc/puppetlabs/puppet/ssl -name vmk3* -print -delete
 /etc/puppetlabs/puppet/ssl/private_keys/vmk3.pem
 /etc/puppetlabs/puppet/ssl/certs/vmk3.pem
 $ puppet config set server server1.cracker.org
+- note: certname need to match with hostname
+$ puppet config print certname prior to running first time puppet agent -t
+vmk3
 $ service pe-puppet start
 $ puppet agent -t
 ```
