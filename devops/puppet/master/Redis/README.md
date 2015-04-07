@@ -134,3 +134,7 @@ vmk4.cracker.org:6379> SET users:GeorgeWashington "job: President, born:1732, di
 (error) READONLY You can't write against a read only slave.
 
 ```
+* This is good slide to explain how [Redis cluster](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0CCUQFjAB&url=http%3A%2F%2Fredis.io%2Fpresentation%2FRedis_Cluster.pdf&ei=TDkkVbajH8OrogTpl4CACQ&usg=AFQjCNFgKv0Vvqs1wRFGz_Egx1wIotzMTg&sig2=Za00HII1Dw0xh9dUJxpVPg&bvm=bv.90237346,d.cGU) works
+* This is other two projects that I want to test with this redis cluster. Since my host is running out memory, I have to stop right here. I perhaps consider ec2 for server deployment, not using local centos/ubuntu kickstart host.
+  - [docker-twemproxy](https://github.com/jgoodall/docker-twemproxy)
+  
