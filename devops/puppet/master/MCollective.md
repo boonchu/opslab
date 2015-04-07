@@ -114,6 +114,15 @@ $ mco puppet runonce -I vmk3
  * [ ============================================================> ] 1 / 1
 Finished processing 1 / 1 hosts in 647.33 ms
 ```
+* find uptime 
+```
+$ mco inventory vmk3  | grep uptime
+      system_uptime => {"seconds"=>"7237", "hours"=>"2", "days"=>"0", "uptime"=>"2:00 hours"}
+      uptime => 2:00 hours
+      uptime_days => 0
+      uptime_hours => 2
+      uptime_seconds => 7237
+```
 ###### Reference
   - [Puppet Orchestration](https://docs.puppetlabs.com/pe/latest/orchestration_invoke_cli.html)
   - [Mcollective configuration](https://docs.puppetlabs.com/mcollective/configure/server.html)
