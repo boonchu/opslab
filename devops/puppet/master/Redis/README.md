@@ -81,3 +81,12 @@ class my_redis(
 
 - if you notice, MASTER still block the 6379 port. firewall need to be modified for allowing service.
 ```
+* adding firewall port 6379
+```
+        # Allow Redis
+        firewall { '100 allow redis access':
+                port   => '6379',
+                proto  => tcp,
+                action => accept,
+        }
+```
