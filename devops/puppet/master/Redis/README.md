@@ -128,4 +128,9 @@ vmk4.cracker.org:6379> auth redis
 OK
 vmk4.cracker.org:6379> get a
 "hello"
+
+- mode set NOT to write on slave
+vmk4.cracker.org:6379> SET users:GeorgeWashington "job: President, born:1732, dislikes: cherry trees"
+(error) READONLY You can't write against a read only slave.
+
 ```
