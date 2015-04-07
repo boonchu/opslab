@@ -8,6 +8,13 @@ class my_redis(
     		redis_package  => true,
 	}
 
+	# Allow Redis
+  	firewall { '100 allow redis access':
+    		port   => '6379',
+    		proto  => tcp,
+    		action => accept,
+  	}
+
 	service { 'redis-server': 
 		ensure => stopped,
 		enable => false,
