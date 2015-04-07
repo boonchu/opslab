@@ -100,3 +100,10 @@ Chain INPUT (policy ACCEPT 14 packets, 1599 bytes)
     3   192 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            multiport ports 22 /* 100 allow ssh access */
     0     0 DROP       tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            /* 999 drop all other requests */
 ```
+* log looks sync after firewall allows port
+```
+[9096] 07 Apr 12:35:09.112 * MASTER <-> SLAVE sync: receiving 18 bytes from master
+[9096] 07 Apr 12:35:09.112 * MASTER <-> SLAVE sync: Flushing old data
+[9096] 07 Apr 12:35:09.113 * MASTER <-> SLAVE sync: Loading DB in memory
+[9096] 07 Apr 12:35:09.113 * MASTER <-> SLAVE sync: Finished with success
+```
