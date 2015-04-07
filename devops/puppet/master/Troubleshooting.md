@@ -38,11 +38,13 @@ $ find /etc/puppetlabs/puppet/ssl/ca/signed/ -name vmk3.pem -print -delete
 ```
 clean up client cert on client
 ```
+- centos6/ubuntu instruction
 $ service pe-puppet stop
 $ find /etc/puppetlabs/puppet/ssl -name vmk3* -print -delete
 /etc/puppetlabs/puppet/ssl/public_keys/vmk3.pem
 /etc/puppetlabs/puppet/ssl/private_keys/vmk3.pem
 /etc/puppetlabs/puppet/ssl/certs/vmk3.pem
+$ puppet config set server server1.cracker.org
 $ service pe-puppet start
 $ puppet agent -t
 ```
