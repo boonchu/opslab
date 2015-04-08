@@ -1,4 +1,30 @@
 ###### Ubuntu 
+* how to recompile the sources
+```
+- build source file
+$ sudo apt-get install dpkg-dev
+$ sudo apt-get build-dep network-manager-gnome
+$ apt-get source network-manager-gnome
+$ cd network-manager-applet-0.X.X.X/
+$ ./configure --prefix=/opt/nm/ --disable-more-warnings \
+  --disable-migration --enable-introspection=no \
+  --with-modem-manager-1=no --with-gtkver=2 --without-bluetooth
+$ make
+$ sudo make install
+$ cd /opt/nm/
+
+- take content and transfer
+$ tar czf ~/Desktop/nm-custom.tgz 
+
+- copy to target host
+$ sudo mkdir /opt/nm
+$ cd /opt/nm
+$ sudo tar xvf ~/nm-custom.tgz
+$ sudo apt-get --no-install-recommends install libnm-glib-vpn1
+
+- run command 
+$ sudo /opt/nm/bin/nm-connection-editor
+```
 * install [Network Manager on 14.04](https://help.ubuntu.com/community/NetworkManager)
 ```
 sudo apt-get install network-manager network-manager-gnome
