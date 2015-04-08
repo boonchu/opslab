@@ -1,4 +1,9 @@
 ###### Ubuntu 
+* what is your ubuntu release
+```
+# lsb_release -sc
+trusty
+```
 * how to recompile the sources
 ```
 - build source file
