@@ -68,6 +68,9 @@ bond0      bond              connected
 eth2       802-3-ethernet    connecting (getting IP configuration)
 eth1       802-3-ethernet    connected
 eth0       802-3-ethernet    unmanaged
+
+- (note) turn off setting eth0 on /etc/network/interfaces to allow NM to manage eth0 device && reboot.
+
 $ nmcli c
 NAME                      UUID                                   TYPE              TIMESTAMP-REAL
 bond0 slave 1             792fa476-6a40-4a89-bb26-13d7cde11ba9   802-3-ethernet    Fri 03 Apr 2015 11:23:54 AM PDT
