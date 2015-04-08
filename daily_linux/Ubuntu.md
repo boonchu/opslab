@@ -7,7 +7,7 @@ trusty
 * how to recompile the sources
 ```
 - build source file
-$ sudo apt-get install dpkg-dev
+$ sudo apt-get install dpkg-dev libglib2.0-dev
 $ sudo apt-get build-dep network-manager-gnome
 $ apt-get source network-manager-gnome
 $ cd network-manager-applet-0.X.X.X/
