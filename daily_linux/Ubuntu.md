@@ -1,4 +1,27 @@
 ###### Ubuntu 
+* debian package management 
+```
+- show dependencies
+$ apt-cache depends penguin-command
+penguin-command
+  Depends: libc6
+  Depends: libsdl-image1.2
+  Depends: libsdl-mixer1.2
+  Depends: libsdl1.2debian
+  Conflicts: penguin-command:i386
+  
+- find package from content name
+$ dpkg -S $(which nm-connection-editor)
+network-manager-gnome: /usr/bin/nm-connection-editor
+$ dpkg -l | grep network-manager
+ii  network-manager                     0.9.8.8-0ubuntu7                  amd64        network management framework (daemon and userspace tools)
+
+- find package which file belong to
+$ sudo apt-file update
+$ apt-file search [file name] | head -2 (to list package name)
+$ apt-file list [package name] (to list content in package)
+
+```
 * what is your ubuntu release
 ```
 # lsb_release -sc
